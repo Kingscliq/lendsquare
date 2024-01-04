@@ -1,3 +1,28 @@
 $primary-color: #39cdcc;
 $secondary-color: #213f7d;
 $tertiary-color: rgba(57, 205, 204, 0.06);
+
+$font-weights: (
+  'light': 300,
+  'regular': 400,
+  'normal': 500,
+  'semi-bold': 600,
+  'bold': 700,
+);
+
+$font-sizes: (
+  'xl': 40px,
+  'lg': 24px,
+  'md': 20px,
+  'base': 16px,
+  'sm': 14px,
+  'xs': 12px,
+);
+
+@function fontWeight($weight) {
+  @return map-get($font-weights, $weight);
+}
+
+@function fontSize($size) {
+  @return map-get($font-sizes, $size);
+}

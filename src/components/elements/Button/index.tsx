@@ -1,7 +1,8 @@
 import React, { ReactNode } from 'react';
 import BtnLoader from './loader';
+import styles from './button.module.scss';
 
-interface ButtonProps extends HTMLButtonElement {
+interface ButtonProps extends Partial<HTMLButtonElement> {
   label?: string | ReactNode;
   onClick?: () => void;
   onMouseOver?: () => void;
@@ -12,6 +13,7 @@ interface ButtonProps extends HTMLButtonElement {
   variant?: string;
   btnLeftIcon?: string;
   btnRightIcon?: string;
+  type?: 'button' | 'submit' | 'reset' | undefined;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -35,10 +37,7 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       onMouseOver={onMouseOver}
       disabled={loading || disabled}
-      className={[
-        `w-full px-6 py-3 relative hover:opacity-90 transition-all duration-500 ease-linear rounded`,
-        className,
-      ].join(' ')}
+      className={[`${styles.button}`, className].join(' ')}
       style={{
         cursor: loading || disabled ? 'not-allowed' : '',
         opacity: loading || disabled ? '.68' : '1',
@@ -46,30 +45,14 @@ const Button: React.FC<ButtonProps> = ({
       }}
     >
       {loading ? (
-        <div className="flex justify-center align-middle">
+        <div className="btn-loader">
           <BtnLoader />
         </div>
       ) : (
-        <div className="flex items-center justify-center">
-          {btnLeftIcon && (
-            <div className="mr-2 md:mr-4">
-              <img src={btnLeftIcon} width={20} height={20} alt="icon" />
-            </div>
-          )}
-          <div
-            className={`md:w-fit ${
-              btnLeftIcon !== '' || btnRightIcon !== '' ? 'w-full' : null
-            } `}
-          >
-            <p className="text-center text-sm md:text-base whitespace-nowrap">
-              {'Button Text'}
-            </p>
-          </div>
-          {btnRightIcon && (
-            <div className="ml-2">
-              <img src={btnRightIcon} width={20} height={20} alt="icon" />
-            </div>
-          )}
+        <div className="btn-body">
+          <p className="text-center text-sm md:text-base whitespace-nowrap">
+            {label || 'Button Text'}
+          </p>
         </div>
       )}
     </button>
