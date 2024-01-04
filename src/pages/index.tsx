@@ -1,7 +1,8 @@
 import Home from '../features/Dashboard';
+import Login from './login';
 
 const HomePage = () => {
-  return <Home />;
+  return <Login />;
 };
 
 export default HomePage;

@@ -6,11 +6,13 @@ const Index = () => {
     { value: 'Female', label: 'Female' },
   ];
 
+
+
   return (
     <div>
       <h3 className="text-primary">Index</h3>
 
-      <div style={{padding: "40px", margin: "56px"}}>
+      <div style={{ padding: '40px', margin: '56px' }}>
         <SelectDropdown
           options={GenderOptions}
           label={'Select an Item'}
