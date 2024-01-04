@@ -2,19 +2,20 @@ import { useCallback } from 'react';
 import { setData, clearData } from 'slices/dataSlice';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { RootState } from '../store/types';
+import { generateData } from '@utils/helpers';
 
-export const auth = (state: RootState) => state.auth;
+export const users = (state: RootState) => state.data;
 
 export const useDataActions = () => {
-
-    
   const dispatch = useAppDispatch();
+
+  const generatedData = generateData();
   return {
-    setData: useCallback(() => dispatch(setData()), [dispatch]),
+    setData: useCallback(() => dispatch(setData(generatedData)), [dispatch]),
     clear: useCallback(() => dispatch(clearData()), [dispatch]),
   };
 };
 
 export const useAuth = () => {
-  return useAppSelector(auth);
+  return useAppSelector(users);
 };
