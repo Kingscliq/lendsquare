@@ -3,7 +3,8 @@ import logger from 'redux-logger';
 import storage from 'redux-persist/lib/storage';
 import type { WebStorage } from 'redux-persist';
 import { persistReducer } from 'redux-persist';
-
+import Auth from '../slices/authSlice';
+import Data from '../slices/dataSlice';
 import { initMessageListener } from 'redux-state-sync';
 
 interface PersitConfig {
@@ -16,7 +17,10 @@ export const persistConfig: PersitConfig = {
   storage: storage,
 };
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  auth: Auth,
+  data: Data,
+});
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

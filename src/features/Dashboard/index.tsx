@@ -1,4 +1,3 @@
-import Button from '@components/elements/button';
 import SelectDropdown from '@components/elements/select';
 
 const Index = () => {
@@ -10,7 +9,6 @@ const Index = () => {
   return (
     <div>
       <h3 className="text-primary">Index</h3>
-      {/* <Button /> */}
 
       <div style={{padding: "40px", margin: "56px"}}>
         <SelectDropdown
