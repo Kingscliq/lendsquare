@@ -4,7 +4,6 @@ import gurarantor from './guarantors.svg';
 import eye from './eye-view.svg';
 import karma from './karma.svg';
 import carret from './carret.svg';
-
 import loanRequest from './loan-requests.svg';
 import moneySacks from './money-sack.svg';
 import preferences from './preferences.svg';
