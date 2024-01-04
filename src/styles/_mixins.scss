@@ -4,3 +4,17 @@
   align-items: center;
   flex-direction: $direction;
 }
+
+@mixin flexBetween($direction) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin flexAround($direction) {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: $direction;
+}
