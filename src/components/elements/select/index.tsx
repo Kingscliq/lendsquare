@@ -38,7 +38,7 @@ const SelectDropdown = React.forwardRef(function SelectDropdown(
 ) {
   // select dropdown custom styles
   const selectCustomStyles = {
-    menu: (provided: any) => ({
+    menu: (provided: any, state: { isFocused: any }) => ({
       ...provided,
       fontSize: '14px',
       textTransform: textTransform || 'capitalize',
@@ -54,7 +54,9 @@ const SelectDropdown = React.forwardRef(function SelectDropdown(
       ...provided,
       minHeight: '48px',
       fontSize: '14px',
-      border: `0.5px solid ${state.isFocused ? '#a4ffb9' : '#E7EDF2'}`,
+      border: `0.5px solid ${
+        state.isFocused ? 'rgba(84, 95, 125, 0.6)' : 'rgba(84, 95, 125, 0.14)'
+      }`,
       color: error ? '#fd3d3d' : `${state.isFocused ? 'green' : '#E7EDF2'}`,
       borderRadius: '6px',
       textTransform: textTransform || 'capitalize',
@@ -67,9 +69,9 @@ const SelectDropdown = React.forwardRef(function SelectDropdown(
         state.isSelected ? '#fff' : state.isFocused ? '#20282e' : '#20282e'
       }`,
       backgroundColor: state.isSelected
-        ? '#227645'
+        ? '#39cdcc'
         : state.isFocused
-        ? '#47F58F'
+        ? '#39cdcd2b'
         : '',
     }),
 
