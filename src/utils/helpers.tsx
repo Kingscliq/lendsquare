@@ -1,7 +1,5 @@
-// utils/generateData.ts
-
 import { IUserData } from '@/types/datatable';
-import * as faker from 'faker';
+import { faker } from '@faker-js/faker';
 
 const randomDate = (start: Date, end: Date): Date =>
   new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
@@ -12,12 +10,17 @@ export const generateData = (): IUserData[] => {
   for (let i = 1; i <= 500; i++) {
     const dataRecord: IUserData = {
       id: i,
-      organisation: faker.company.companyName(),
+      organisation: faker.company.name(),
       username: faker.internet.userName(),
       email: faker.internet.email(),
-      phone: faker.phone.phoneNumber(),
+      phone: faker.phone.number(),
       start_date: randomDate(new Date(2010, 0, 1), new Date()),
-      status: faker.random.arrayElement(['active', 'inactive', '', '', '']),
+      status: faker.helpers.arrayElement([
+        'active',
+        'inactive',
+        'pending',
+        'blacklisted',
+      ]),
     };
 
     generatedData.push(dataRecord);

@@ -1,8 +1,16 @@
-import React from 'react';
+import { useDataActions, useUsersData } from '@hooks/useData';
+import React, { useEffect } from 'react';
 
 const Login = () => {
+  const data = useUsersData();
 
-  const data = useDa
+  const { setData } = useDataActions();
+
+  useEffect(() => {
+    setData();
+  }, [setData]);
+
+  console.log({ data });
   return <div>Login</div>;
 };
 

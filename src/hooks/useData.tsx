@@ -10,12 +10,16 @@ export const useDataActions = () => {
   const dispatch = useAppDispatch();
 
   const generatedData = generateData();
+
   return {
-    setData: useCallback(() => dispatch(setData(generatedData)), [dispatch]),
+    setData: useCallback(
+      () => dispatch(setData(generatedData)),
+      [dispatch, generatedData]
+    ),
     clear: useCallback(() => dispatch(clearData()), [dispatch]),
   };
 };
 
-export const useAuth = () => {
+export const useUsersData = () => {
   return useAppSelector(users);
 };
