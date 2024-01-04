@@ -1,3 +1,4 @@
+import AppRoutes from '@components/router';
 import React, { Fragment } from 'react';
 
 const App: React.FC<{}> = () => {
@@ -6,7 +7,9 @@ const App: React.FC<{}> = () => {
     //   <AppRoutes />
     // </Layout>
 
-    <Fragment></Fragment>
+    <Fragment>
+      <AppRoutes />
+    </Fragment>
   );
 };
 

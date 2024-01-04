@@ -1,25 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Oswald:wght@500;700&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Rubik+Dirt&display=swap');
-
 html {
   font-family: 'Poppins', system-ui, sans-serif;
   overflow-x: hidden;
   padding: 0;
   margin: 0;
-}
 
-body {
-  padding: 0;
-  margin: 0;
-  overflow-x: hidden;
-}
+  body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
 
-.Toastify__toast-theme--light {
-  font-size: 12px;
-}
-
-::-webkit-scrollbar {
-  width: 0;
-  /* Remove scrollbar space */
-  background: transparent;
-  /* Optional: just make scrollbar invisible */
+    ::-webkit-scrollbar {
+      width: 0;
+      /* Remove scrollbar space */
+      background: transparent;
+      /* Optional: just make scrollbar invisible */
+    }
+    .Toastify__toast-theme--light {
+      font-size: 12px;
+    }
+    .container {
+      max-width: 90%;
+    }
+  }
 }
