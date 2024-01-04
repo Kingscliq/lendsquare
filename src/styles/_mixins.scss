@@ -18,3 +18,8 @@
   align-items: center;
   flex-direction: $direction;
 }
+
+@mixin grid($cols, $spacing) {
+  display: grid;
+  grid-template-columns: repeat($cols, $spacing);
+}
