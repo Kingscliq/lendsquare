@@ -1,8 +1,6 @@
-import Home from "../features/Dashboard";
+import Home from '../features/Dashboard';
 
 const HomePage = () => {
-  return (
-    <Home />
-  );
+  return <Home />;
 };
 export default HomePage;

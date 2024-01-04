@@ -25,5 +25,9 @@ html {
       max-width: 90%;
       margin: auto;
     }
+    .text-primary {
+      color: $primary-color;
+      font-size: 30px;
+    }
   }
 }
