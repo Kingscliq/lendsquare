@@ -23,7 +23,5 @@ const dataSlice = createSlice({
 });
 
 export const { setData, clearData } = dataSlice.actions;
-export const selectGeneratedData = (state: { data: DataState }) =>
-  state.data.generatedData;
 
 export default dataSlice.reducer;

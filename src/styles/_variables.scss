@@ -22,10 +22,21 @@ $font-sizes: (
   'xs': 12px,
 );
 
+$breakpoints: (
+  'mobile': 320px,
+  'tablet': 768px,
+  'mini': 1200,
+  'desktop': 1440,
+);
+
 @function fontWeight($weight) {
   @return map-get($font-weights, $weight);
 }
 
 @function fontSize($size) {
   @return map-get($font-sizes, $size);
+}
+
+@function device($size) {
+  @return map-get($breakpoints, $size);
 }

@@ -6,8 +6,6 @@ const Index = () => {
     { value: 'Female', label: 'Female' },
   ];
 
-
-
   return (
     <div>
       <h3 className="text-primary">Index</h3>

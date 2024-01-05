@@ -1,4 +1,3 @@
-import Home from '../features/Dashboard';
 import Login from './login';
 
 const HomePage = () => {

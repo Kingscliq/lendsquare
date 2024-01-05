@@ -23,3 +23,9 @@
   display: grid;
   grid-template-columns: repeat($cols, $spacing);
 }
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}

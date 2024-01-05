@@ -8,7 +8,7 @@ const Login = () => {
 
   useEffect(() => {
     setData();
-  }, [setData]);
+  }, []);
 
   console.log({ data });
   return <div>Login</div>;
