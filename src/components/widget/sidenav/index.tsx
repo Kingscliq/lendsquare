@@ -18,7 +18,6 @@ import {
 import SidebarMenuItem from '@components/elements/sidebar-menu-item';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styles from './sidenav.module.scss';
-import { routes } from '@components/router/routes';
 
 const SideNav = () => {
   const location = useLocation();
@@ -26,14 +25,14 @@ const SideNav = () => {
 
   return (
     <div className={styles.sidenav}>
-      <div>
+      {/* <div>
         <a href={routes.HOME} target="_blank" rel="noreferrer">
           <img src={logo} alt="light logo" />
         </a>
-      </div>
+      </div> */}
       <aside className="mt-24">
         <h3 className={styles.link__heading}>Customers</h3>
-        <div className="mb-2">
+        <div className="">
           <SidebarMenuItem
             title="Users"
             active={['/'].includes(location?.pathname)}
@@ -42,7 +41,7 @@ const SideNav = () => {
             baseIcon={users}
           />
         </div>
-        <div className="mb-2">
+        <div className="">
           <SidebarMenuItem
             title="Guarantors"
             active={['/customers/karma'].includes(location?.pathname)}
@@ -51,7 +50,7 @@ const SideNav = () => {
             baseIcon={gurarantor}
           />
         </div>
-        <div className="mb-2">
+        <div className="">
           <SidebarMenuItem
             title="Loans"
             active={['/customers/loans'].includes(location?.pathname)}
@@ -60,7 +59,7 @@ const SideNav = () => {
             baseIcon={loanRequest}
           />
         </div>
-        <div className="mb-2">
+        <div className="">
           <SidebarMenuItem
             title="Decision Models"
             active={['/customers/decision-models'].includes(location?.pathname)}
@@ -69,7 +68,7 @@ const SideNav = () => {
             baseIcon={decisionModels}
           />
         </div>
-        <div className="mb-2">
+        <div className="">
           <SidebarMenuItem
             title="Savings"
             active={['/customers/savings'].includes(location?.pathname)}
@@ -78,7 +77,7 @@ const SideNav = () => {
             baseIcon={users}
           />
         </div>
-        <div className="mb-2">
+        <div className="">
           <SidebarMenuItem
             title="Loan Requests"
             active={['/customers/loan-requests'].includes(location?.pathname)}
@@ -87,7 +86,7 @@ const SideNav = () => {
             baseIcon={loanRequest}
           />
         </div>
-        <div className="mb-2">
+        <div className="">
           <SidebarMenuItem
             title="White Lists"
             active={['/customers/whitelist'].includes(location?.pathname)}
@@ -96,7 +95,7 @@ const SideNav = () => {
             baseIcon={whiteList}
           />
         </div>
-        <div className="mb-2">
+        <div className={styles.link__divider}>
           <SidebarMenuItem
             title="Karma"
             active={['/customers/karma'].includes(location?.pathname)}
@@ -107,7 +106,7 @@ const SideNav = () => {
         </div>
 
         <h3 className={styles.link__heading}>Businesses</h3>
-        <div className="mb-2">
+        <div className="">
           <SidebarMenuItem
             title="Organisation"
             active={['businesses/organisations'].includes(location?.pathname)}
@@ -116,7 +115,7 @@ const SideNav = () => {
             baseIcon={organisation}
           />
         </div>
-        <div className="mb-2">
+        <div className="">
           <SidebarMenuItem
             title="Loan Products"
             active={['/businesses/loan-products'].includes(location?.pathname)}
@@ -125,7 +124,7 @@ const SideNav = () => {
             baseIcon={loanRequest}
           />
         </div>
-        <div className="mb-2">
+        <div className="">
           <SidebarMenuItem
             title="Fees and Charges"
             active={['/busineses/fees-charges'].includes(location?.pathname)}
@@ -134,7 +133,7 @@ const SideNav = () => {
             baseIcon={feesCharges}
           />
         </div>
-        <div className="mb-2">
+        <div className="">
           <SidebarMenuItem
             title="Transactions"
             active={['/businesses/transactions'].includes(location?.pathname)}
@@ -143,7 +142,7 @@ const SideNav = () => {
             baseIcon={transactions}
           />
         </div>
-        <div className="mb-2">
+        <div className="">
           <SidebarMenuItem
             title="Settlements"
             active={['businesses/settlement'].includes(location?.pathname)}
@@ -152,7 +151,7 @@ const SideNav = () => {
             baseIcon={settlements}
           />
         </div>
-        <div className="mb-2">
+        <div className={styles.link__divider}>
           <SidebarMenuItem
             title="Reports"
             active={['/businesses/reports'].includes(location?.pathname)}
@@ -162,7 +161,7 @@ const SideNav = () => {
           />
         </div>
         <h3 className={styles.link__heading}>Settings</h3>
-        <div className="mb-2">
+        <div className="">
           <SidebarMenuItem
             title="Preferences"
             active={['/settings/preferences'].includes(location?.pathname)}
@@ -171,7 +170,7 @@ const SideNav = () => {
             baseIcon={preferences}
           />
         </div>
-        <div className="mb-2">
+        <div className="">
           <SidebarMenuItem
             title="Fees and Pricing"
             active={['/settings/fees-pricing'].includes(location?.pathname)}
@@ -180,7 +179,7 @@ const SideNav = () => {
             baseIcon={feesPricing}
           />
         </div>
-        <div className="mb-2">
+        <div className="">
           <SidebarMenuItem
             title="Audit Logs"
             active={['/settings/audit-logs'].includes(location?.pathname)}

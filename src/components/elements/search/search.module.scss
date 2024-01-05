@@ -1,0 +1,16 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.search__container {
+  @include flexItem;
+  .search__icon__container {
+    background-color: $primary-color;
+    padding: 9px 20px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    width: 56px;
+  }
+  .input {
+    border-right: none !important;
+  }
+}

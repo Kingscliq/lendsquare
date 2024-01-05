@@ -11,6 +11,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [openMobileNav, setOpenMobileNav] = useState<boolean>(false);
   return (
     <section>
+      <Header openNav={() => setOpenMobileNav(true)} />
       {/* desktop sidebar */}
       <SideNav />
       {/* mobile sidebar */}
@@ -20,7 +21,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       />
       {/* main content */}
       <main className="h-screen lg:ml-72">
-        <Header openNav={() => setOpenMobileNav(true)} />
         <section className="py-5 px-5 md:px-16 md:py-10 xl:px-20">
           {children}
         </section>

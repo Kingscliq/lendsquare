@@ -3,7 +3,7 @@
 @import '../../../styles/variables';
 
 .sidenav {
-  width: 380px;
+  width: 280px;
   padding: 32px 0;
   padding-left: 32px;
   box-shadow: 0px 5px 20px 0px $grey-200;
@@ -16,5 +16,9 @@
     font-weight: fontWeight('normal');
     text-transform: uppercase;
     font-size: fontSize('xs');
+    margin-bottom: 10px;
+  }
+  .link__divider {
+    margin-bottom: 20px;
   }
 }
