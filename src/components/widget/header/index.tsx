@@ -3,6 +3,7 @@ import { useAuth } from '@hooks/useAuth';
 import { Avatar } from '@radix-ui/themes';
 
 import styles from './header.module.scss';
+import Dropdown from '@components/elements/dropdown-menu';
 
 const Header = ({ openNav }: any) => {
   const user = useAuth();
@@ -20,20 +21,23 @@ const Header = ({ openNav }: any) => {
             <img src={logo} alt="Logo" />
           </div>
         </div>
-        <div></div>
+        <div className={styles.search__container}></div>
         <div className={styles.notification__container}>
           <div>
             <img src={notification} alt="" />
           </div>
-          <div className="">
+          <div className={styles.profile}>
             <Avatar
               src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256"
               fallback="A"
               size={'4'}
               radius="full"
             />
-            <div className="ml-3">
-              <p className="text-[#444444]">{person?.username}</p>
+            <div className={styles.dropdown}>
+              <Dropdown
+                placeholder={'Adedeji'}
+                items={['Profile', 'Settings']}
+              />
             </div>
           </div>
         </div>

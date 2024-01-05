@@ -2,8 +2,11 @@
 @import '../../../styles/variables.scss';
 
 .header {
-  @include flexBetween('row');
-  padding: 0 64px;
+  @include grid(4, 1fr);
+  padding: 32px 64px;
+  box-shadow: $shadow-primary;
+  background-color: $light;
+
   @include device('tablet') {
     display: none;
     padding: 32px;
@@ -11,17 +14,17 @@
   .menu {
     @include flexItem;
     .menu__btn {
-      display: block;
+      display: none;
       @include device('mobile') {
-        display: none;
+        display: block;
       }
     }
     .menu__logo {
       margin-left: 20px;
-      display: none;
+      display: block;
 
       @include device('mobile') {
-        display: block;
+        display: none;
       }
     }
   }
@@ -29,5 +32,18 @@
     @include flexItem;
     position: relative;
     cursor: pointer;
+  }
+
+  .profile {
+    @include flexItem;
+    margin-left: 10px;
+  }
+
+  .dropdown {
+    margin-left: 10px;
+  }
+
+  .search_container {
+    grid-column: span 2;
   }
 }

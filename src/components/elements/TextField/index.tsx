@@ -1,4 +1,5 @@
 import React, { ComponentProps, JSXElementConstructor } from 'react';
+import styles from './text-field.module.scss';
 
 interface TextFieldProps extends HTMLInputElement {
   onClick?: () => void;
@@ -38,13 +39,11 @@ const TextField: React.FC<TextFieldProps> = ({
             {label}
           </label>
         )}
-
         <div
           className={[
             className,
-            `rounded w-full h-12 my-1 focus:border-primary ${
-              error ? 'border-red-500' : '0'
-            }`,
+            `${styles.text__field__container}
+              ${error ? 'border-red-500' : '0'}`,
           ].join(' ')}
         >
           <input

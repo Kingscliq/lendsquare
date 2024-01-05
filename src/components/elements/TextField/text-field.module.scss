@@ -1,0 +1,16 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+// bg-transparent outline-none rounded py-4 h-12 w-full focus:border-primary transition-all duration-200 ease-in-out',
+.text-field {
+  background-color: transparent;
+  outline: none;
+  border-radius: 8px;
+  height: 48px;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+
+  &:focus {
+    border: 1px solid $primary-color;
+  }
+}
