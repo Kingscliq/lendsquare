@@ -6,7 +6,12 @@
 .link {
   text-decoration: none;
   font-weight: fontWeight('light');
+  font-size: fontSize('base');
+  &:hover {
+    font-weight: fontWeight('normal');
+  }
 }
+
 .sidebarItem {
   font-family: $secondary-font;
   font-weight: fontWeight('light');
@@ -35,7 +40,7 @@
   }
 
   &.active {
-    font-weight: fontWeight('normal');
+    // font-weight: fontWeight('normal');
     border-left: 4px solid $primary-color;
   }
 

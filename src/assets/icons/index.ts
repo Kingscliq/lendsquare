@@ -21,6 +21,7 @@ import activateUsers from './activate-user.svg';
 import feesCharges from './fees-charges.svg';
 import feesPricing from './fees-pricing.svg';
 import blackListUser from './blacklist-user.svg';
+import organisation from './briefcase.svg';
 
 export {
   logo,
@@ -46,4 +47,5 @@ export {
   eye,
   audit,
   blackListUser,
+  organisation,
 };

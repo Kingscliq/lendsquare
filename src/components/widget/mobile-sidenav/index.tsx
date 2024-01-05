@@ -28,16 +28,6 @@ const MobileSideNav: React.FC<MobileSideNavProps> = ({
         </div>
 
         <aside className="mt-10">
-          {/* <div className="mb-2">
-                <SidebarMenuItem
-                  onClick={setOpenMobileNav}
-                  title="Contact Us"
-                  active={location.pathname === '/contact'}
-                  url="/contact"
-                  activeIcon={userActive}
-                  baseIcon={profileIcon}
-                />
-              </div> */}
           <SidebarMenuItem
             onClick={setOpenMobileNav}
             title="FAQ"
