@@ -15,21 +15,25 @@ const Login = () => {
 
   console.log({ data });
   return (
-    <div className="card-grid">
-      <DashCard icon={dashUsers} title={'Users'} value={'2,343'} />
-      <DashCard icon={dashUsers} title={'Active Users'} value={'3,456'} />
-      <DashCard
-        icon={userWithLoans}
-        title={'Users with Loans'}
-        value={'2,345'}
-      />
-      <DashCard
-        icon={userWithSavings}
-        title={'Users with Savings'}
-        value={'2,345'}
-      />
+    <div>
+      <div className="card-grid">
+        <DashCard icon={dashUsers} title={'Users'} value={'2,343'} />
+        <DashCard icon={dashUsers} title={'Active Users'} value={'3,456'} />
+        <DashCard
+          icon={userWithLoans}
+          title={'Users with Loans'}
+          value={'2,345'}
+        />
+        <DashCard
+          icon={userWithSavings}
+          title={'Users with Savings'}
+          value={'2,345'}
+        />
+      </div>
 
-      <TextField />
+      <div>
+        <TextField error />
+      </div>
     </div>
   );
 };

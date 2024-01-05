@@ -4,21 +4,28 @@
 // bg-transparent outline-none rounded py-4 h-12 w-full focus:border-primary transition-all duration-200 ease-in-out',
 // rounded w-full h-12 my-1 focus:border-primary
 
-.text__field__container {
-  @include flexItem;
+.field__container {
   width: 100%;
-  border: 1px solid grey;
-
-  .text__field {
-    background-color: transparent;
-    outline: none;
-    border-radius: 8px;
-    height: 48px;
+  .text__field__container {
+    @include flexItem;
     width: 100%;
-    transition: all 0.2s ease-in-out;
-    padding: 16px;
-    &:focus {
-      border: 1px solid $primary-color;
+
+    .text__field {
+      background-color: transparent;
+      outline: none;
+      border-radius: 8px;
+      height: 48px;
+      width: 100%;
+      transition: all 0.2s ease-in-out;
+      padding: 16px 10px;
+      border: 1px solid rgba(33, 63, 125, 0.2);
+      font-size: fontSize('sm');
+      &.error__border {
+        border: 1px solid $error;
+      }
+      &:focus {
+        border: 1px solid $primary-color;
+      }
     }
   }
 }

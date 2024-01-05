@@ -1,6 +1,11 @@
 @import './styles/variables';
 @import './styles/mixins';
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 html {
   font-family: 'Poppins', system-ui, sans-serif;
   overflow-x: hidden;
@@ -39,11 +44,11 @@ html {
     }
 
     .error-text {
-      color: red;
+      color: $error;
     }
 
     .error-border {
-      border: #e11900;
+      border: 1px solid $error;
     }
   }
 }

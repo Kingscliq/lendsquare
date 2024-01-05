@@ -29,37 +29,39 @@ const TextField: React.FC<TextFieldProps> = ({
   disabled,
 }) => {
   return (
-    <div className="w-full">
-      <div>
-        {label && (
-          <label
-            className="text-primary font-bold"
-            style={{ color: error ? '#e11900 ' : '0' }}
-          >
-            {label}
-          </label>
-        )}
-        <div
-          className={[
-            className,
-            `${styles.text__field__container}
-              ${error ? 'error' : '0'}`,
-          ].join(' ')}
+    <div className={`${styles.field__container}`}>
+      {label && (
+        <label
+          className="text-primary font-bold"
+          style={{ color: error ? '#e11900 ' : '0' }}
         >
-          <input
-            type={type || 'text'}
-            className={[inputClass, styles.text__field].join(' ')}
-            placeholder={placeholder || 'Enter a value'}
-            value={value}
-            onClick={onClick}
-            error={error}
-            onChange={onChange}
-            name={name}
-            disabled={disabled}
-            ref={inputRef}
-            {...props}
-          />
-        </div>
+          {label}
+        </label>
+      )}
+      <div
+        className={[
+          className,
+          `${styles.text__field__container}
+              ${error ? styles.error__border : '0'}`,
+        ].join(' ')}
+      >
+        <input
+          type={type || 'text'}
+          className={[
+            inputClass,
+            styles.text__field,
+            error ? styles.error__border : styles.border,
+          ].join(' ')}
+          placeholder={placeholder || 'Enter a value'}
+          value={value}
+          onClick={onClick}
+          error={error}
+          onChange={onChange}
+          name={name}
+          disabled={disabled}
+          ref={inputRef}
+          {...props}
+        />
       </div>
       {error && <small style={{ color: '#e11900' }}>{message}</small>}
     </div>
