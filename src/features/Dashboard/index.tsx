@@ -1,25 +1,11 @@
-import SelectDropdown from '@components/elements/select';
+import Overview from './widgets/overview';
 
-const Index = () => {
-  const GenderOptions = [
-    { value: 'Male', label: 'Male' },
-    { value: 'Female', label: 'Female' },
-  ];
-
+const Dashboard = () => {
   return (
     <div>
-      <h3 className="text-primary">Index</h3>
-
-      <div style={{ padding: '40px', margin: '56px' }}>
-        <SelectDropdown
-          options={GenderOptions}
-          label={'Select an Item'}
-          placeholder="Select Next of Kin State of Origin"
-          name="kinStateOfOrigin"
-        />
-      </div>
+      <Overview />
     </div>
   );
 };
 
-export default Index;
+export default Dashboard;

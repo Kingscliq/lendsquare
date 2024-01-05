@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import { routes } from './routes';
 import ProtectedRoute from './protected-routes';
 import { useAuth } from '@hooks/useAuth';
+import LoginPage from '@pages/login';
 
 const AppRoutes: React.FC<{}> = () => {
   const user = useAuth();
@@ -18,7 +19,7 @@ const AppRoutes: React.FC<{}> = () => {
           </ProtectedRoute>
         }
       ></Route>
-      <Route path={routes.HOME} element={<HomePage />}></Route>
+      <Route path={routes.SIGN_IN} element={<LoginPage />}></Route>
     </Routes>
   );
 };

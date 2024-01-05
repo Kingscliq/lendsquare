@@ -1,7 +1,7 @@
-import Login from './login';
+import Dashboard from '@features/Dashboard';
 
 const HomePage = () => {
-  return <Login />;
+  return <Dashboard />;
 };
 
 export default HomePage;
