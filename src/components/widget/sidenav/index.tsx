@@ -6,7 +6,6 @@ import {
   gurarantor,
   karma,
   loanRequest,
-  logo,
   organisation,
   preferences,
   reports,
@@ -25,11 +24,6 @@ const SideNav = () => {
 
   return (
     <div className={styles.sidenav}>
-      {/* <div>
-        <a href={routes.HOME} target="_blank" rel="noreferrer">
-          <img src={logo} alt="light logo" />
-        </a>
-      </div> */}
       <aside className="mt-24">
         <h3 className={styles.link__heading}>Customers</h3>
         <div className="">
