@@ -1,7 +1,7 @@
 import React, { ComponentProps, JSXElementConstructor } from 'react';
 import styles from './text-field.module.scss';
 
-interface TextFieldProps extends HTMLInputElement {
+interface TextFieldProps extends Partial<HTMLInputElement> {
   onClick?: () => void;
   error?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -43,15 +43,12 @@ const TextField: React.FC<TextFieldProps> = ({
           className={[
             className,
             `${styles.text__field__container}
-              ${error ? 'border-red-500' : '0'}`,
+              ${error ? 'error' : '0'}`,
           ].join(' ')}
         >
           <input
             type={type || 'text'}
-            className={[
-              inputClass,
-              'bg-transparent outline-none rounded py-4 h-12 w-full focus:border-primary transition-all duration-200 ease-in-out',
-            ].join(' ')}
+            className={[inputClass, styles.text__field].join(' ')}
             placeholder={placeholder || 'Enter a value'}
             value={value}
             onClick={onClick}

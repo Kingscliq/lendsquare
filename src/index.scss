@@ -21,10 +21,12 @@ html {
     .Toastify__toast-theme--light {
       font-size: 12px;
     }
+
     .container {
       max-width: 90%;
       margin: auto;
     }
+
     .text-primary {
       color: $primary-color;
       font-size: 30px;
@@ -34,6 +36,14 @@ html {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 24px;
+    }
+
+    .error-text {
+      color: red;
+    }
+
+    .error-border {
+      border: #e11900;
     }
   }
 }

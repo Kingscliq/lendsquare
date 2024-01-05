@@ -4,6 +4,7 @@ import { Avatar } from '@radix-ui/themes';
 
 import styles from './header.module.scss';
 import Dropdown from '@components/elements/dropdown-menu';
+import Search from '@components/elements/search';
 
 const Header = ({ openNav }: any) => {
   const user = useAuth();
@@ -21,7 +22,10 @@ const Header = ({ openNav }: any) => {
             <img src={logo} alt="Logo" />
           </div>
         </div>
-        <div className={styles.search__container}></div>
+        <div className={styles.search__container}>
+          <Search />
+        </div>
+        <div></div>
         <div className={styles.notification__container}>
           <div>
             <img src={notification} alt="" />

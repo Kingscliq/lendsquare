@@ -11,8 +11,10 @@
     display: none;
     padding: 32px;
   }
+
   .menu {
     @include flexItem;
+    grid-column: span 1;
     .menu__btn {
       display: none;
       @include device('mobile') {
@@ -28,10 +30,13 @@
       }
     }
   }
+
   .notification__container {
     @include flexItem;
     position: relative;
     cursor: pointer;
+    grid-column: span 1;
+    justify-self: flex-end;
   }
 
   .profile {

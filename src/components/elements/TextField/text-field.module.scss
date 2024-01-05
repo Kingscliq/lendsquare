@@ -2,15 +2,23 @@
 @import '../../../styles/variables';
 
 // bg-transparent outline-none rounded py-4 h-12 w-full focus:border-primary transition-all duration-200 ease-in-out',
-.text-field {
-  background-color: transparent;
-  outline: none;
-  border-radius: 8px;
-  height: 48px;
-  width: 100%;
-  transition: all 0.2s ease-in-out;
+// rounded w-full h-12 my-1 focus:border-primary
 
-  &:focus {
-    border: 1px solid $primary-color;
+.text__field__container {
+  @include flexItem;
+  width: 100%;
+  border: 1px solid grey;
+
+  .text__field {
+    background-color: transparent;
+    outline: none;
+    border-radius: 8px;
+    height: 48px;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+    padding: 16px;
+    &:focus {
+      border: 1px solid $primary-color;
+    }
   }
 }
