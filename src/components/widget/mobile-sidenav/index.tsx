@@ -2,6 +2,7 @@ import { logo } from '@assets/icons';
 
 import { useLocation, useNavigate } from 'react-router-dom';
 import styles from './mobile-nav.module.scss';
+import SidebarMenuItem from '@components/elements/sidebar-menu-item';
 
 interface MobileSideNavProps {
   openMobileNav: boolean;
@@ -37,6 +38,15 @@ const MobileSideNav: React.FC<MobileSideNavProps> = ({
                   baseIcon={profileIcon}
                 />
               </div> */}
+          <SidebarMenuItem
+            onClick={setOpenMobileNav}
+            title="FAQ"
+            active={location.pathname === '/faq'}
+            url="/faq"
+            activeIcon={undefined}
+            baseIcon={undefined} // activeIcon={helpActive}
+            // baseIcon={helpBase}
+          />
           Hello
         </aside>
       </div>

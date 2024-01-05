@@ -14,6 +14,7 @@
 
   @include device('mobile') {
     width: 384px;
+    background-color: red;
   }
 }
 

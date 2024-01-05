@@ -1,0 +1,45 @@
+// flex items-center justify-between hover:cursor-pointer
+
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.link {
+  text-decoration: none;
+  font-weight: fontWeight('light');
+}
+.sidebarItem {
+  font-family: $secondary-font;
+  font-weight: fontWeight('light');
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: $secondary-color;
+  transition: all 0.3s ease-out;
+  padding: 14px 30px;
+
+  &:hover {
+    cursor: pointer;
+    border-left: 4px solid $primary-color;
+    background-color: $tertiary-color;
+  }
+
+  .icon {
+  }
+
+  .title {
+    margin-left: 12px;
+  }
+
+  .container {
+    // ...
+  }
+
+  &.active {
+    font-weight: fontWeight('normal');
+    border-left: 4px solid $primary-color;
+  }
+
+  &.base {
+    font-weight: fontWeight('regular');
+  }
+}

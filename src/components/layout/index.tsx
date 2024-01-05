@@ -1,3 +1,6 @@
+import Header from '@components/widget/header';
+import MobileSideNav from '@components/widget/mobile-sidenav';
+import SideNav from '@components/widget/sidenav';
 import React, { ReactNode, useState } from 'react';
 
 interface LayoutProps {

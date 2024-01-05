@@ -24,8 +24,8 @@
   grid-template-columns: repeat($cols, $spacing);
 }
 
-@mixin mobile {
-  @media (max-width: $mobile) {
+@mixin device($screen) {
+  @media (max-width: $screen) {
     @content;
   }
 }

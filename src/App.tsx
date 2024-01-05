@@ -1,14 +1,13 @@
+import Layout from '@components/layout';
 import AppRoutes from '@components/router';
 import React, { Fragment } from 'react';
 
 const App: React.FC<{}> = () => {
   return (
-    // <Layout>
-    //   <AppRoutes />
-    // </Layout>
-
     <Fragment>
-      <AppRoutes />
+      <Layout>
+        <AppRoutes />
+      </Layout>
     </Fragment>
   );
 };

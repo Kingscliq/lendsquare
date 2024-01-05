@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
+import styles from './side-bar-menu.module.scss';
 
 interface SideBarMenuItemProps {
   title: string;
@@ -22,63 +23,20 @@ const SidebarMenuItem: React.FC<SideBarMenuItemProps> = ({
   title,
   className,
   onClick,
-  optionalIcon,
 }) => {
   return (
-    <Link to={url || '/'}>
-      <div className="flex items-center justify-between hover:cursor-pointer">
-        <div
-          className={[
-            'flex w-full transition-all duration-500 hover:cursor-pointer ease-in-out items-center cursor-pointer hover:bg-neutral/5 hover:font-medium hover:border-r-4 border-r-[#82C600] rounded-sm',
-            `${
-              active
-                ? 'font-medium border-r-4 border-r-[#82C600]'
-                : 'font-normal text-gray-400'
-            } `,
-            className,
-          ].join(' ')}
-          onClick={onClick}
-          title={title}
-        >
-          <div
-            className={[
-              'flex w-2/3 transition-all duration-500 ease-in-out items-center cursor-pointer  border-r-[#82C600] px-4 py-3 rounded-sm',
-              `${
-                active
-                  ? 'font-medium text-white bg-primary hover:bg-primary/90'
-                  : 'font-normal text-gray-400 hover:bg-neutral/5 hover:font-medium'
-              } `,
-            ].join(' ')}
-          >
-            {active ? (
-              <div className={['flex items-center justify-center '].join(' ')}>
-                {/* {activeIcon} */}
-                <img
-                  src={activeIcon}
-                  alt="Active Icon"
-                  height={16}
-                  width={16}
-                />
-              </div>
-            ) : (
-              <div className={['flex items-center justify-center'].join(' ')}>
-                {/* {baseIcon} */}
-                <img src={baseIcon} alt="Base Icon" height={16} width={16} />
-              </div>
-            )}
-            <div className="ml-3 transition-all text-sm">{title}</div>
-          </div>
-
-          {active && (
-            <div className="rounded-bl-lg rounded-tl-lg bg-secondary"></div>
-          )}
-
-          {optionalIcon && (
-            <div className="ml-4">
-              <img src={optionalIcon} alt="icon" />
-            </div>
-          )}
+    <Link to={url || '/'} className={styles.link}>
+      <div
+        className={`${styles.sidebarItem} ${
+          active ? styles.active : styles.base
+        } ${className}`}
+        onClick={onClick}
+        title={title}
+      >
+        <div className={styles.icon}>
+          <img src={active ? activeIcon : baseIcon} alt={title} />
         </div>
+        <div className={styles.title}>{title}</div>
       </div>
     </Link>
   );

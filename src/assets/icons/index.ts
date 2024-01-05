@@ -20,6 +20,7 @@ import whiteList from './white-list.svg';
 import activateUsers from './activate-user.svg';
 import feesCharges from './fees-charges.svg';
 import feesPricing from './fees-pricing.svg';
+import blackListUser from './blacklist-user.svg';
 
 export {
   logo,
@@ -44,4 +45,5 @@ export {
   gurarantor,
   eye,
   audit,
+  blackListUser,
 };
