@@ -37,6 +37,7 @@ const MobileSideNav: React.FC<MobileSideNavProps> = ({
                   baseIcon={profileIcon}
                 />
               </div> */}
+          Hello
         </aside>
       </div>
 
