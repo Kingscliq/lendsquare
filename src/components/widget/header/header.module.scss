@@ -1,0 +1,33 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables.scss';
+
+.header {
+  @include flexBetween('row');
+  padding: 0 64px;
+  @include device('tablet') {
+    display: none;
+    padding: 32px;
+  }
+  .menu {
+    @include flexItem;
+    .menu__btn {
+      display: block;
+      @include device('mobile') {
+        display: none;
+      }
+    }
+    .menu__logo {
+      margin-left: 20px;
+      display: none;
+
+      @include device('mobile') {
+        display: block;
+      }
+    }
+  }
+  .notification__container {
+    @include flexItem;
+    position: relative;
+    cursor: pointer;
+  }
+}

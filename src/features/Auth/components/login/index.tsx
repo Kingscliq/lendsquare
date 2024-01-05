@@ -1,9 +1,4 @@
-import {
-  activateUsers,
-  dashUsers,
-  userWithLoans,
-  userWithSavings,
-} from '@assets/icons';
+import { dashUsers, userWithLoans, userWithSavings } from '@assets/icons';
 import DashCard from '@components/elements/dash-card';
 import { useDataActions, useUsersData } from '@hooks/useData';
 import { useEffect } from 'react';

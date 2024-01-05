@@ -1,9 +1,9 @@
-import { AppStoreProvider } from './StoreProvider';
+import ThemeProvider from '@providers/ThemeProvider';
 
 interface AppProviderProps {
   children: React.ReactNode;
 }
 
 export function AppProvider({ children }: AppProviderProps) {
-  return <AppStoreProvider>{children}</AppStoreProvider>;
+  return <ThemeProvider>{children}</ThemeProvider>;
 }

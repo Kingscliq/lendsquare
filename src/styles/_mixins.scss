@@ -18,6 +18,10 @@
   align-items: center;
   flex-direction: $direction;
 }
+@mixin flexItem {
+  display: flex;
+  align-items: center;
+}
 
 @mixin grid($cols, $spacing) {
   display: grid;
