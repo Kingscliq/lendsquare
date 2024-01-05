@@ -45,7 +45,7 @@ const SideNav = () => {
         <div className="mb-2">
           <SidebarMenuItem
             title="Guarantors"
-            active={['/'].includes(location?.pathname)}
+            active={['/customers/karma'].includes(location?.pathname)}
             url="/"
             activeIcon={gurarantor}
             baseIcon={gurarantor}
@@ -54,7 +54,7 @@ const SideNav = () => {
         <div className="mb-2">
           <SidebarMenuItem
             title="Loans"
-            active={['/'].includes(location?.pathname)}
+            active={['/customers/loans'].includes(location?.pathname)}
             url="/"
             activeIcon={loanRequest}
             baseIcon={loanRequest}
@@ -63,7 +63,7 @@ const SideNav = () => {
         <div className="mb-2">
           <SidebarMenuItem
             title="Decision Models"
-            active={['/'].includes(location?.pathname)}
+            active={['/customers/decision-models'].includes(location?.pathname)}
             url="/"
             activeIcon={decisionModels}
             baseIcon={decisionModels}
@@ -72,7 +72,7 @@ const SideNav = () => {
         <div className="mb-2">
           <SidebarMenuItem
             title="Savings"
-            active={['/'].includes(location?.pathname)}
+            active={['/customers/savings'].includes(location?.pathname)}
             url="/"
             activeIcon={users}
             baseIcon={users}
@@ -81,7 +81,7 @@ const SideNav = () => {
         <div className="mb-2">
           <SidebarMenuItem
             title="Loan Requests"
-            active={['/'].includes(location?.pathname)}
+            active={['/customers/loan-requests'].includes(location?.pathname)}
             url="/"
             activeIcon={loanRequest}
             baseIcon={loanRequest}
@@ -90,7 +90,7 @@ const SideNav = () => {
         <div className="mb-2">
           <SidebarMenuItem
             title="White Lists"
-            active={['/'].includes(location?.pathname)}
+            active={['/customers/whitelist'].includes(location?.pathname)}
             url="/"
             activeIcon={whiteList}
             baseIcon={whiteList}
@@ -99,7 +99,7 @@ const SideNav = () => {
         <div className="mb-2">
           <SidebarMenuItem
             title="Karma"
-            active={['/'].includes(location?.pathname)}
+            active={['/customers/karma'].includes(location?.pathname)}
             url="/"
             activeIcon={karma}
             baseIcon={karma}
@@ -110,7 +110,7 @@ const SideNav = () => {
         <div className="mb-2">
           <SidebarMenuItem
             title="Organisation"
-            active={['/'].includes(location?.pathname)}
+            active={['businesses/organisations'].includes(location?.pathname)}
             url="/"
             activeIcon={organisation}
             baseIcon={organisation}
@@ -119,7 +119,7 @@ const SideNav = () => {
         <div className="mb-2">
           <SidebarMenuItem
             title="Loan Products"
-            active={['/'].includes(location?.pathname)}
+            active={['/businesses/loan-products'].includes(location?.pathname)}
             url="/"
             activeIcon={loanRequest}
             baseIcon={loanRequest}
@@ -128,7 +128,7 @@ const SideNav = () => {
         <div className="mb-2">
           <SidebarMenuItem
             title="Fees and Charges"
-            active={['/'].includes(location?.pathname)}
+            active={['/busineses/fees-charges'].includes(location?.pathname)}
             url="/"
             activeIcon={feesCharges}
             baseIcon={feesCharges}
@@ -137,7 +137,7 @@ const SideNav = () => {
         <div className="mb-2">
           <SidebarMenuItem
             title="Transactions"
-            active={['/'].includes(location?.pathname)}
+            active={['/businesses/transactions'].includes(location?.pathname)}
             url="/"
             activeIcon={transactions}
             baseIcon={transactions}
@@ -146,7 +146,7 @@ const SideNav = () => {
         <div className="mb-2">
           <SidebarMenuItem
             title="Settlements"
-            active={['/'].includes(location?.pathname)}
+            active={['businesses/settlement'].includes(location?.pathname)}
             url="/"
             activeIcon={settlements}
             baseIcon={settlements}
@@ -155,7 +155,7 @@ const SideNav = () => {
         <div className="mb-2">
           <SidebarMenuItem
             title="Reports"
-            active={['/'].includes(location?.pathname)}
+            active={['/businesses/reports'].includes(location?.pathname)}
             url="/"
             activeIcon={reports}
             baseIcon={reports}
@@ -165,7 +165,7 @@ const SideNav = () => {
         <div className="mb-2">
           <SidebarMenuItem
             title="Preferences"
-            active={['/'].includes(location?.pathname)}
+            active={['/settings/preferences'].includes(location?.pathname)}
             url="/"
             activeIcon={preferences}
             baseIcon={preferences}
@@ -174,7 +174,7 @@ const SideNav = () => {
         <div className="mb-2">
           <SidebarMenuItem
             title="Fees and Pricing"
-            active={['/'].includes(location?.pathname)}
+            active={['/settings/fees-pricing'].includes(location?.pathname)}
             url="/"
             activeIcon={feesPricing}
             baseIcon={feesPricing}
@@ -183,7 +183,7 @@ const SideNav = () => {
         <div className="mb-2">
           <SidebarMenuItem
             title="Audit Logs"
-            active={['/'].includes(location?.pathname)}
+            active={['/settings/audit-logs'].includes(location?.pathname)}
             url="/"
             activeIcon={audit}
             baseIcon={audit}

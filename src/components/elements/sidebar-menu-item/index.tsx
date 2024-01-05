@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './side-bar-menu.module.scss';
 
 interface SideBarMenuItemProps {
@@ -24,11 +24,17 @@ const SidebarMenuItem: React.FC<SideBarMenuItemProps> = ({
   className,
   onClick,
 }) => {
+  const [hover, setHover] = useState<boolean>(false);
   return (
-    <Link to={url || '/'} className={styles.link}>
+    <Link
+      to={url || '/'}
+      className={styles.link}
+      onMouseOver={() => setHover(true)}
+      onMouseOut={() => setHover(false)}
+    >
       <div
         className={`${styles.sidebarItem} ${
-          active ? styles.active : styles.base
+          active || hover ? styles.active : styles.base
         } ${className}`}
         onClick={onClick}
         title={title}

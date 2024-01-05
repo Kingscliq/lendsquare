@@ -13,7 +13,8 @@
   z-index: 50;
 
   .link__heading {
-    font-weight: fontWeight('light');
+    font-weight: fontWeight('normal');
     text-transform: uppercase;
+    font-size: fontSize('xs');
   }
 }
