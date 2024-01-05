@@ -1,3 +1,21 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
 .dash__card {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #fff;
+  padding: 20px 30px;
+
+  .dash__text {
+    text-transform: uppercase;
+    font-size: fontSize('sm');
+  }
+
+  .dash__value {
+    font-size: fontSize('lg');
+    font-weight: fontWeight('semi-bold');
+    color: $secondary-color;
+  }
 }

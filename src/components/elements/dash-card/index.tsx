@@ -3,9 +3,8 @@ import styles from './dash-card.module.scss';
 
 interface DashCardProps {
   icon: string;
-  title: string;
-  description: string;
-  value: string;
+  title?: string;
+  value?: string;
 }
 
 const DashCard: React.FC<DashCardProps> = ({ icon, title, value }) => {
@@ -13,13 +12,12 @@ const DashCard: React.FC<DashCardProps> = ({ icon, title, value }) => {
     <div className={styles.dash__card}>
       <div>
         <img src={icon} alt="Lendsqr Dash card" />
-        {icon}
       </div>
       <div>
-        <p>{title}</p>
+        <p className={styles.dash__text}>{title}</p>
       </div>
       <div>
-        <h2>{value}</h2>
+        <h2 className={styles.dash__value}>{value}</h2>
       </div>
     </div>
   );

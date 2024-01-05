@@ -20,7 +20,7 @@ const MobileSideNav: React.FC<MobileSideNavProps> = ({
     <>
       <div
         className={`${styles.mobileNav} ${
-          openMobileNav ? 'isOpen' : 'isClosed'
+          openMobileNav ? styles.isOpen : styles.isClosed
         }`}
       >
         <div>

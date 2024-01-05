@@ -1,8 +1,6 @@
 @import './styles/variables';
 @import './styles/mixins';
 
-
-
 html {
   font-family: 'Poppins', system-ui, sans-serif;
   overflow-x: hidden;
@@ -13,7 +11,7 @@ html {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
-
+    background-color: #fbfbfb;
     ::-webkit-scrollbar {
       width: 0;
       /* Remove scrollbar space */
@@ -30,6 +28,12 @@ html {
     .text-primary {
       color: $primary-color;
       font-size: 30px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
     }
   }
 }
