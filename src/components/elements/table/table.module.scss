@@ -50,3 +50,25 @@
     }
   }
 }
+
+.pagination__container {
+  @include flexBetween('row');
+  font-size: fontSize('xs');
+  color: $secondary-color;
+  padding: 40px;
+  .pagination_body {
+    @include flexItem;
+    width: 400px;
+    .page {
+      @include flexItem;
+    }
+    select {
+      background-color: rgba(33, 63, 125, 0.1);
+      color: $secondary-color;
+      width: 72px;
+      border: none;
+      border-radius: 5px;
+      padding: 7px 5px;
+    }
+  }
+}

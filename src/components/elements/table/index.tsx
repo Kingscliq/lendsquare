@@ -137,11 +137,7 @@ function Table({
                   >
                     {headerGroup.headers.map(header => {
                       return (
-                        <th
-                          key={header.id}
-                          colSpan={header.colSpan}
-                          className="text-left text-xs text-white font-semibold uppercase whitespace-nowrap py-5 px-5"
-                        >
+                        <th key={header.id} colSpan={header.colSpan}>
                           {header.isPlaceholder ? null : (
                             <div
                               {...{
@@ -172,24 +168,14 @@ function Table({
                 {!loading &&
                   table?.getRowModel()?.rows.map(row => {
                     return (
-                      <tr
-                        key={row.id}
-                        className={`relative border-y border-light text-dark ${
-                          Number(row?.id) % 2 ? 'bg-primary-100' : ''
-                        }`}
-                      >
+                      <tr key={row.id}>
                         {row?.getVisibleCells().map(cell => {
                           return (
-                            <td
-                              key={cell.id}
-                              className="text-sm font-normal capitalize whitespace-nowrap py-[14px] px-5"
-                            >
-                              {/* <div className="flex items-center"> */}
+                            <td key={cell.id}>
                               {flexRender(
                                 cell?.column.columnDef.cell,
                                 cell?.getContext()
                               )}
-                              {/* </div> */}
                             </td>
                           );
                         })}
@@ -199,24 +185,64 @@ function Table({
               </tbody>
             </table>
             {loading && (
-              <div className="h-64 w-full flex items-center justify-center">
+              <div>
                 <div>Loading...</div>
               </div>
             )}
             {!loading && data?.length === 0 && (
-              <div className="h-64 w-full flex items-center justify-center">
-                <p className="text-gray-400">
-                  {noData || 'Oops! No Data to Display'}
-                </p>
+              <div>
+                <p>{noData || 'Oops! No Data to Display'}</p>
               </div>
             )}
           </div>
         </div>
       </article>
-      <div className="h-2" />
+      <div />
       {!loading && data?.length > 0 && (
-        <div className="flex items-center justify-center text-sx text-gray-600">
-          <div className="flex items-center gap-2">
+        <div className={styles.pagination__container}>
+          <div className={styles.pagination_body}>
+            <div className={styles.page}>
+              {/* <div>Page </div>
+              <div>
+                {table?.getState().pagination.pageIndex + 1} of{' '}
+                {table?.getPageCount()}
+              </div> */}
+              Show
+            </div>
+            {/* <span className="flex items-center gap-1 text-xs">
+              | Go to page:
+              <input
+                type="number"
+                defaultValue={table?.getState().pagination.pageIndex + 1}
+                onChange={e => {
+                  const page = e.target.value ? Number(e.target.value) - 1 : 0;
+                  table.setPageIndex(page);
+                }}
+                className="border p-1 rounded w-16"
+              />
+            </span> */}
+            <div>
+              <select
+                value={table?.getState().pagination.pageSize}
+                onChange={e => {
+                  table?.setPageSize(Number(e.target.value));
+                }}
+              >
+                {[10, 20, 30, 40, 50].map(pageSize => (
+                  <option key={pageSize} value={pageSize}>
+                    {pageSize}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <div>
+                {table?.getState().pagination.pageIndex + 1} of{' '}
+                {table?.getPageCount()}
+              </div>
+            </div>
+          </div>
+          <div>
             <Button
               className=""
               onClick={() => table?.setPageIndex(0)}
@@ -250,38 +276,6 @@ function Table({
             >
               {'>>'}
             </Button>
-
-            <span className="flex items-center gap-1 text-xs">
-              <div>Page</div>
-              <strong>
-                {table?.getState().pagination.pageIndex + 1} of{' '}
-                {table?.getPageCount()}
-              </strong>
-            </span>
-            <span className="flex items-center gap-1 text-xs">
-              | Go to page:
-              <input
-                type="number"
-                defaultValue={table?.getState().pagination.pageIndex + 1}
-                onChange={e => {
-                  const page = e.target.value ? Number(e.target.value) - 1 : 0;
-                  table.setPageIndex(page);
-                }}
-                className="border p-1 rounded w-16"
-              />
-            </span>
-            <select
-              value={table?.getState().pagination.pageSize}
-              onChange={e => {
-                table?.setPageSize(Number(e.target.value));
-              }}
-            >
-              {[10, 20, 30, 40, 50].map(pageSize => (
-                <option className="text-xs" key={pageSize} value={pageSize}>
-                  Show {pageSize}
-                </option>
-              ))}
-            </select>
           </div>
         </div>
       )}
