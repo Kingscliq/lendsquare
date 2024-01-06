@@ -3,6 +3,8 @@
   padding: 8px 20px;
   text-align: center;
   text-transform: capitalize;
+  border: none;
+  outline: none;
 
   &.active {
     background-color: rgba(57, 205, 98, 0.1);

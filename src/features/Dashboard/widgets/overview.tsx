@@ -1,5 +1,6 @@
 import { IUserData } from '@/types/datatable';
 import { dashUsers, userWithLoans, userWithSavings } from '@assets/icons';
+import Badge from '@components/elements/badge';
 import DashCard from '@components/elements/dash-card';
 import TableComponent from '@components/elements/table';
 import { useUsersData } from '@hooks/useData';
@@ -31,7 +32,22 @@ const Overview = () => {
       {
         header: 'Status',
         accessorKey: 'status',
-        cell: info => info?.getValue(),
+        cell: info => (
+          <Badge
+            text={info?.getValue() as string}
+            status={info?.getValue() as string}
+          />
+        ),
+      },
+      {
+        header: 'Status',
+        accessorKey: 'status',
+        cell: info => (
+          <Badge
+            text={info?.getValue() as string}
+            status={info?.getValue() as string}
+          />
+        ),
       },
     ],
     []

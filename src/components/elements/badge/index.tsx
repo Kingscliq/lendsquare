@@ -13,7 +13,7 @@ const statusStyles: StatusStyleProps = {
   active: styles.active,
   inactive: styles.inactive,
   pending: styles.pending,
-  balcklisted: styles.blacklisted,
+  blacklisted: styles.blacklisted,
 };
 
 const Badge: React.FC<BadgeProps> = ({ text, status }) => {
