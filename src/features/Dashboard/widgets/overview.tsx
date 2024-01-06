@@ -17,6 +17,7 @@ import { useUsersData } from '@hooks/useData';
 import { useFilters } from '@hooks/useFilters';
 import { ColumnDef } from '@tanstack/react-table';
 import React from 'react';
+import UserProfile from './user-profile';
 
 const Overview = () => {
   const menuItems = [
@@ -114,6 +115,8 @@ const Overview = () => {
         loading={false}
       />
       <Filter />
+
+      <UserProfile />
     </div>
   );
 };

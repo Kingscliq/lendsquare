@@ -1,6 +1,8 @@
 @import './styles/variables';
 @import './styles/mixins';
 
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -8,7 +10,7 @@
 }
 
 html {
-  font-family: $secondary-font;
+  font-family: 'Work Sans', sans-serif;
   overflow-x: hidden;
   padding: 0;
   margin: 0;
@@ -18,7 +20,7 @@ html {
     margin: 0;
     overflow-x: hidden;
     background-color: #fbfbfb;
-    font-family: $secondary-font;
+    font-family: 'Work Sans', sans-serif;
     ::-webkit-scrollbar {
       width: 0;
       /* Remove scrollbar space */

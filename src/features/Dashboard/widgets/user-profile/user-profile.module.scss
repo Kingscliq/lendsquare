@@ -1,0 +1,59 @@
+@import '../../../../styles//mixins';
+@import '../../../../styles/variables';
+
+.user__profile {
+  .profile__header {
+    @include flexBetween('row');
+  }
+  .profile__card {
+    box-shadow: $shadow-primary;
+    padding-right: 30px 30px;
+    padding-bottom: 0px;
+    background-color: $light;
+    .profile__menu {
+      @include flexItem;
+
+      .profile__name {
+        @include flexItem;
+        padding-right: 30px;
+        border-right: 1px solid $grey-200;
+        h2 {
+          font-size: 22px;
+          font-weight: fontWeight('normal');
+          color: $secondary-color;
+        }
+        p {
+          font-size: fontSize('sm');
+        }
+      }
+      .tier {
+        font-size: fontSize('sm');
+        padding-right: 30px;
+        padding-left: 30px;
+        border-right: 1px solid $grey-200;
+      }
+      .balance__bank {
+        padding-left: 30px;
+        h2 {
+          font-size: 22px;
+          font-weight: fontWeight('normal');
+          color: $secondary-color;
+        }
+        p {
+          font-size: fontSize('xs');
+        }
+      }
+    }
+
+    .tabs {
+      text-transform: uppercase;
+    }
+    .tabs[data-state='active'] {
+      color: $primary-color;
+      text-transform: uppercase;
+      &::before {
+        background-color: $primary-color;
+      }
+    }
+  }
+}
