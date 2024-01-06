@@ -1,10 +1,10 @@
 import React from 'react';
+import * as yup from 'yup';
+import { useFormik } from 'formik';
 import styles from './login.module.scss';
 import TextField from '@components/elements/textfield';
 import { Link, useNavigate } from 'react-router-dom';
 import Button from '@components/elements/button';
-import { useFormik } from 'formik';
-import * as yup from 'yup';
 
 const Form = () => {
   const navigate = useNavigate();
@@ -29,7 +29,9 @@ const Form = () => {
       initialValues: intitalValues,
       validationSchema: loginSchema,
       onSubmit: async (values: FormValues) => {
-        console.log(values);
+        if (errors.password || errors.username) {
+          console.log(values);
+        }
       },
     });
 

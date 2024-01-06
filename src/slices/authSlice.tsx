@@ -1,5 +1,3 @@
-// slices/authSlice.ts
-
 import { IUserData } from '@/types/datatable';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
