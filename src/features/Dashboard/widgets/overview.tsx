@@ -1,13 +1,37 @@
 import { IUserData } from '@/types/datatable';
-import { dashUsers, userWithLoans, userWithSavings } from '@assets/icons';
+import {
+  activateUsers,
+  blackListUser,
+  dashUsers,
+  eye,
+  userWithLoans,
+  userWithSavings,
+} from '@assets/icons';
 import Badge from '@components/elements/badge';
 import DashCard from '@components/elements/dash-card';
+import Ellipsis from '@components/elements/popover';
+import PopoverItem from '@components/elements/popover/item';
 import TableComponent from '@components/elements/table';
 import { useUsersData } from '@hooks/useData';
 import { ColumnDef } from '@tanstack/react-table';
 import React from 'react';
 
 const Overview = () => {
+  const menuItems = [
+    {
+      label: 'View Details',
+      icon: eye,
+    },
+    {
+      label: 'Blacklist Users',
+      icon: blackListUser,
+    },
+    {
+      label: 'Activate Users',
+      icon: activateUsers,
+    },
+  ];
+
   const tableColumns = React.useMemo<ColumnDef<IUserData>[]>(
     () => [
       {
@@ -40,13 +64,14 @@ const Overview = () => {
         ),
       },
       {
-        header: 'Status',
-        accessorKey: 'status',
+        header: '',
+        accessorKey: 'ellipsis',
         cell: info => (
-          <Badge
-            text={info?.getValue() as string}
-            status={info?.getValue() as string}
-          />
+          <Ellipsis>
+            {menuItems.map(item => {
+              return <PopoverItem label={item.label} icon={item.icon} />;
+            })}
+          </Ellipsis>
         ),
       },
     ],

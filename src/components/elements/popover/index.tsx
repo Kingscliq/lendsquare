@@ -1,11 +1,11 @@
 import { Button, DropdownMenu } from '@radix-ui/themes';
 import React, { ReactNode } from 'react';
 
-interface DropDownProps {
+interface EllipsisProps {
   children: ReactNode;
 }
 
-const Dropdown: React.FC<DropDownProps> = ({ children }) => {
+const Ellipsis: React.FC<EllipsisProps> = ({ children }) => {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger>
@@ -36,4 +36,4 @@ const Dropdown: React.FC<DropDownProps> = ({ children }) => {
   );
 };
 
-export default Dropdown;
+export default Ellipsis;
