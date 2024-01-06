@@ -5,6 +5,7 @@
 .table__container {
   display: flex;
   flex-direction: column;
+  box-shadow: $shadow-primary;
   .table__main {
     overflow-x: auto;
     .table__cover {
@@ -16,29 +17,32 @@
         overflow-y: scroll;
         position: relative;
         height: auto;
+        border: none;
         thead {
-          background-color: #f4f4f4;
           tr {
             width: 100%;
-            border-top: 1px solid rgba(33, 63, 125, 0.1);
-            border-bottom: 1px solid rgba(33, 63, 125, 0.1);
             th {
               text-align: left;
               font-size: fontSize('xs');
               font-weight: fontWeight('semi-bold');
               text-transform: uppercase;
+              padding: 20px;
+              color: $accent;
             }
           }
-          tbody {
-            tr {
-              width: 100%;
-              border-top: 1px solid rgba(33, 63, 125, 0.1);
+        }
+        tbody {
+          tr {
+            width: 100%;
+            border-bottom: 1px solid black;
+            td {
+              text-align: left;
+              font-size: fontSize('sm');
+              font-weight: fontWeight('regular');
+              white-space: nowrap;
+              padding: 22px 20px;
               border-bottom: 1px solid rgba(33, 63, 125, 0.1);
-              td {
-                text-align: left;
-                font-size: fontSize('sm');
-                font-weight: fontWeight('regular');
-              }
+              color: $accent;
             }
           }
         }

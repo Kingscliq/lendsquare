@@ -10,15 +10,6 @@ import {
 } from '@tanstack/react-table';
 import { IUserData } from '@/types/datatable';
 
-// import { LeaderBoardData } from '@/types/index';
-// import Section from '../Section';
-// import BtnLoader from '../Button/loader';
-// import Paragraph from '../Text/Paragraph';
-// import TextField from '../TextField';
-// import { search } from '@assets/icons';
-// import Image from '../Image';
-// import SelectDropdown from '../Select';
-
 interface TableProps {
   data: any;
   columns: any;
@@ -138,11 +129,11 @@ function Table({
         <div className={styles.table__main}>
           <div className={styles.table__cover}>
             <table className={styles.table}>
-              <thead className="bg-light-grey-100">
+              <thead>
                 {table?.getHeaderGroups().map(headerGroup => (
                   <tr
                     key={headerGroup.id}
-                    className="w-full border-y border-light text-white bg-primary"
+                    // className="w-full border-y border-light text-white bg-primary"
                   >
                     {headerGroup.headers.map(header => {
                       return (
@@ -177,7 +168,7 @@ function Table({
                   </tr>
                 ))}
               </thead>
-              <tbody className="bg-white">
+              <tbody>
                 {!loading &&
                   table?.getRowModel()?.rows.map(row => {
                     return (
@@ -193,12 +184,12 @@ function Table({
                               key={cell.id}
                               className="text-sm font-normal capitalize whitespace-nowrap py-[14px] px-5"
                             >
-                              <div className="flex items-center">
-                                {flexRender(
-                                  cell?.column.columnDef.cell,
-                                  cell?.getContext()
-                                )}
-                              </div>
+                              {/* <div className="flex items-center"> */}
+                              {flexRender(
+                                cell?.column.columnDef.cell,
+                                cell?.getContext()
+                              )}
+                              {/* </div> */}
                             </td>
                           );
                         })}

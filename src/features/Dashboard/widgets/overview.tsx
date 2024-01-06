@@ -1,8 +1,45 @@
+import { IUserData } from '@/types/datatable';
 import { dashUsers, userWithLoans, userWithSavings } from '@assets/icons';
 import DashCard from '@components/elements/dash-card';
-import TextField from '@components/elements/textfield';
+import TableComponent from '@components/elements/table';
+import { useUsersData } from '@hooks/useData';
+import { ColumnDef } from '@tanstack/react-table';
+import React from 'react';
 
 const Overview = () => {
+  const tableColumns = React.useMemo<ColumnDef<IUserData>[]>(
+    () => [
+      {
+        header: 'Organisation',
+        accessorKey: 'organisation',
+      },
+      {
+        header: 'Username',
+        accessorKey: 'username',
+        cell: info => info.getValue(),
+      },
+      {
+        header: 'Email',
+        accessorKey: 'email',
+        cell: info => info?.getValue(),
+      },
+      {
+        header: 'Phone',
+        accessorKey: 'phone',
+        cell: info => info?.getValue(),
+      },
+      {
+        header: 'Status',
+        accessorKey: 'status',
+        cell: info => info?.getValue(),
+      },
+    ],
+    []
+  );
+
+  const users = useUsersData();
+
+  console.log(users);
   return (
     <div>
       <div className="card-grid">
@@ -20,9 +57,11 @@ const Overview = () => {
         />
       </div>
 
-      <div>
-        <TextField />
-      </div>
+      <TableComponent
+        data={users.generatedData}
+        columns={tableColumns}
+        loading={false}
+      />
     </div>
   );
 };
