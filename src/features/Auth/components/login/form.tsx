@@ -13,6 +13,7 @@ const Form = () => {
     username: string;
     password: string;
   }
+
   const intitalValues: FormValues = {
     username: '',
     password: '',
@@ -31,8 +32,9 @@ const Form = () => {
         console.log(values);
       },
     });
+
   return (
-    <form className={styles.form__container}>
+    <form className={styles.form__container} onSubmit={handleSubmit}>
       <div className={styles.content}>
         <div className={styles.headings}>
           <h2>Welcome!</h2>
