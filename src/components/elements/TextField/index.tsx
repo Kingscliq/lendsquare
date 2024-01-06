@@ -31,12 +31,7 @@ const TextField: React.FC<TextFieldProps> = ({
   return (
     <div className={`${styles.field__container}`}>
       {label && (
-        <label
-          className="text-primary font-bold"
-          style={{ color: error ? '#e11900 ' : '0' }}
-        >
-          {label}
-        </label>
+        <label style={{ color: error ? '#e11900 ' : '0' }}>{label}</label>
       )}
       <div
         className={[

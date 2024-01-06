@@ -1,0 +1,13 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.filter__container {
+  .form__container {
+    margin-bottom: 20px;
+  }
+  .filter__cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

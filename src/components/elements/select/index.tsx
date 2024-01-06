@@ -60,7 +60,7 @@ const SelectDropdown = React.forwardRef(function SelectDropdown(
       color: error ? '#fd3d3d' : `${state.isFocused ? 'green' : '#E7EDF2'}`,
       borderRadius: '6px',
       textTransform: textTransform || 'capitalize',
-      backgroundColor: error ? '#fd3d3d0f' : '#F9F9FB',
+      backgroundColor: error ? '#fd3d3d0f' : 'transparent',
     }),
 
     option: (provided: any, state: { isSelected: any; isFocused: any }) => ({

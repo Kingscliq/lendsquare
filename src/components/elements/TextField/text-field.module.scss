@@ -6,10 +6,13 @@
 
 .field__container {
   width: 100%;
+  label {
+    font-size: fontSize('sm');
+    margin-bottom: 6px;
+  }
   .text__field__container {
     @include flexItem;
     width: 100%;
-
     .text__field {
       background-color: transparent;
       outline: none;

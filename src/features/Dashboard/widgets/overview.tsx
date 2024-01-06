@@ -12,6 +12,7 @@ import DashCard from '@components/elements/dash-card';
 import Ellipsis from '@components/elements/popover';
 import PopoverItem from '@components/elements/popover/item';
 import TableComponent from '@components/elements/table';
+import Filter from '@components/widget/filter';
 import { useUsersData } from '@hooks/useData';
 import { ColumnDef } from '@tanstack/react-table';
 import React from 'react';
@@ -103,6 +104,7 @@ const Overview = () => {
         columns={tableColumns}
         loading={false}
       />
+      <Filter />
     </div>
   );
 };
