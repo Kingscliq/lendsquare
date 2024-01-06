@@ -14,6 +14,7 @@ import PopoverItem from '@components/elements/popover/item';
 import TableComponent from '@components/elements/table';
 import Filter from '@components/widget/filter';
 import { useUsersData } from '@hooks/useData';
+import { useFilters } from '@hooks/useFilters';
 import { ColumnDef } from '@tanstack/react-table';
 import React from 'react';
 
@@ -70,7 +71,13 @@ const Overview = () => {
         cell: info => (
           <Ellipsis>
             {menuItems.map(item => {
-              return <PopoverItem label={item.label} icon={item.icon} />;
+              return (
+                <PopoverItem
+                  label={item.label}
+                  icon={item.icon}
+                  key={item.label}
+                />
+              );
             })}
           </Ellipsis>
         ),
@@ -82,6 +89,8 @@ const Overview = () => {
   const users = useUsersData();
 
   console.log(users);
+
+  const {} = useFilters();
   return (
     <div>
       <div className="card-grid">

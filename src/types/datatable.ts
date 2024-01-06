@@ -6,6 +6,7 @@ export interface IUserData {
   phone: string;
   start_date: string | Date;
   status: 'active' | 'inactive' | 'pending' | 'blacklisted';
+  [key: string]: string | number | Date;
 }
 
 export interface FilterQuery {
@@ -17,7 +18,6 @@ export interface FilterQuery {
   status: 'active' | 'inactive' | 'pending' | 'blacklisted' | '';
   search_string: string;
 }
-
 
 export type UserFilterType = {
   field: keyof FilterQuery;

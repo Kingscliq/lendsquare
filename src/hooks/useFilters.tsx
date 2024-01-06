@@ -1,5 +1,6 @@
 import { FilterQuery, UserFilterType } from '@/types/datatable';
 import React from 'react';
+import { useUsersData } from './useData';
 
 const initialState: FilterQuery = {
   organisation: '',
@@ -73,17 +74,22 @@ export const useFilters = () => {
     });
   }, []);
 
-  //   const { setAlert } = useToast();
-  const filterUsers = async (params: FilterQuery) => {
-    const queryParams = {};
-    //   try {
-    //     const res = await client.get('c/FieldStaffs/getDownlines', {
-    //       params: queryParams,
-    //     });
-    //     return pickResult(res);
-    //   } catch (error) {
-    //     return pickErrorMessage(error as any);
-    //   }
+  const user = useUsersData();
+
+  const filterUsers = (params: FilterQuery) => {
+    const areAllValuesEmpty = Object.values(params).every(
+      value => value === ''
+    );
+    if (areAllValuesEmpty) {
+      return user.generatedData;
+    }
+    console.log(Object.values(params));
+    console.log('No filters');
+    return user.generatedData.filter(item => {
+      return Object.entries(params).every(
+        ([key, value]) => item[key] === value
+      );
+    });
   };
 
   const query = React.useMemo(
@@ -98,6 +104,10 @@ export const useFilters = () => {
     }),
     [organisation, username, email, date, phone_number, status, search_string]
   );
+
+  const filteredData = filterUsers(query);
+
+  console.log({ filteredData });
 
   return [
     {
@@ -114,6 +124,6 @@ export const useFilters = () => {
       resetFilter,
       searchFilter,
     },
-    // { data, isFetching },
+    { filteredData },
   ];
 };
