@@ -2,5 +2,22 @@
   border-radius: 20px;
   padding: 8px 20px;
   text-align: center;
-  background-color: rgba(233, 178, 0, 0.1);
+  text-transform: capitalize;
+
+  &.active {
+    background-color: rgba(57, 205, 98, 0.1);
+    color: rgba(57, 205, 98, 1);
+  }
+  &.inactive {
+    background-color: rgba(84, 95, 125, 0.1);
+    color: rgba(84, 95, 125, 1);
+  }
+  &.pending {
+    background-color: rgba(233, 178, 0, 0.1);
+    color: rgba(233, 178, 0, 1);
+  }
+  &.blacklisted {
+    background-color: rgba(228, 3, 59, 0.1);
+    color: rgba(228, 3, 59, 1);
+  }
 }
