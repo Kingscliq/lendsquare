@@ -1,5 +1,5 @@
 import { IUserData } from '@/types/datatable';
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 interface AuthState {
   isLoggedIn: boolean;
