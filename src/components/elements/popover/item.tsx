@@ -5,6 +5,7 @@ interface PopoverItemProps {
   label: string;
   icon: string;
 }
+
 const PopoverItem: React.FC<PopoverItemProps> = ({ icon, label }) => {
   return (
     <section className={styles.popover__item}>
