@@ -1,5 +1,5 @@
 import React, { ReactNode, SetStateAction, useState } from 'react';
-
+import styles from './table.module.scss';
 import {
   useReactTable,
   getCoreRowModel,
@@ -134,10 +134,10 @@ function Table({
           />
         </div> */}
       </div>
-      <article className="flex flex-col border border-light-grey">
-        <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-          <div className=" inline-block min-w-full sm:px-6 lg:px-8">
-            <table className="min-w-full bg-white sm:px-6 lg:px-8 h-auto overflow-y-scroll relative">
+      <article className={styles.table__container}>
+        <div className={styles.table__main}>
+          <div className={styles.table__cover}>
+            <table className={styles.table}>
               <thead className="bg-light-grey-100">
                 {table?.getHeaderGroups().map(headerGroup => (
                   <tr

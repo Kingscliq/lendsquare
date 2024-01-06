@@ -1,8 +1,4 @@
-// <article className="flex flex-col border border-light-grey">
-// <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-//   <div className=" inline-block min-w-full sm:px-6 lg:px-8">
-//     <table className="min-w-full bg-white sm:px-6 lg:px-8 h-auto overflow-y-scroll relative">
-
+// className="text-left text-xs text-white font-semibold uppercase whitespace-nowrap py-5 px-5"
 @import '../../../styles/mixins';
 @import '../../../styles/variables';
 
@@ -17,6 +13,35 @@
       .table {
         min-width: 100%;
         background-color: $light;
+        overflow-y: scroll;
+        position: relative;
+        height: auto;
+        thead {
+          background-color: #f4f4f4;
+          tr {
+            width: 100%;
+            border-top: 1px solid rgba(33, 63, 125, 0.1);
+            border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+            th {
+              text-align: left;
+              font-size: fontSize('xs');
+              font-weight: fontWeight('semi-bold');
+              text-transform: uppercase;
+            }
+          }
+          tbody {
+            tr {
+              width: 100%;
+              border-top: 1px solid rgba(33, 63, 125, 0.1);
+              border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+              td {
+                text-align: left;
+                font-size: fontSize('sm');
+                font-weight: fontWeight('regular');
+              }
+            }
+          }
+        }
       }
     }
   }
