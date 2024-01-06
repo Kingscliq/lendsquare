@@ -228,7 +228,7 @@ function Table({
                   table?.setPageSize(Number(e.target.value));
                 }}
               >
-                {[10, 20, 30, 40, 50].map(pageSize => (
+                {[100, 200, 300, 400, 500].map(pageSize => (
                   <option key={pageSize} value={pageSize}>
                     {pageSize}
                   </option>
@@ -237,8 +237,8 @@ function Table({
             </div>
             <div>
               <div>
-                {table?.getState().pagination.pageIndex + 1} of{' '}
-                {table?.getPageCount()}
+                of{' '}
+                {data.length}
               </div>
             </div>
           </div>

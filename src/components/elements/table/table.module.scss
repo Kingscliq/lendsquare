@@ -57,8 +57,8 @@
   color: $secondary-color;
   padding: 40px;
   .pagination_body {
-    @include flexItem;
-    width: 400px;
+    @include flexBetween('row');
+    width: 150px;
     .page {
       @include flexItem;
     }
