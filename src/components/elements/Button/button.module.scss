@@ -9,6 +9,7 @@
   background-color: $primary-color;
   border: none;
   cursor: pointer;
+  color: $light;
 
   &:hover {
     opacity: 0.9;
@@ -22,16 +23,8 @@
   .btn-body {
     @include flexCenter('row');
     p {
-      //   <p className="text-center text-sm md:text-base whitespace-nowrap">
-      //   {label || 'Button Text'}
-      // </p>
-
       text-align: center;
       font-size: 098;
     }
   }
 }
-
-// <div className="flex justify-center align-middle">
-//           <BtnLoader />
-//         </div>

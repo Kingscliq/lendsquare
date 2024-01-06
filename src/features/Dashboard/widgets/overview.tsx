@@ -1,7 +1,6 @@
 import { dashUsers, userWithLoans, userWithSavings } from '@assets/icons';
 import DashCard from '@components/elements/dash-card';
 import TextField from '@components/elements/textfield';
-import React from 'react';
 
 const Overview = () => {
   return (
