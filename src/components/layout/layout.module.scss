@@ -5,13 +5,12 @@
 @import '../../styles/variables';
 .layout__container {
   @include flexItem;
-
   .layout__main__content {
-    @include flexCenter('row');
+    display: grid;
+    grid-template-columns: 25% 80%;
     width: 100%;
     margin-right: 30px;
     margin-top: 130px;
-    justify-content: flex-end;
     .layout__main {
     }
   }

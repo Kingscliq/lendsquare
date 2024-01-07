@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import styles from './user-profile.module.scss';
 import { OutlineButton } from '@components/elements/button';
-import { profile } from '@assets/icons';
 import ReactStars from 'react-rating-star-with-type';
-import { Tabs } from '@radix-ui/themes';
+import { Avatar, Tabs } from '@radix-ui/themes';
 import Info from './info';
 import ComingSoon from './coming-soon';
 import { useFilters } from '@hooks/useFilters';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const UserProfile = () => {
   const { id } = useParams();
@@ -44,15 +43,12 @@ const UserProfile = () => {
     },
   ];
 
-  const [star, setStar] = useState<number>(2);
-
-  const onChange = (nextValue: any) => {
-    setStar(nextValue);
-  };
-
+  const navigate = useNavigate();
   return (
     <section className={styles.user__profile}>
-      <button className="btn">&larr; Back to Users</button>
+      <button className="btn" onClick={() => navigate(-1)}>
+        &larr; Back to Users
+      </button>
       <div className={styles.profile__header}>
         <div>
           <h2>User Details</h2>
@@ -66,22 +62,29 @@ const UserProfile = () => {
         <div className={styles.profile__menu}>
           <div className={styles.profile__name}>
             <div className={styles.avatar}>
-              <img src={profile} alt="User" />
+              <Avatar
+                src={userInfo?.avatar}
+                fallback={userInfo?.fullname.split('')[0]!}
+                size={'8'}
+                radius="full"
+              />
             </div>
             <div className={styles.name}>
-              <h3>Grace Effiom</h3>
-              <p>LSQFf587g90 </p>
+              <h3>{userInfo?.fullname}</h3>
+              <p>{userInfo?.username} </p>
             </div>
           </div>
           <div className={styles.tier}>
             <p>User Tier</p>
             <div>
-              <ReactStars count={3} onChange={onChange} value={star} />
+              <ReactStars count={3} value={userInfo?.tier} />
             </div>
           </div>
           <div className={styles.balance__bank}>
-            <h2>₦200,000.00</h2>
-            <p>9912345678/Providus Bank</p>
+            <h2>₦{userInfo?.monthly_income}</h2>
+            <p>
+              {userInfo?.account_number}/{userInfo?.bank_name}
+            </p>
           </div>
         </div>
       </div>

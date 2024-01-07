@@ -6,6 +6,7 @@
   .profile__header {
     @include flexBetween('row');
     padding: 32px 0px;
+    padding-bottom: 20px;
     h2 {
       font-size: fontSize('lg');
       color: $secondary-color;
@@ -22,7 +23,7 @@
     padding: 30px 30px;
     padding-bottom: 0px;
     background-color: $light;
-    min-width: 1000px;
+    // max-width: 1000px;
     .profile__menu {
       @include flexItem;
       margin-bottom: 50px;
@@ -32,13 +33,13 @@
         .name {
           padding-left: 30px;
         }
-        .avatar {
-          height: 100px;
-          width: 100px;
-          border-radius: 100%;
-          background-color: rgba(33, 63, 125, 0.16);
-          @include flexCenter('row');
-        }
+        // .avatar {
+        //   height: 100px;
+        //   width: 100px;
+        //   border-radius: 100%;
+        //   background-color: rgba(33, 63, 125, 0.16);
+        //   @include flexCenter('row');
+        // }
         h3 {
           font-size: 22px;
           font-weight: fontWeight('normal');
@@ -86,7 +87,7 @@
 
 .info__container {
   margin-top: 30px;
-  width: 100%;
+  // max-width: 1000px;
   h2 {
     font-size: fontSize('base');
     font-weight: fontWeight('normal');

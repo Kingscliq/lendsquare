@@ -6,11 +6,17 @@ interface DashCardProps {
   icon: string;
   title?: string;
   value?: string;
+  className?: string;
 }
 
-const DashCard: React.FC<DashCardProps> = ({ icon, title, value }) => {
+const DashCard: React.FC<DashCardProps> = ({
+  icon,
+  title,
+  value,
+  className,
+}) => {
   return (
-    <Card>
+    <Card className={className}>
       <div className={styles.dash__card}>
         <div>
           <img src={icon} alt="Lendsqr Dash card" />
