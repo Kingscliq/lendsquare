@@ -11,9 +11,9 @@
     overflow-x: auto;
     .table__cover {
       display: inline-block;
-      min-width: 100%;
+      width: 100%;
       .table {
-        min-width: 100%;
+        width: 100%;
         background-color: $light;
         overflow-y: scroll;
         position: relative;
@@ -38,7 +38,7 @@
             border-bottom: 1px solid black;
             td {
               text-align: left;
-              font-size: fontSize('sm');
+              font-size: fontSize('xs');
               font-weight: fontWeight('regular');
               white-space: nowrap;
               padding: 22px 20px;

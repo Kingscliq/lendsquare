@@ -1,13 +1,10 @@
-//   <main className="h-screen lg:ml-72">
-// <section className="py-5 px-5 md:px-16 md:py-10 xl:px-20">
-
 @import '../../styles/mixins';
 @import '../../styles/variables';
 .layout__container {
   @include flexItem;
   .layout__main__content {
     display: grid;
-    grid-template-columns: 25% 80%;
+    grid-template-columns: 25% 75%;
     width: 100%;
     margin-right: 30px;
     margin-top: 130px;

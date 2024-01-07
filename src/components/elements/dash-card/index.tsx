@@ -16,8 +16,8 @@ const DashCard: React.FC<DashCardProps> = ({
   className,
 }) => {
   return (
-    <Card className={className}>
-      <div className={styles.dash__card}>
+    <Card className={styles.dash__card}>
+      <div>
         <div>
           <img src={icon} alt="Lendsqr Dash card" />
         </div>

@@ -9,7 +9,6 @@ import {
   flexRender,
 } from '@tanstack/react-table';
 import { IUserData } from '@/types/dataTable';
-// import { IUserData } from '@/types/dataTable';
 
 interface TableProps {
   data: any;
@@ -133,10 +132,7 @@ function Table({
             <table className={styles.table}>
               <thead>
                 {table?.getHeaderGroups().map(headerGroup => (
-                  <tr
-                    key={headerGroup.id}
-                    // className="w-full border-y border-light text-white bg-primary"
-                  >
+                  <tr key={headerGroup.id}>
                     {headerGroup.headers.map(header => {
                       return (
                         <th key={header.id} colSpan={header.colSpan}>
