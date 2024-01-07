@@ -22,7 +22,8 @@ import feesCharges from './fees-charges.svg';
 import feesPricing from './fees-pricing.svg';
 import blackListUser from './blacklist-user.svg';
 import organisation from './briefcase.svg';
-import notification from './notifications.svg'
+import notification from './notifications.svg';
+import profile from './profile.svg';
 
 export {
   logo,
@@ -49,5 +50,6 @@ export {
   audit,
   blackListUser,
   organisation,
-  notification
+  notification,
+  profile,
 };

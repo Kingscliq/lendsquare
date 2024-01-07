@@ -13,11 +13,21 @@
     background-color: $light;
     .profile__menu {
       @include flexItem;
+      margin-bottom: 50px;
       .profile__name {
         @include flexItem;
         padding-right: 30px;
-        border-right: 1px solid $grey-200;
-        h2 {
+        .name {
+          padding-left: 30px;
+        }
+        .avatar {
+          height: 100px;
+          width: 100px;
+          border-radius: 100%;
+          background-color: rgba(33, 63, 125, 0.16);
+          @include flexCenter('row');
+        }
+        h3 {
           font-size: 22px;
           font-weight: fontWeight('normal');
           color: $secondary-color;
@@ -31,6 +41,7 @@
         padding-right: 30px;
         padding-left: 30px;
         border-right: 1px solid $grey-200;
+        border-left: 1px solid $grey-200;
       }
       .balance__bank {
         padding-left: 30px;
@@ -57,7 +68,28 @@
   }
 }
 
-
-.info__container{
-  
+.info__container {
+  h2 {
+    font-size: fontSize('base');
+    font-weight: fontWeight('normal');
+    color: $secondary-color;
+    margin-bottom: 30px;
+  }
+  .info__main {
+    margin-bottom: 30px;
+    border-bottom: 1px solid $grey-200;
+    padding-bottom: 30px;
+    .info__data {
+      @include grid(4, 1fr);
+      gap: 30px;
+      .info__data__item {
+        h3 {
+          font-size: fontSize('xs');
+          font-weight: fontWeight('regular');
+          color: $secondary-color;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
 }

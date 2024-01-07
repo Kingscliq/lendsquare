@@ -52,16 +52,17 @@ const Info = () => {
       ],
     },
   ];
+
   return (
     <Card>
       <section className={styles.info__container}>
         {infoDetails.map(item => {
           return (
-            <section key={item.id}>
+            <section key={item.id} className={styles.info__main}>
               <h2>{item.heading}</h2>
-              <section>
+              <section className={styles.info__data}>
                 {item.data.map(info => (
-                  <section>
+                  <section className={styles.info__data__item}>
                     <h3>{info.label}</h3>
                     <p>{info.value || '-'}</p>
                   </section>

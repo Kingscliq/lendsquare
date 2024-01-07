@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './user-profile.module.scss';
 import Button from '@components/elements/button';
-import { activateUsers } from '@assets/icons';
+import { activateUsers, profile } from '@assets/icons';
 import ReactStars from 'react-rating-star-with-type';
 import { Box, Tabs, Text } from '@radix-ui/themes';
 import Info from './info';
@@ -49,10 +49,10 @@ const UserProfile = () => {
       <div className={styles.profile__card}>
         <div className={styles.profile__menu}>
           <div className={styles.profile__name}>
-            <div>
-              <img src={activateUsers} height={100} width={100} alt="User" />
+            <div className={styles.avatar}>
+              <img src={profile} alt="User" />
             </div>
-            <div>
+            <div className={styles.name}>
               <h3>Grace Effiom</h3>
               <p>LSQFf587g90 </p>
             </div>
@@ -82,13 +82,13 @@ const UserProfile = () => {
               );
             })}
           </Tabs.List>
-          <Box px="4" pt="3" pb="2">
+          <section>
             {tabsData.map(item => {
               return (
                 <Tabs.Content value={item.value}>{item.component}</Tabs.Content>
               );
             })}
-          </Box>
+          </section>
         </Tabs.Root>
       </div>
     </section>

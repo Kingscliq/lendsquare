@@ -108,15 +108,11 @@ const Overview = () => {
           value={'2,345'}
         />
       </div>
-
       <TableComponent
         data={users.generatedData}
         columns={tableColumns}
         loading={false}
       />
-      <Filter />
-
-      <UserProfile />
     </div>
   );
 };
