@@ -4,13 +4,40 @@ import Button from '@components/elements/button';
 import { activateUsers } from '@assets/icons';
 import ReactStars from 'react-rating-star-with-type';
 import { Box, Tabs, Text } from '@radix-ui/themes';
+import Info from './info';
+import ComingSoon from './coming-soon';
 
 const UserProfile = () => {
-  const [star, setStar] = useState<number>(5);
+  const tabsData = [
+    { id: 1, label: 'General Details', value: 'account', component: <Info /> },
+    {
+      id: 2,
+      label: 'Documents',
+      value: 'documents',
+      component: <ComingSoon />,
+    },
+    {
+      id: 3,
+      label: 'Bank Details',
+      value: 'bank-details',
+      component: <ComingSoon />,
+    },
+    { id: 4, label: 'Loans', value: 'loans', component: <ComingSoon /> },
+    { id: 5, label: 'Savings', value: 'savings', component: <ComingSoon /> },
+    {
+      id: 6,
+      label: ' App and System',
+      value: 'apps-systems',
+      component: <ComingSoon />,
+    },
+  ];
+
+  const [star, setStar] = useState<number>(2);
 
   const onChange = (nextValue: any) => {
     setStar(nextValue);
   };
+
   return (
     <section className={styles.user__profile}>
       <div className={styles.profile__header}>
@@ -33,7 +60,7 @@ const UserProfile = () => {
           <div className={styles.tier}>
             <p>User Tier</p>
             <div>
-              <ReactStars count={3} onChange={onChange} value={2} />
+              <ReactStars count={3} onChange={onChange} value={star} />
             </div>
           </div>
           <div className={styles.balance__bank}>
@@ -43,43 +70,24 @@ const UserProfile = () => {
         </div>
         <Tabs.Root defaultValue="account">
           <Tabs.List>
-            <Tabs.Trigger
-              value="account"
-              color="#39cdcc"
-              className={styles.tabs}
-            >
-              Account
-            </Tabs.Trigger>
-            <Tabs.Trigger
-              value="documents"
-              color="#39cdcc"
-              className={styles.tabs}
-            >
-              Documents
-            </Tabs.Trigger>
-            <Tabs.Trigger
-              value="settings"
-              color="#39cdcc"
-              className={styles.tabs}
-            >
-              Settings
-            </Tabs.Trigger>
+            {tabsData.map(item => {
+              return (
+                <Tabs.Trigger
+                  value={item.value}
+                  className={styles.tabs}
+                  key={item.id}
+                >
+                  {item.label}
+                </Tabs.Trigger>
+              );
+            })}
           </Tabs.List>
-
           <Box px="4" pt="3" pb="2">
-            <Tabs.Content value="account">
-              <Text size="2">Make changes to your account.</Text>
-            </Tabs.Content>
-
-            <Tabs.Content value="documents">
-              <Text size="2">Access and update your documents.</Text>
-            </Tabs.Content>
-
-            <Tabs.Content value="settings">
-              <Text size="2">
-                Edit your profile or update contact information.
-              </Text>
-            </Tabs.Content>
+            {tabsData.map(item => {
+              return (
+                <Tabs.Content value={item.value}>{item.component}</Tabs.Content>
+              );
+            })}
           </Box>
         </Tabs.Root>
       </div>

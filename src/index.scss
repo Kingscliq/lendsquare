@@ -20,7 +20,7 @@ html {
     margin: 0;
     overflow-x: hidden;
     background-color: #fbfbfb;
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Work Sans', sans-serif !important;
     ::-webkit-scrollbar {
       width: 0;
       /* Remove scrollbar space */

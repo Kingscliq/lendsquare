@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   box-shadow: $shadow-primary;
+  font-family: $secondary-font;
   .table__main {
     overflow-x: auto;
     .table__cover {
