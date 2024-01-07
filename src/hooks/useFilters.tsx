@@ -83,14 +83,20 @@ export const useFilters = () => {
     if (areAllValuesEmpty) {
       return user.generatedData;
     }
-    console.log(Object.values(params));
-    console.log('No filters');
+
     return user.generatedData.filter(item => {
       return Object.entries(params).every(
         ([key, value]) => item[key] === value
       );
     });
   };
+
+  const _activeUsers = () =>
+    user.generatedData.filter(item => item.status === 'active');
+
+  const _usersWithLoan = () => user.generatedData.filter(item => item.withLoan);
+  const _usersWithSavings = () =>
+    user.generatedData.filter(item => item.withSavings);
 
   const query = React.useMemo(
     () => ({
@@ -106,6 +112,9 @@ export const useFilters = () => {
   );
 
   const filteredData = filterUsers(query);
+  const activeUsers = _activeUsers().length;
+  const usersWithLoan = _usersWithLoan().length;
+  const usersWithSavings = _usersWithSavings().length;
 
   console.log({ filteredData });
 
@@ -124,6 +133,6 @@ export const useFilters = () => {
       resetFilter,
       searchFilter,
     },
-    { filteredData },
+    { filteredData, activeUsers, usersWithLoan, usersWithSavings },
   ];
 };

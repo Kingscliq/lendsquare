@@ -1,4 +1,3 @@
-import React from 'react';
 import * as yup from 'yup';
 import { useFormik } from 'formik';
 import styles from './login.module.scss';
@@ -31,7 +30,9 @@ const Form = () => {
       onSubmit: async (values: FormValues) => {
         if (errors.password || errors.username) {
           console.log(values);
+          return;
         }
+        navigate('/');
       },
     });
 

@@ -6,7 +6,7 @@ export interface IUserData {
   phone: string;
   start_date: string | Date;
   status: 'active' | 'inactive' | 'pending' | 'blacklisted';
-  [key: string]: string | number | Date;
+  [key: string]: string | number | Date | boolean;
   fullname: string;
   bvn: string;
   gender: 'male' | 'female' | 'unknown';
@@ -21,11 +21,13 @@ export interface IUserData {
   twitter: string;
   facebook: string;
   instagram: string;
-  gurarantors_fullname: string
-  gurarantors_phone_number: string
-  gurarantors_email_address: string
-  gurarantors_relationship: string
-  avatar: string
+  gurarantors_fullname: string;
+  gurarantors_phone_number: string;
+  gurarantors_email_address: string;
+  gurarantors_relationship: string;
+  avatar: string;
+  withLoan: boolean;
+  withSavings: boolean;
 }
 
 export interface FilterQuery {

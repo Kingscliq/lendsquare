@@ -1,11 +1,18 @@
 import { IUserData } from '@/types/dataTable';
 import { faker } from '@faker-js/faker';
 
-// const randomDate = (start: Date, end: Date): Date =>
-//   new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-
 export const generateData = (): IUserData[] => {
   const generatedData: IUserData[] = [];
+  const relationships = [
+    'brother',
+    'sister',
+    'father',
+    'uncle',
+    'aunty',
+    'cousin',
+    'friend',
+    'colleague',
+  ];
 
   for (let i = 1; i <= 500; i++) {
     const record: IUserData = {
@@ -51,17 +58,15 @@ export const generateData = (): IUserData[] => {
       facebook: faker.internet.userName(),
       instagram: faker.internet.userName(),
       gurarantors_fullname: faker.internet.displayName(),
-      gurarantors_phone_number: faker.helpers.fromRegExp(
-        '/^+234-d{3}-d{4}-d{3}$/'
-      ),
+      gurarantors_phone_number: faker.phone.number(),
       gurarantors_email_address: faker.internet.email(),
-      gurarantors_relationship: faker.random.word(),
+      gurarantors_relationship: faker.helpers.arrayElement(relationships),
       avatar: faker.image.avatar(),
+      withLoan: faker.datatype.boolean(),
+      withSavings: faker.datatype.boolean(),
     };
 
     generatedData.push(record);
-
   }
-    return generatedData;
-  
+  return generatedData;
 };

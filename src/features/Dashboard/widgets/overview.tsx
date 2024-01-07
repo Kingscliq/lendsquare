@@ -88,24 +88,30 @@ const Overview = () => {
 
   const users = useUsersData();
 
-  console.log(users);
-
-  const {} = useFilters();
+  const [FILTERS, FILTERS_ACTIONS, FILTERS_DATA] = useFilters();
   return (
     <div>
       <h3 className={'page-title'}>Users</h3>
       <div className="card-grid">
-        <DashCard icon={dashUsers} title={'Users'} value={'2,343'} />
-        <DashCard icon={dashUsers} title={'Active Users'} value={'3,456'} />
+        <DashCard
+          icon={dashUsers}
+          title={'Users'}
+          value={FILTERS_DATA?.filteredData?.length as unknown as string}
+        />
+        <DashCard
+          icon={dashUsers}
+          title={'Active Users'}
+          value={FILTERS_DATA?.activeUsers as unknown as string}
+        />
         <DashCard
           icon={userWithLoans}
           title={'Users with Loans'}
-          value={'2,345'}
+          value={FILTERS_DATA?.usersWithSavings as unknown as string}
         />
         <DashCard
           icon={userWithSavings}
           title={'Users with Savings'}
-          value={'2,345'}
+          value={FILTERS_DATA?.usersWithSavings as unknown as string}
         />
       </div>
       <TableComponent
