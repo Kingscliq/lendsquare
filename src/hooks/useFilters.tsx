@@ -98,8 +98,14 @@ export const useFilters = () => {
   const _usersWithSavings = () =>
     user.generatedData.filter(item => item.withSavings);
 
-  const getSingleUsers = (id: number) =>
-    user.generatedData.filter(item => item.id === id);
+  const getSingleUsers = (id: number) => {
+    console.log({id});
+    return user.generatedData.find(item => {
+      console.log('ItemId:', item.id);
+      return item.id === id;
+    });
+  };
+
   const query = React.useMemo(
     () => ({
       organisation,
@@ -120,22 +126,21 @@ export const useFilters = () => {
 
   console.log({ filteredData });
 
-  return [
-    {
-      organisation,
-      username,
-      email,
-      date,
-      phone_number,
-      status,
-      search_string,
-    },
-    {
-      setFilter,
-      resetFilter,
-      searchFilter,
-      getSingleUsers,
-    },
-    { filteredData, activeUsers, usersWithLoan, usersWithSavings },
-  ];
+  return {
+    organisation,
+    username,
+    email,
+    date,
+    phone_number,
+    status,
+    search_string,
+    setFilter,
+    resetFilter,
+    searchFilter,
+    getSingleUsers,
+    filteredData,
+    activeUsers,
+    usersWithLoan,
+    usersWithSavings,
+  };
 };

@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   activateUsers,
   blackListUser,
@@ -14,11 +15,11 @@ import TableComponent from '@components/elements/table';
 import { useUsersData } from '@hooks/useData';
 import { useFilters } from '@hooks/useFilters';
 import { ColumnDef } from '@tanstack/react-table';
-import React from 'react';
-import UserProfile from './user-profile';
 import { IUserData } from '@/types/dataTable';
+import { useNavigate } from 'react-router-dom';
 
 const Overview = () => {
+  const navigate = useNavigate();
   const menuItems = [
     {
       label: 'View Details',
@@ -68,19 +69,22 @@ const Overview = () => {
       {
         header: '',
         accessorKey: 'ellipsis',
-        cell: info => (
-          <Ellipsis>
-            {menuItems.map(item => {
-              return (
-                <PopoverItem
-                  label={item.label}
-                  icon={item.icon}
-                  key={item.label}
-                />
-              );
-            })}
-          </Ellipsis>
-        ),
+        cell: info => {
+          return (
+            <Ellipsis>
+              {menuItems.map(item => {
+                return (
+                  <PopoverItem
+                    label={item.label}
+                    icon={item.icon}
+                    key={item.label}
+                    onClick={() => navigate(`/user/${info.row.original.id}`)}
+                  />
+                );
+              })}
+            </Ellipsis>
+          );
+        },
       },
     ],
     []
@@ -88,7 +92,8 @@ const Overview = () => {
 
   const users = useUsersData();
 
-  const [FILTERS, FILTERS_ACTIONS, FILTERS_DATA] = useFilters();
+  const { filteredData, activeUsers, usersWithLoan, usersWithSavings } =
+    useFilters();
   return (
     <div>
       <h3 className={'page-title'}>Users</h3>
@@ -96,22 +101,22 @@ const Overview = () => {
         <DashCard
           icon={dashUsers}
           title={'Users'}
-          value={FILTERS_DATA?.filteredData?.length as unknown as string}
+          value={filteredData?.length as unknown as string}
         />
         <DashCard
           icon={dashUsers}
           title={'Active Users'}
-          value={FILTERS_DATA?.activeUsers as unknown as string}
+          value={activeUsers as unknown as string}
         />
         <DashCard
           icon={userWithLoans}
           title={'Users with Loans'}
-          value={FILTERS_DATA?.usersWithSavings as unknown as string}
+          value={usersWithLoan as unknown as string}
         />
         <DashCard
           icon={userWithSavings}
           title={'Users with Savings'}
-          value={FILTERS_DATA?.usersWithSavings as unknown as string}
+          value={usersWithSavings as unknown as string}
         />
       </div>
       <TableComponent

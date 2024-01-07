@@ -9,6 +9,7 @@
     h2 {
       font-size: fontSize('lg');
       color: $secondary-color;
+      font-weight: fontWeight('normal');
     }
     .profile__cta {
       & > :nth-child(2) {
@@ -21,7 +22,7 @@
     padding: 30px 30px;
     padding-bottom: 0px;
     background-color: $light;
-    min-width: 1100px;
+    min-width: 1000px;
     .profile__menu {
       @include flexItem;
       margin-bottom: 50px;

@@ -6,10 +6,22 @@ import ReactStars from 'react-rating-star-with-type';
 import { Tabs } from '@radix-ui/themes';
 import Info from './info';
 import ComingSoon from './coming-soon';
+import { useFilters } from '@hooks/useFilters';
+import { useParams } from 'react-router-dom';
 
 const UserProfile = () => {
+  const { id } = useParams();
+  const { getSingleUsers } = useFilters();
+
+  const userInfo = getSingleUsers!(Number(id));
+
   const tabsData = [
-    { id: 1, label: 'General Details', value: 'account', component: <Info /> },
+    {
+      id: 1,
+      label: 'General Details',
+      value: 'account',
+      component: <Info item={userInfo!} />,
+    },
     {
       id: 2,
       label: 'Documents',
@@ -43,7 +55,7 @@ const UserProfile = () => {
       <button className="btn">&larr; Back to Users</button>
       <div className={styles.profile__header}>
         <div>
-          <h2> User Details</h2>
+          <h2>User Details</h2>
         </div>
         <div className={styles.profile__cta}>
           <OutlineButton label="Blacklist User" variant="danger" />
