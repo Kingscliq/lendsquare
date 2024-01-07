@@ -98,6 +98,8 @@ export const useFilters = () => {
   const _usersWithSavings = () =>
     user.generatedData.filter(item => item.withSavings);
 
+  const getSingleUsers = (id: number) =>
+    user.generatedData.filter(item => item.id === id);
   const query = React.useMemo(
     () => ({
       organisation,
@@ -132,6 +134,7 @@ export const useFilters = () => {
       setFilter,
       resetFilter,
       searchFilter,
+      getSingleUsers
     },
     { filteredData, activeUsers, usersWithLoan, usersWithSavings },
   ];
