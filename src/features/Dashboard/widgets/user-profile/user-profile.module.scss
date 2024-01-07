@@ -12,7 +12,6 @@
     background-color: $light;
     .profile__menu {
       @include flexItem;
-
       .profile__name {
         @include flexItem;
         padding-right: 30px;
