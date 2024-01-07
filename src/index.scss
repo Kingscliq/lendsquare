@@ -62,5 +62,12 @@ html {
       color: $secondary-color;
       margin-bottom: 30px;
     }
+    .btn {
+      background-color: transparent;
+      outline: none;
+      font-size: fontSize('base');
+      border: none;
+      font-family: 'Work Sans', sans-serif !important;
+    }
   }
 }

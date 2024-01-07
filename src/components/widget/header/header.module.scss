@@ -8,6 +8,7 @@
   background-color: $light;
   position: fixed;
   width: 100%;
+  z-index: 300;
 
   @include device('tablet') {
     display: none;

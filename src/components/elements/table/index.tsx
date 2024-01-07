@@ -62,6 +62,7 @@ function Table({
   setOption?: React.Dispatch<SetStateAction<string>>;
 }) {
   const [globalFilter, setGlobalFilter] = useState<string>('');
+  
   // const [sorting, setSorting] = useState<SortingState>([]);
   // const options: { label: string; value: string }[] = [
   //   { label: 'Monthly', value: 'monthly' },

@@ -61,6 +61,7 @@ export const OutlineButton: React.FC<ButtonProps> = ({
   const btnVariants: StatusStyleProps = {
     primary: styles.btn__primary,
     secondary: styles.btn__secondary,
+    danger: styles.btn__danger,
     default: styles.btn__default,
   };
 

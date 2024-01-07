@@ -22,6 +22,7 @@
     justify-content: center;
     color: $grey-100;
   }
+
   .btn-body {
     @include flexCenter('row');
     p {

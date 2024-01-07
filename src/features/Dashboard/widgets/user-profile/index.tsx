@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './user-profile.module.scss';
-import Button, { OutlineButton } from '@components/elements/button';
+import { OutlineButton } from '@components/elements/button';
 import { profile } from '@assets/icons';
 import ReactStars from 'react-rating-star-with-type';
 import { Tabs } from '@radix-ui/themes';
@@ -40,11 +40,14 @@ const UserProfile = () => {
 
   return (
     <section className={styles.user__profile}>
+      <button className="btn">&larr; Back to Users</button>
       <div className={styles.profile__header}>
-        <div>User Details</div>
+        <div>
+          <h2> User Details</h2>
+        </div>
         <div className={styles.profile__cta}>
-          <OutlineButton label="Activate User" />
-          <OutlineButton label="Blacklist User" />
+          <OutlineButton label="Blacklist User" variant="danger" />
+          <OutlineButton label="Activate User" variant="primary" />
         </div>
       </div>
       <div className={styles.profile__card}>
