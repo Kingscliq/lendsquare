@@ -5,6 +5,13 @@
 @import '../../styles/variables';
 .layout__container {
   @include flexItem;
-  .layout__main {
+
+  .layout__main__content {
+    @include flexCenter('row');
+    width: 100%;
+    margin-left: 100px;
+    margin-top: 130px;
+    .layout__main {
+    }
   }
 }

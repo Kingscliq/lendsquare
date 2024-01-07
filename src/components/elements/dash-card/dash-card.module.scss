@@ -6,12 +6,13 @@
   flex-direction: column;
   align-items: flex-start;
   background-color: #fff;
-  padding: 20px 30px;
   font-family: $secondary-font;
 
   .dash__text {
     text-transform: uppercase;
     font-size: fontSize('sm');
+    margin-bottom: 18px;
+    margin-top: 14px;
   }
 
   .dash__value {

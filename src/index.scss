@@ -27,6 +27,7 @@ html {
       background: transparent;
       /* Optional: just make scrollbar invisible */
     }
+
     .Toastify__toast-theme--light {
       font-size: 12px;
     }
@@ -54,6 +55,12 @@ html {
 
     .error-border {
       border: 1px solid $error;
+    }
+    .page-title {
+      font-size: 24px;
+      font-weight: 500;
+      color: $secondary-color;
+      margin-bottom: 30px;
     }
   }
 }

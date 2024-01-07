@@ -94,6 +94,7 @@ const Overview = () => {
   const {} = useFilters();
   return (
     <div>
+      <h3 className={'page-title'}>Users</h3>
       <div className="card-grid">
         <DashCard icon={dashUsers} title={'Users'} value={'2,343'} />
         <DashCard icon={dashUsers} title={'Active Users'} value={'3,456'} />
