@@ -30,3 +30,30 @@
     }
   }
 }
+
+.variable__btn {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  background-color: transparent;
+
+  &.btn__primary {
+    border: 1px solid $primary-color;
+    color: $primary-color;
+  }
+
+  &.btn__secondary {
+    border: 1px solid $secondary-color;
+    color: $secondary-color;
+  }
+
+  &.btn__danger {
+    border: 1px solid $error;
+    color: $error;
+  }
+
+  &.btn__default {
+    border: 1px solid $accent;
+    color: $accent;
+  }
+}

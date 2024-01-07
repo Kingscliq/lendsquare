@@ -17,7 +17,6 @@ const Info = () => {
         { label: 'Type of Residence', value: '' },
       ],
     },
-
     {
       id: 2,
       heading: 'Education and Employment',
@@ -54,8 +53,8 @@ const Info = () => {
   ];
 
   return (
-    <Card>
-      <section className={styles.info__container}>
+    <Card className={styles.info__container}>
+      <section>
         {infoDetails.map(item => {
           return (
             <section key={item.id} className={styles.info__main}>

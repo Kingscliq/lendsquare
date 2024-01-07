@@ -1,6 +1,6 @@
 import styles from './badge.module.scss';
 
-interface StatusStyleProps {
+export interface StatusStyleProps {
   [key: string]: string;
 }
 

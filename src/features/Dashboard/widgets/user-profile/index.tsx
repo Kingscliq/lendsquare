@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './user-profile.module.scss';
-import Button from '@components/elements/button';
-import { activateUsers, profile } from '@assets/icons';
+import Button, { OutlineButton } from '@components/elements/button';
+import { profile } from '@assets/icons';
 import ReactStars from 'react-rating-star-with-type';
-import { Box, Tabs, Text } from '@radix-ui/themes';
+import { Tabs } from '@radix-ui/themes';
 import Info from './info';
 import ComingSoon from './coming-soon';
 
@@ -42,8 +42,9 @@ const UserProfile = () => {
     <section className={styles.user__profile}>
       <div className={styles.profile__header}>
         <div>User Details</div>
-        <div>
-          <Button />
+        <div className={styles.profile__cta}>
+          <OutlineButton label="Activate User" />
+          <OutlineButton label="Blacklist User" />
         </div>
       </div>
       <div className={styles.profile__card}>
@@ -68,7 +69,9 @@ const UserProfile = () => {
             <p>9912345678/Providus Bank</p>
           </div>
         </div>
-        <Tabs.Root defaultValue="account">
+      </div>
+      <Tabs.Root defaultValue="account">
+        <section className={styles.tabs__list}>
           <Tabs.List>
             {tabsData.map(item => {
               return (
@@ -82,15 +85,15 @@ const UserProfile = () => {
               );
             })}
           </Tabs.List>
-          <section>
-            {tabsData.map(item => {
-              return (
-                <Tabs.Content value={item.value}>{item.component}</Tabs.Content>
-              );
-            })}
-          </section>
-        </Tabs.Root>
-      </div>
+        </section>
+        <section>
+          {tabsData.map(item => {
+            return (
+              <Tabs.Content value={item.value}>{item.component}</Tabs.Content>
+            );
+          })}
+        </section>
+      </Tabs.Root>
     </section>
   );
 };

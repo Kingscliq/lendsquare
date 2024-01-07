@@ -3,14 +3,19 @@
 
 .user__profile {
   font-family: $secondary-font;
+
   .profile__header {
     @include flexBetween('row');
+    .profile__cta {
+     
+    }
   }
   .profile__card {
     box-shadow: $shadow-primary;
     padding: 30px 30px;
     padding-bottom: 0px;
     background-color: $light;
+    width: 1100px;
     .profile__menu {
       @include flexItem;
       margin-bottom: 50px;
@@ -55,7 +60,12 @@
         }
       }
     }
+  }
 
+  .tabs__list {
+    background-color: $light;
+    // box-shadow: $shadow-primary;
+    margin-top: -3rem;
     .tabs {
       font-family: $secondary-font;
     }
@@ -69,6 +79,8 @@
 }
 
 .info__container {
+  margin-top: 30px;
+  width: 100%;
   h2 {
     font-size: fontSize('base');
     font-weight: fontWeight('normal');

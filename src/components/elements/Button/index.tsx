@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import BtnLoader from './loader';
 import styles from './button.module.scss';
+import { StatusStyleProps } from '../badge';
 
 interface ButtonProps extends Partial<HTMLButtonElement> {
   label?: string | ReactNode;
@@ -23,13 +23,7 @@ const Button: React.FC<ButtonProps> = ({
   onMouseOver,
   disabled,
   loading,
-  loadingText,
   className,
-  loadingIcon,
-  btnIcon,
-  variant,
-  btnLeftIcon,
-  btnRightIcon,
 }) => {
   return (
     <button
@@ -58,4 +52,26 @@ const Button: React.FC<ButtonProps> = ({
   );
 };
 
+export const OutlineButton: React.FC<ButtonProps> = ({
+  type,
+  label,
+  onClick,
+  variant = 'default',
+}) => {
+  const btnVariants: StatusStyleProps = {
+    primary: styles.btn__primary,
+    secondary: styles.btn__secondary,
+    default: styles.btn__default,
+  };
+
+  return (
+    <button
+      type={type || 'button'}
+      onClick={onClick}
+      className={`${styles.variable__btn} ${btnVariants[variant]}`}
+    >
+      {label}
+    </button>
+  );
+};
 export default Button;
