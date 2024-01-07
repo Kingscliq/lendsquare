@@ -1,18 +1,14 @@
 import { IUserData } from '@/types/dataTable';
 import { faker } from '@faker-js/faker';
+import {
+  maritalStatus,
+  nigerianBanks,
+  relationships,
+  statuses,
+} from './models';
 
 export const generateData = (): IUserData[] => {
   const generatedData: IUserData[] = [];
-  const relationships = [
-    'brother',
-    'sister',
-    'father',
-    'uncle',
-    'aunty',
-    'cousin',
-    'friend',
-    'colleague',
-  ];
 
   for (let i = 1; i <= 500; i++) {
     const record: IUserData = {
@@ -22,20 +18,18 @@ export const generateData = (): IUserData[] => {
       email: faker.internet.email(),
       phone: faker.phone.number(),
       start_date: faker.date.past(),
-      status: faker.helpers.arrayElement([
-        'active',
-        'inactive',
-        'pending',
-        'blacklisted',
-      ]),
+      status: faker.helpers.arrayElement(statuses) as
+        | 'active'
+        | 'inactive'
+        | 'pending'
+        | 'blacklisted',
       fullname: faker.internet.displayName(),
       bvn: faker.finance.accountNumber(),
       gender: faker.helpers.arrayElement(['male', 'female', 'unknown']),
-      marital_status: faker.helpers.arrayElement([
-        'single',
-        'married',
-        'divorced',
-      ]),
+      marital_status: faker.helpers.arrayElement(maritalStatus) as
+        | 'single'
+        | 'married'
+        | 'divorced',
       children: faker.number.int({ min: 0, max: 5 }),
       type_of_residence: faker.helpers.arrayElement([
         "Parent's apartment",
@@ -64,6 +58,9 @@ export const generateData = (): IUserData[] => {
       avatar: faker.image.avatar(),
       withLoan: faker.datatype.boolean(),
       withSavings: faker.datatype.boolean(),
+      tier: faker.number.int({ min: 0, max: 5 }),
+      account_number: faker.finance.accountNumber(),
+      bank_name: faker.helpers.arrayElement(nigerianBanks),
     };
 
     generatedData.push(record);

@@ -134,7 +134,7 @@ export const useFilters = () => {
       setFilter,
       resetFilter,
       searchFilter,
-      getSingleUsers
+      getSingleUsers,
     },
     { filteredData, activeUsers, usersWithLoan, usersWithSavings },
   ];

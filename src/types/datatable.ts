@@ -6,7 +6,6 @@ export interface IUserData {
   phone: string;
   start_date: string | Date;
   status: 'active' | 'inactive' | 'pending' | 'blacklisted';
-  [key: string]: string | number | Date | boolean;
   fullname: string;
   bvn: string;
   gender: 'male' | 'female' | 'unknown';
@@ -28,6 +27,10 @@ export interface IUserData {
   avatar: string;
   withLoan: boolean;
   withSavings: boolean;
+  account_number: string;
+  tier: number;
+  bank_name: string;
+  [key: string]: string | number | Date | boolean;
 }
 
 export interface FilterQuery {
@@ -44,48 +47,3 @@ export type UserFilterType = {
   field: keyof FilterQuery;
   value: string | number;
 };
-
-// data: [
-//   { label: 'Full Name', value: '' },
-//   { label: 'Phone Number', value: '' },
-//   { label: 'Email Address', value: '' },
-//   { label: 'BVN', value: '' },
-//   { label: 'Gender', value: '' },
-//   { label: 'Marital Status', value: '' },
-//   { label: 'Children', value: '' },
-//   { label: 'Type of Residence', value: '' },
-// ],
-// },
-// {
-// id: 2,
-// heading: 'Education and Employment',
-// data: [
-//   { label: 'Level of education', value: '' },
-//   { label: 'Employment status', value: '' },
-//   { label: 'Sector of employment', value: '' },
-//   { label: 'Duration of employment', value: '' },
-//   { label: 'Office email', value: '' },
-//   { label: ' Monthly income', value: '' },
-//   { label: 'loan repayment', value: '' },
-//   { label: 'Type of Residence', value: '' },
-// ],
-// },
-// {
-// id: 3,
-// heading: 'Socials',
-// data: [
-//   { label: 'Twitter', value: '' },
-//   { label: 'Facebook', value: '' },
-//   { label: 'Instagram', value: '' },
-// ],
-// },
-// {
-// id: 3,
-// heading: 'Guarantors',
-// data: [
-//   { label: 'Full Name', value: '' },
-//   { label: 'Phone Number', value: '' },
-//   { label: 'Email Address', value: '' },
-//   { label: 'Relationship', value: '' },
-// ],
-// },

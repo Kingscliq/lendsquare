@@ -6,6 +6,7 @@ import { routes } from './routes';
 import ProtectedRoute from './protected-routes';
 import { useAuth } from '@hooks/useAuth';
 import LoginPage from '@pages/login';
+import UserProfile from '@features/Dashboard/widgets/user-profile';
 
 const AppRoutes: React.FC<{}> = () => {
   const user = useAuth();
@@ -20,6 +21,14 @@ const AppRoutes: React.FC<{}> = () => {
         }
       ></Route>
       <Route path={routes.SIGN_IN} element={<LoginPage />}></Route>
+      <Route
+        path={routes.USER}
+        element={
+          <ProtectedRoute isAllowed={user !== null} redirectPath={'/signin'}>
+            <UserProfile />
+          </ProtectedRoute>
+        }
+      />
     </Routes>
   );
 };

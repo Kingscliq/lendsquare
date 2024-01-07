@@ -119,7 +119,6 @@ const Overview = () => {
         columns={tableColumns}
         loading={false}
       />
-      <UserProfile  />
     </div>
   );
 };
