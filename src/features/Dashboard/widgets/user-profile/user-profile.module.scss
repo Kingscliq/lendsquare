@@ -11,7 +11,7 @@
       color: $secondary-color;
     }
     .profile__cta {
-      &:nth-child(2) {
+      & > :nth-child(2) {
         margin-left: 10px;
       }
     }
