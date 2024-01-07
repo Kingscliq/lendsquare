@@ -8,7 +8,8 @@ import {
   ColumnDef,
   flexRender,
 } from '@tanstack/react-table';
-import { IUserData } from '@/types/datatable';
+import { IUserData } from '@/types/dataTable';
+// import { IUserData } from '@/types/dataTable';
 
 interface TableProps {
   data: any;
@@ -62,7 +63,7 @@ function Table({
   setOption?: React.Dispatch<SetStateAction<string>>;
 }) {
   const [globalFilter, setGlobalFilter] = useState<string>('');
-  
+
   // const [sorting, setSorting] = useState<SortingState>([]);
   // const options: { label: string; value: string }[] = [
   //   { label: 'Monthly', value: 'monthly' },
@@ -237,10 +238,7 @@ function Table({
               </select>
             </div>
             <div>
-              <div>
-                of{' '}
-                {data.length}
-              </div>
+              <div>of {data.length}</div>
             </div>
           </div>
           <div>

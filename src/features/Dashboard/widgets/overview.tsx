@@ -1,4 +1,3 @@
-import { IUserData } from '@/types/datatable';
 import {
   activateUsers,
   blackListUser,
@@ -17,6 +16,7 @@ import { useFilters } from '@hooks/useFilters';
 import { ColumnDef } from '@tanstack/react-table';
 import React from 'react';
 import UserProfile from './user-profile';
+import { IUserData } from '@/types/dataTable';
 
 const Overview = () => {
   const menuItems = [

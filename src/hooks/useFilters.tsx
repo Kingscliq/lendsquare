@@ -1,4 +1,4 @@
-import { FilterQuery, UserFilterType } from '@/types/datatable';
+import { FilterQuery, UserFilterType } from '@/types/dataTable';
 import React from 'react';
 import { useUsersData } from './useData';
 
