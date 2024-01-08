@@ -37,9 +37,14 @@ Explain the steps a user needs to follow to get started with your project.
 
 ### Installation
 
-Provide step-by-step instructions on how to install your project.
+Once you clone the project, the first thing you need to do is to install the dependencies using the following command
 
 ```bash
-# Example installation commands
-npm install
+yarn install
+```
+
+After installing you can start the project using the following command
+
+```bash
+yarn start
 ```

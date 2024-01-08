@@ -29,7 +29,6 @@ const Form = () => {
       validationSchema: loginSchema,
       onSubmit: async (values: FormValues) => {
         if (errors.password || errors.username) {
-          console.log(values);
           return;
         }
         navigate('/');

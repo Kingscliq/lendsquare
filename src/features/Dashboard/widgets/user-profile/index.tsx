@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styles from './user-profile.module.scss';
 import { OutlineButton } from '@components/elements/button';
 import ReactStars from 'react-rating-star-with-type';
@@ -7,6 +6,7 @@ import Info from './info';
 import ComingSoon from './coming-soon';
 import { useFilters } from '@hooks/useFilters';
 import { useNavigate, useParams } from 'react-router-dom';
+import Dialog from '@components/elements/dialog';
 
 const UserProfile = () => {
   const { id } = useParams();
@@ -55,8 +55,29 @@ const UserProfile = () => {
           <h2>User Details</h2>
         </div>
         <div className={styles.profile__cta}>
-          <OutlineButton label="Blacklist User" variant="danger" />
-          <OutlineButton label="Activate User" variant="primary" />
+          <Dialog
+            trigger={<OutlineButton label="Blacklist User" variant="danger" />}
+            title={'Blacklist User'}
+            description={
+              'This action automatically blacklists a user and disables the user from carrying out transactions'
+            }
+            actionText={'Continue'}
+            submitFn={function (): void {
+              throw new Error('Function not implemented.');
+            }}
+          />
+
+          <Dialog
+            trigger={<OutlineButton label="Activate User" variant="primary" />}
+            title={'Activate User'}
+            description={
+              'This action automatically activates a user and enables him to carry out transactions'
+            }
+            actionText={'Continue'}
+            submitFn={function (): void {
+              throw new Error('Function not implemented.');
+            }}
+          />
         </div>
       </div>
       <div className={styles.profile__card}>

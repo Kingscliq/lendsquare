@@ -6,15 +6,12 @@ import { hero } from '@assets/images';
 import Form from './form';
 
 const Login = () => {
-  const data = useUsersData();
-
   const { setData } = useDataActions();
 
   useEffect(() => {
     setData();
   }, []);
 
-  console.log({ data });
   return (
     <div className={styles.login}>
       <div className={styles.hero}>
