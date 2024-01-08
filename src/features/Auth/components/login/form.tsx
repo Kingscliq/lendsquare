@@ -4,9 +4,12 @@ import styles from './login.module.scss';
 import TextField from '@components/elements/textfield';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@components/elements/button';
+import { useState } from 'react';
 
 const Form = () => {
   const navigate = useNavigate();
+
+  const [loading, setLoading] = useState<boolean>(false);
 
   interface FormValues {
     username: string;
@@ -31,6 +34,8 @@ const Form = () => {
         if (errors.password || errors.username) {
           return;
         }
+
+        setTimeout(() => setLoading(false), 3000);
         navigate('/');
       },
     });
@@ -70,7 +75,7 @@ const Form = () => {
           </div>
         </div>
         <div>
-          <Button label="LOG IN" type="submit" />
+          <Button label="LOG IN" type="submit" loading={loading} />
         </div>
       </div>
     </form>
