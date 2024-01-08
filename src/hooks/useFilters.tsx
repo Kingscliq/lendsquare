@@ -1,7 +1,7 @@
 // Import necessary types and React hooks
 import { FilterQuery, UserFilterType } from '@/types/dataTable';
 import React, { useState } from 'react';
-import { useUsersData } from './useData';
+import { useDataActions, useUsersData } from './useData';
 
 // Define initial state for filters
 const initialState: FilterQuery = {
@@ -32,6 +32,7 @@ type Action =
  * @param {Action} action - The action to be performed on the state.
  * @returns {FilterQuery} The updated state after applying the action.
  */
+
 function UserReducer(state: FilterQuery, action: Action): FilterQuery {
   switch (action.type) {
     case 'SET_FILTER':
@@ -62,6 +63,7 @@ export const useFilters = () => {
     ...filters,
   }));
 
+  const { updateData } = useDataActions();
   // State to manage visibility of filters modal
   const [filtersModal, setFilterModal] = useState<boolean>(false);
 
@@ -147,6 +149,27 @@ export const useFilters = () => {
     return user.generatedData.find(item => {
       return item.id === id;
     });
+  };
+
+  const changeUserStatus = (
+    userId: number,
+    newStatus: 'active' | 'inactive' | 'blacklisted' | 'pending'
+  ) => {
+    // Find the index of the user with the given ID in the array
+    const userIndex = user.generatedData.findIndex(user => user.id === userId);
+    if (userIndex !== -1) {
+      const updatedUsers = [
+        ...user.generatedData.slice(0, userIndex),
+        { ...user.generatedData[userIndex], status: newStatus },
+        ...user.generatedData.slice(userIndex + 1),
+      ];
+
+      updateData(updatedUsers);
+      return updatedUsers;
+    }
+
+    // If the user is not found, return the original array
+    return user.generatedData;
   };
 
   // Calculate statistics based on filtered user data
