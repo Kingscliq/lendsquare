@@ -64,7 +64,6 @@ export const useFilters = () => {
   }));
 
   const { updateData } = useDataActions();
-  // State to manage visibility of filters modal
   const [filtersModal, setFilterModal] = useState<boolean>(false);
 
   /**
@@ -78,9 +77,6 @@ export const useFilters = () => {
     [dispatch]
   );
 
-  /**
-   * @description Function to reset all filters to initial state.
-   */
   const resetFilter = React.useCallback(() => {
     dispatch({ type: 'RESET_STATE' });
   }, [dispatch]);
@@ -150,27 +146,6 @@ export const useFilters = () => {
       return item.id === id;
     });
   };
-
-  // const changeUserStatus = (
-  //   userId: number,
-  //   newStatus: 'active' | 'inactive' | 'blacklisted' | 'pending'
-  // ) => {
-  //   // Find the index of the user with the given ID in the array
-  //   const userIndex = user.generatedData.findIndex(user => user.id === userId);
-  //   if (userIndex !== -1) {
-  //     const updatedUsers = [
-  //       ...user.generatedData.slice(0, userIndex),
-  //       { ...user.generatedData[userIndex], status: newStatus },
-  //       ...user.generatedData.slice(userIndex + 1),
-  //     ];
-
-  //     updateData(updatedUsers);
-  //     return updatedUsers;
-  //   }
-
-  //   // If the user is not found, return the original array
-  //   return user.generatedData;
-  // };
 
   const changeUserStatus = useCallback(
     (

@@ -7,6 +7,7 @@ import ComingSoon from './coming-soon';
 import { useFilters } from '@hooks/useFilters';
 import { useNavigate, useParams } from 'react-router-dom';
 import Dialog from '@components/elements/dialog';
+import { success } from '@components/elements/alert/notify';
 
 const UserProfile = () => {
   const { id } = useParams();
@@ -64,7 +65,14 @@ const UserProfile = () => {
               'This action automatically blacklists a user and disables the user from carrying out transactions'
             }
             actionText={'Continue'}
-            submitFn={() => changeUserStatus(userInfo?.id!, 'blacklisted')}
+            submitFn={() => {
+              changeUserStatus(userInfo?.id!, 'blacklisted');
+              setTimeout(
+                () =>
+                  success({ message: 'User has been activated successfully' }),
+                2000
+              );
+            }}
           />
           <Dialog
             trigger={<OutlineButton label="Activate User" variant="primary" />}
@@ -75,8 +83,14 @@ const UserProfile = () => {
             actionText={'Continue'}
             submitFn={() => {
               changeUserStatus(userInfo?.id!, 'active');
-              console.log(changeUserStatus(userInfo?.id!, 'active'));
-              console.log('Clicked');
+
+              setTimeout(
+                () =>
+                  success({ message: 'User has been activated successfully' }),
+                2000
+              );
+              // console.log(changeUserStatus(userInfo?.id!, 'active'));
+              // console.log('Clicked');
             }}
           />
         </div>

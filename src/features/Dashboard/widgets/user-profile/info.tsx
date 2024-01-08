@@ -10,8 +10,6 @@ const Info: React.FC<InfoProps> = ({ item }) => {
   console.log({ item });
 
   const {
-    account_number,
-    organisation,
     fullname,
     gurarantors_email_address,
     gurarantors_fullname,
@@ -21,7 +19,6 @@ const Info: React.FC<InfoProps> = ({ item }) => {
     marital_status,
     bvn,
     gender,
-    bank_name,
     type_of_residence,
     children,
     level_of_education,
