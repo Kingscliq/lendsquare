@@ -1,3 +1,5 @@
+import { SetStateAction } from 'react';
+
 export interface IUserData {
   id: number;
   organisation: string;
@@ -46,4 +48,24 @@ export interface FilterQuery {
 export type UserFilterType = {
   field: keyof FilterQuery;
   value: string | number;
+};
+
+export type FilterTypes = {
+  organisation: string;
+  username: string;
+  email: string;
+  date: string;
+  phone_number: string;
+  status: string;
+  search_string: string;
+  setFilter: (payload: UserFilterType) => void;
+  resetFilter: () => void;
+  searchFilter: (search: string) => void;
+  getSingleUsers: (id: number) => IUserData | undefined;
+  filteredData: IUserData[];
+  activeUsers: number;
+  usersWithLoan: number;
+  usersWithSavings: number;
+  filtersModal: boolean;
+  setFilterModal: React.Dispatch<SetStateAction<boolean>>;
 };

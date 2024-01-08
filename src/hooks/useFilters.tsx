@@ -1,5 +1,5 @@
 import { FilterQuery, UserFilterType } from '@/types/dataTable';
-import React from 'react';
+import React, { useState } from 'react';
 import { useUsersData } from './useData';
 
 const initialState: FilterQuery = {
@@ -56,6 +56,8 @@ export const useFilters = () => {
     dispatch,
   ] = React.useReducer(UserReducer, initialState);
 
+  const [filtersModal, setFilterModal] = useState<boolean>(true);
+
   const setFilter = React.useCallback(
     (payload: UserFilterType) => {
       dispatch({ type: 'SET_FILTER', payload });
@@ -99,7 +101,7 @@ export const useFilters = () => {
     user.generatedData.filter(item => item.withSavings);
 
   const getSingleUsers = (id: number) => {
-    console.log({id});
+    console.log({ id });
     return user.generatedData.find(item => {
       console.log('ItemId:', item.id);
       return item.id === id;
@@ -142,5 +144,7 @@ export const useFilters = () => {
     activeUsers,
     usersWithLoan,
     usersWithSavings,
+    filtersModal,
+    setFilterModal,
   };
 };

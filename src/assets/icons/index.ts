@@ -24,6 +24,7 @@ import blackListUser from './blacklist-user.svg';
 import organisation from './briefcase.svg';
 import notification from './notifications.svg';
 import profile from './profile.svg';
+import filter from './filter.svg'
 
 export {
   logo,
@@ -52,4 +53,5 @@ export {
   organisation,
   notification,
   profile,
+  filter
 };

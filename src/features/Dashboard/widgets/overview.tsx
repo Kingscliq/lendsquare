@@ -17,9 +17,16 @@ import { useFilters } from '@hooks/useFilters';
 import { ColumnDef } from '@tanstack/react-table';
 import { IUserData } from '@/types/dataTable';
 import { useNavigate } from 'react-router-dom';
+import THead from '@components/elements/table/thead';
+import { getDayMonth } from '@utils/formatters';
 
 const Overview = () => {
   const navigate = useNavigate();
+  const filters = useFilters();
+
+  const { filteredData, activeUsers, usersWithLoan, usersWithSavings } =
+    filters;
+
   const menuItems = [
     {
       label: 'View Details',
@@ -38,26 +45,43 @@ const Overview = () => {
   const tableColumns = React.useMemo<ColumnDef<IUserData>[]>(
     () => [
       {
-        header: 'Organisation',
+        header: () => (
+          <THead text="Organisation" onClick={() => console.log('Clicked')} />
+        ),
         accessorKey: 'organisation',
       },
       {
-        header: 'Username',
+        header: () => (
+          <THead text="Username" onClick={() => console.log('Clicked')} />
+        ),
         accessorKey: 'username',
         cell: info => info.getValue(),
       },
       {
-        header: 'Email',
+        header: () => (
+          <THead text="Email" onClick={() => console.log('Clicked')} />
+        ),
         accessorKey: 'email',
         cell: info => info?.getValue(),
       },
       {
-        header: 'Phone',
+        header: () => (
+          <THead text="Phone" onClick={() => console.log('Clicked')} />
+        ),
         accessorKey: 'phone',
         cell: info => info?.getValue(),
       },
       {
-        header: 'Status',
+        header: () => (
+          <THead text="Date Joined" onClick={() => console.log('Clicked')} />
+        ),
+        accessorKey: 'start_date',
+        cell: info => getDayMonth(info?.getValue() as string),
+      },
+      {
+        header: () => (
+          <THead text="Status" onClick={() => console.log('Clicked')} />
+        ),
         accessorKey: 'status',
         cell: info => (
           <Badge
@@ -92,8 +116,6 @@ const Overview = () => {
 
   const users = useUsersData();
 
-  const { filteredData, activeUsers, usersWithLoan, usersWithSavings } =
-    useFilters();
   return (
     <div>
       <h3 className={'page-title'}>Users</h3>
@@ -120,9 +142,10 @@ const Overview = () => {
         />
       </div>
       <TableComponent
-        data={users.generatedData}
+        data={filteredData}
         columns={tableColumns}
         loading={false}
+        filters={filters}
       />
     </div>
   );

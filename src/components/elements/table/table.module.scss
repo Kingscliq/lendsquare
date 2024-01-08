@@ -7,6 +7,7 @@
   flex-direction: column;
   box-shadow: $shadow-primary;
   font-family: $secondary-font;
+
   .table__main {
     overflow-x: auto;
     .table__cover {
@@ -19,6 +20,7 @@
         position: relative;
         height: auto;
         border: none;
+        padding: 20px;
         thead {
           tr {
             width: 100%;
@@ -71,5 +73,19 @@
       border-radius: 5px;
       padding: 7px 5px;
     }
+  }
+}
+
+.table__head {
+  @include flexItem;
+  p {
+    text-align: left;
+    font-size: fontSize('xs');
+    font-weight: fontWeight('semi-bold');
+    text-transform: uppercase;
+    color: $accent;
+  }
+  div {
+    margin-left: 10px;
   }
 }
