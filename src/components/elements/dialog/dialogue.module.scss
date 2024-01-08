@@ -1,0 +1,32 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.alert__title {
+  font-size: fontSize('md');
+  font-family: $secondary-font;
+  font-weight: fontWeight('normal');
+  color: $secondary-color;
+}
+
+.alert_-description {
+  font-size: fontSize('sm');
+  font-family: $secondary-font;
+}
+
+.action__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+
+  .action__btn {
+    @include flexItem;
+    & > :nth-child(2) {
+      margin-left: 20px;
+    }
+
+    .btn__danger {
+      background-color: $error !important;
+      color: $light !important;
+    }
+  }
+}

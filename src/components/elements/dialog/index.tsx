@@ -1,6 +1,7 @@
-import { AlertDialog, Flex } from '@radix-ui/themes';
+import { AlertDialog } from '@radix-ui/themes';
 import React, { ReactNode } from 'react';
 import Button, { OutlineButton } from '../button';
+import styles from './dialogue.module.scss';
 
 interface DialogProps {
   trigger: ReactNode;
@@ -20,22 +21,32 @@ const Dialog: React.FC<DialogProps> = ({
     <AlertDialog.Root>
       <AlertDialog.Trigger>{trigger}</AlertDialog.Trigger>
       <AlertDialog.Content style={{ maxWidth: 450 }}>
-        <AlertDialog.Title>{title}</AlertDialog.Title>
+        <AlertDialog.Title>
+          <h2 className={styles.alert__title}>{title}</h2>
+        </AlertDialog.Title>
         <AlertDialog.Description size="2">
-          Are you sure? {description}
+          <p className={styles.alert__description}>
+            Are you sure? {description}
+          </p>
         </AlertDialog.Description>
-
-        <Flex gap="3" mt="4" justify="end">
-          <AlertDialog.Cancel>
-            {/* <Button variant="soft" color="gray">
-              Cancel
-            </Button> */}
-            <OutlineButton variant="default" />
-          </AlertDialog.Cancel>
-          <AlertDialog.Action>
-            <Button label={actionText} />
-          </AlertDialog.Action>
-        </Flex>
+        <section className={styles.action__container}>
+          <div></div>
+          <div className={styles.action__btn}>
+            <AlertDialog.Cancel>
+              <OutlineButton variant="default" label="Cancel" />
+            </AlertDialog.Cancel>
+            <AlertDialog.Action>
+              <Button
+                label={actionText}
+                className={
+                  title.toLowerCase().split(' ').includes('blacklist')
+                    ? styles.btn__danger
+                    : ''
+                }
+              />
+            </AlertDialog.Action>
+          </div>
+        </section>
       </AlertDialog.Content>
     </AlertDialog.Root>
   );
