@@ -52,6 +52,8 @@ const Button: React.FC<ButtonProps> = ({
   );
 };
 
+export default Button;
+
 export const OutlineButton: React.FC<ButtonProps> = ({
   type,
   label,
@@ -75,4 +77,3 @@ export const OutlineButton: React.FC<ButtonProps> = ({
     </button>
   );
 };
-export default Button;
