@@ -68,8 +68,7 @@ const UserProfile = () => {
             submitFn={() => {
               changeUserStatus(userInfo?.id!, 'blacklisted');
               setTimeout(
-                () =>
-                  success({ message: 'User has been activated successfully' }),
+                () => success({ message: 'User has been blacklisted' }),
                 2000
               );
             }}
