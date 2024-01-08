@@ -3,15 +3,16 @@ import Card from '@components/elements/card';
 import TextField from '@components/elements/textfield';
 import styles from './filter.module.scss';
 import SelectDropdown from '@components/elements/select';
-import { FilterTypes } from '@/types/dataTable';
+import { FilterQuery, FilterTypes } from '@/types/dataTable';
 import { useUsersData } from '@hooks/useData';
 import { useMemo } from 'react';
 
 interface FilterProps {
   filters: FilterTypes;
+  query: FilterQuery;
 }
 
-const Filter: React.FC<FilterProps> = ({ filters }) => {
+const Filter: React.FC<FilterProps> = ({ filters, query }) => {
   const users = useUsersData();
   const organisations = useMemo(
     () =>
@@ -19,7 +20,7 @@ const Filter: React.FC<FilterProps> = ({ filters }) => {
         label: item.organisation,
         value: item.organisation,
       })),
-    [users.generatedData]
+    []
   );
 
   const status = [
@@ -41,8 +42,12 @@ const Filter: React.FC<FilterProps> = ({ filters }) => {
     },
   ];
   return (
-    <Card>
-      <section className={styles.filter__container}>
+    <Card
+      className={`${styles.filter__container} ${
+        filters.filtersModal ? styles.visible : styles.hidden
+      }`}
+    >
+      <section>
         <form>
           <div className={styles.form__container}>
             <div className={styles.form__container}>
@@ -58,7 +63,7 @@ const Filter: React.FC<FilterProps> = ({ filters }) => {
           <div className={styles.form__container}>
             <TextField
               label="Username"
-              value={filters.username}
+              value={filters.filters.username}
               onChange={e =>
                 filters.setFilter({ field: 'username', value: e.target.value })
               }
@@ -67,7 +72,7 @@ const Filter: React.FC<FilterProps> = ({ filters }) => {
           <div className={styles.form__container}>
             <TextField
               label="Email"
-              value={filters.email}
+              value={filters.filters?.email}
               onChange={e =>
                 filters.setFilter({ field: 'email', value: e.target.value })
               }
@@ -77,7 +82,7 @@ const Filter: React.FC<FilterProps> = ({ filters }) => {
             <TextField
               label="Date"
               type="date"
-              value={filters.date}
+              value={filters.filters.date}
               onChange={e =>
                 filters.setFilter({ field: 'date', value: e.target.value })
               }
@@ -86,7 +91,7 @@ const Filter: React.FC<FilterProps> = ({ filters }) => {
           <div className={styles.form__container}>
             <TextField
               label="Phone Number"
-              value={filters.phone_number}
+              value={filters.filters.phone_number}
               onChange={e =>
                 filters.setFilter({
                   field: 'phone_number',
@@ -106,10 +111,19 @@ const Filter: React.FC<FilterProps> = ({ filters }) => {
           </div>
           <div className={styles.filter__cta}>
             <div>
-              <OutlineButton label="Cancel" />
+              <OutlineButton
+                label="Cancel"
+                onClick={() => filters.setFilterModal(false)}
+              />
             </div>
             <div>
-              <Button label="Filter" />
+              <Button
+                label="Filter"
+                onClick={() => {
+                  filters.setQuery(q => ({ ...q, ...query }));
+                  filters.setFilterModal(false);
+                }}
+              />
             </div>
           </div>
         </form>

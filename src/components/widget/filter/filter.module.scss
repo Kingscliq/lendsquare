@@ -2,6 +2,29 @@
 @import '../../../styles/variables';
 
 .filter__container {
+  width: 250px;
+  position: absolute;
+  z-index: 80;
+  transition: all 0.5s ease-in;
+  animation: fadeInAndSlideIn 0.3s ease-in;
+  &.hidden {
+    display: none;
+  }
+  &.visible {
+    display: block;
+  }
+
+  @keyframes fadeInAndSlideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
   .form__container {
     margin-bottom: 20px;
   }

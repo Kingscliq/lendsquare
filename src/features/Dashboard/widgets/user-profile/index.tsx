@@ -44,6 +44,7 @@ const UserProfile = () => {
   ];
 
   const navigate = useNavigate();
+
   return (
     <section className={styles.user__profile}>
       <button className="btn" onClick={() => navigate(-1)}>

@@ -51,13 +51,7 @@ export type UserFilterType = {
 };
 
 export type FilterTypes = {
-  organisation: string;
-  username: string;
-  email: string;
-  date: string;
-  phone_number: string;
-  status: string;
-  search_string: string;
+  filters: FilterQuery;
   setFilter: (payload: UserFilterType) => void;
   resetFilter: () => void;
   searchFilter: (search: string) => void;
@@ -67,5 +61,6 @@ export type FilterTypes = {
   usersWithLoan: number;
   usersWithSavings: number;
   filtersModal: boolean;
+  setQuery: React.Dispatch<SetStateAction<FilterQuery>>;
   setFilterModal: React.Dispatch<SetStateAction<boolean>>;
 };

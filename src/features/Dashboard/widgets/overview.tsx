@@ -24,8 +24,13 @@ const Overview = () => {
   const navigate = useNavigate();
   const filters = useFilters();
 
-  const { filteredData, activeUsers, usersWithLoan, usersWithSavings } =
-    filters;
+  const {
+    filteredData,
+    activeUsers,
+    usersWithLoan,
+    usersWithSavings,
+    setFilterModal,
+  } = filters;
 
   const menuItems = [
     {
@@ -46,41 +51,41 @@ const Overview = () => {
     () => [
       {
         header: () => (
-          <THead text="Organisation" onClick={() => console.log('Clicked')} />
+          <THead text="Organisation" onClick={() => setFilterModal(true)} />
         ),
         accessorKey: 'organisation',
       },
       {
         header: () => (
-          <THead text="Username" onClick={() => console.log('Clicked')} />
+          <THead text="Username" onClick={() => setFilterModal(true)} />
         ),
         accessorKey: 'username',
         cell: info => info.getValue(),
       },
       {
         header: () => (
-          <THead text="Email" onClick={() => console.log('Clicked')} />
+          <THead text="Email" onClick={() => setFilterModal(true)} />
         ),
         accessorKey: 'email',
         cell: info => info?.getValue(),
       },
       {
         header: () => (
-          <THead text="Phone" onClick={() => console.log('Clicked')} />
+          <THead text="Phone" onClick={() => setFilterModal(true)} />
         ),
         accessorKey: 'phone',
         cell: info => info?.getValue(),
       },
       {
         header: () => (
-          <THead text="Date Joined" onClick={() => console.log('Clicked')} />
+          <THead text="Date Joined" onClick={() => setFilterModal(true)} />
         ),
         accessorKey: 'start_date',
         cell: info => getDayMonth(info?.getValue() as string),
       },
       {
         header: () => (
-          <THead text="Status" onClick={() => console.log('Clicked')} />
+          <THead text="Status" onClick={() => setFilterModal(true)} />
         ),
         accessorKey: 'status',
         cell: info => (
@@ -113,8 +118,6 @@ const Overview = () => {
     ],
     []
   );
-
-  const users = useUsersData();
 
   return (
     <div>

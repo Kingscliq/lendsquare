@@ -69,12 +69,6 @@ function Table({
 }) {
   const [globalFilter, setGlobalFilter] = useState<string>('');
 
-  // const [sorting, setSorting] = useState<SortingState>([]);
-  // const options: { label: string; value: string }[] = [
-  //   { label: 'Monthly', value: 'monthly' },
-  //   { label: 'Daily', value: 'daily' },
-  // ];
-
   const table = useReactTable({
     data,
     columns,
@@ -109,29 +103,9 @@ function Table({
   };
   return (
     <section>
-      <div className="grid grid-cols-2 justify-between mt-4 mx-4">
-        {/* <div>
-          <TextField
-            value={globalFilter ?? ''}
-            onChange={(event) => setGlobalFilter(event.target.value)}
-            className="p-2 font-lg border border-block"
-            placeholder="Search Member"
-            leftIcon={<Image src={search} alt={'Search'} />}
-          />
-        </div>
-        <div className="ml-4">
-          <SelectDropdown
-            options={options}
-            defaultValue={option}
-            placeholder='Toggle By'
-            onChange={({ value }: { value: string }) => {
-              setOption!(value);
-            }}
-          />
-        </div> */}
-      </div>
+      <div className="grid grid-cols-2 justify-between mt-4 mx-4"></div>
       <article className={styles.table__container}>
-        <Filter filters={filters} />
+        <Filter filters={filters} query={filters.filters} />
         <div className={styles.table__main}>
           <div className={styles.table__cover}>
             <table className={styles.table}>
@@ -200,18 +174,6 @@ function Table({
               </div> */}
               Show
             </div>
-            {/* <span className="flex items-center gap-1 text-xs">
-              | Go to page:
-              <input
-                type="number"
-                defaultValue={table?.getState().pagination.pageIndex + 1}
-                onChange={e => {
-                  const page = e.target.value ? Number(e.target.value) - 1 : 0;
-                  table.setPageIndex(page);
-                }}
-                className="border p-1 rounded w-16"
-              />
-            </span> */}
             <div>
               <select
                 value={table?.getState().pagination.pageSize}
