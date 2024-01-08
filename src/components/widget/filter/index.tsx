@@ -1,4 +1,3 @@
-import { OutlineButton, Button } from '@components/elements/button';
 import Card from '@components/elements/card';
 import TextField from '@components/elements/textfield';
 import styles from './filter.module.scss';
@@ -6,6 +5,8 @@ import SelectDropdown from '@components/elements/select';
 import { FilterQuery, FilterTypes } from '@/types/dataTable';
 import { useUsersData } from '@hooks/useData';
 import { useMemo } from 'react';
+import OutlineButton from '@components/elements/button/outline-button';
+import { Button } from '@components/elements/button';
 
 interface FilterProps {
   filters: FilterTypes;
