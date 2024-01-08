@@ -43,6 +43,7 @@ const Dialog: React.FC<DialogProps> = ({
                     ? styles.btn__danger
                     : ''
                 }
+                onClick={submitFn}
               />
             </AlertDialog.Action>
           </div>

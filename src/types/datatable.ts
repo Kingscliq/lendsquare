@@ -63,4 +63,8 @@ export type FilterTypes = {
   filtersModal: boolean;
   setQuery: React.Dispatch<SetStateAction<FilterQuery>>;
   setFilterModal: React.Dispatch<SetStateAction<boolean>>;
+  changeUserStatus: (
+    userId: number,
+    newStatus: 'active' | 'inactive' | 'blacklisted' | 'pending'
+  ) => IUserData[];
 };

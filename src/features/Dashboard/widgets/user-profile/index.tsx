@@ -45,6 +45,8 @@ const UserProfile = () => {
 
   const navigate = useNavigate();
 
+  const { changeUserStatus } = useFilters();
+
   return (
     <section className={styles.user__profile}>
       <button className="btn" onClick={() => navigate(-1)}>
@@ -62,11 +64,8 @@ const UserProfile = () => {
               'This action automatically blacklists a user and disables the user from carrying out transactions'
             }
             actionText={'Continue'}
-            submitFn={function (): void {
-              throw new Error('Function not implemented.');
-            }}
+            submitFn={() => changeUserStatus(userInfo?.id!, 'blacklisted')}
           />
-
           <Dialog
             trigger={<OutlineButton label="Activate User" variant="primary" />}
             title={'Activate User'}
@@ -74,8 +73,10 @@ const UserProfile = () => {
               'This action automatically activates a user and enables him to carry out transactions'
             }
             actionText={'Continue'}
-            submitFn={function (): void {
-              throw new Error('Function not implemented.');
+            submitFn={() => {
+              changeUserStatus(userInfo?.id!, 'active');
+              console.log(changeUserStatus(userInfo?.id!, 'active'));
+              console.log('Clicked');
             }}
           />
         </div>

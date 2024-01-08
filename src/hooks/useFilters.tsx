@@ -1,6 +1,6 @@
 // Import necessary types and React hooks
 import { FilterQuery, UserFilterType } from '@/types/dataTable';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useDataActions, useUsersData } from './useData';
 
 // Define initial state for filters
@@ -151,26 +151,53 @@ export const useFilters = () => {
     });
   };
 
-  const changeUserStatus = (
-    userId: number,
-    newStatus: 'active' | 'inactive' | 'blacklisted' | 'pending'
-  ) => {
-    // Find the index of the user with the given ID in the array
-    const userIndex = user.generatedData.findIndex(user => user.id === userId);
-    if (userIndex !== -1) {
-      const updatedUsers = [
-        ...user.generatedData.slice(0, userIndex),
-        { ...user.generatedData[userIndex], status: newStatus },
-        ...user.generatedData.slice(userIndex + 1),
-      ];
+  // const changeUserStatus = (
+  //   userId: number,
+  //   newStatus: 'active' | 'inactive' | 'blacklisted' | 'pending'
+  // ) => {
+  //   // Find the index of the user with the given ID in the array
+  //   const userIndex = user.generatedData.findIndex(user => user.id === userId);
+  //   if (userIndex !== -1) {
+  //     const updatedUsers = [
+  //       ...user.generatedData.slice(0, userIndex),
+  //       { ...user.generatedData[userIndex], status: newStatus },
+  //       ...user.generatedData.slice(userIndex + 1),
+  //     ];
 
-      updateData(updatedUsers);
-      return updatedUsers;
-    }
+  //     updateData(updatedUsers);
+  //     return updatedUsers;
+  //   }
 
-    // If the user is not found, return the original array
-    return user.generatedData;
-  };
+  //   // If the user is not found, return the original array
+  //   return user.generatedData;
+  // };
+
+  const changeUserStatus = useCallback(
+    (
+      userId: number,
+      newStatus: 'active' | 'inactive' | 'blacklisted' | 'pending'
+    ) => {
+      // Find the index of the user with the given ID in the array
+      const userIndex = user.generatedData.findIndex(
+        user => user.id === userId
+      );
+      if (userIndex !== -1) {
+        const updatedUsers = [
+          ...user.generatedData.slice(0, userIndex),
+          { ...user.generatedData[userIndex], status: newStatus },
+          ...user.generatedData.slice(userIndex + 1),
+        ];
+
+        updateData(updatedUsers);
+        console.log({ updatedUsers });
+        return updatedUsers;
+      }
+
+      // If the user is not found, return the original array
+      return user.generatedData;
+    },
+    [user.generatedData, updateData]
+  );
 
   // Calculate statistics based on filtered user data
   const filteredData = filterUsers(_query);
@@ -192,5 +219,6 @@ export const useFilters = () => {
     usersWithSavings,
     filtersModal,
     setFilterModal,
+    changeUserStatus,
   };
 };
