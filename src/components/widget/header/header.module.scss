@@ -3,7 +3,7 @@
 
 .header {
   @include grid(4, 1fr);
-  padding: 32px 30px;
+  padding: 20px 30px;
   box-shadow: $shadow-primary;
   background-color: $light;
   position: fixed;
@@ -12,12 +12,27 @@
   @include device($mini) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    padding: 10px 15px;
   }
   .menu {
     @include flexItem;
     grid-column: span 1;
     .menu__btn {
       display: none;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      div {
+        height: 2px;
+        width: 30px;
+        background-color: $accent;
+      }
+      & > div:nth-child(1) {
+        margin-bottom: 4px;
+      }
+      & > div:nth-child(2) {
+        margin-bottom: 4px;
+      }
       @include device($mini) {
         display: block;
       }

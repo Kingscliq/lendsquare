@@ -27,6 +27,7 @@ import profile from './profile.svg';
 import filter from './filter.svg';
 import successIcon from './tick-circle.svg';
 import errorIcon from './close-circle.svg';
+import dashboard from './dashboard.svg';
 
 export {
   logo,
@@ -58,4 +59,5 @@ export {
   filter,
   errorIcon,
   successIcon,
+  dashboard,
 };

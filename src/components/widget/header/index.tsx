@@ -16,7 +16,9 @@ const Header = ({ openNav }: any) => {
       <section className={styles.header}>
         <div className={styles.menu}>
           <button onClick={openNav} className={styles.menu__btn}>
-            menu
+            <div></div>
+            <div></div>
+            <div></div>
           </button>
           <div className={styles.menu__logo}>
             <img src={logo} alt="Logo" />

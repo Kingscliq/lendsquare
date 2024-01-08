@@ -1,21 +1,40 @@
 @import '../../../styles/mixins';
+@import '../../../styles/variables';
 
 .mobileNav {
   @include flexBetween('column');
   position: fixed;
   top: 0;
-  bottom: 0;
-  height: 100%;
-  padding: 32px 16px;
-  width: 160px;
+  padding: 32px 0;
+  width: 300px;
   z-index: 50;
   transition: all 0.3s ease-in-out;
   overflow-y: auto;
-
-  @include device('mobile') {
-    width: 384px;
-    background-color: red;
+  background-color: $light;
+  z-index: 400;
+  display: none;
+  height: 100%;
+  
+  @include device($mini) {
+    display: block;
   }
+
+  .mobile__nav__logo {
+    margin-bottom: 20px;
+    margin-left: 20px;
+  }
+}
+
+.link__heading {
+  font-weight: fontWeight('normal');
+  text-transform: uppercase;
+  font-size: fontSize('xs');
+  margin-bottom: 10px;
+  padding-left: 32px;
+}
+
+.link__divider {
+  margin-bottom: 20px;
 }
 
 .isOpen {
@@ -23,4 +42,21 @@
 }
 .isClosed {
   left: -32rem;
+}
+
+.over__lay {
+  // className="h-full w-full z-20 bg-dark/50 fixed top-0 left-0 bottom-0"
+  height: 100%;
+  width: 100%;
+  z-index: 301;
+  background-color: $tertiary-color;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  .close__icon {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+  }
 }
