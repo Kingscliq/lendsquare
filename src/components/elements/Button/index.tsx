@@ -1,8 +1,7 @@
 import React, { ReactNode } from 'react';
 import styles from './button.module.scss';
-import { StatusStyleProps } from '../badge';
 
-interface ButtonProps extends Partial<HTMLButtonElement> {
+export interface ButtonProps extends Partial<HTMLButtonElement> {
   label?: string | ReactNode;
   onClick?: () => void;
   onMouseOver?: () => void;
@@ -46,30 +45,6 @@ export const Button: React.FC<ButtonProps> = ({
           <p>{label || 'Button Text'}</p>
         </div>
       )}
-    </button>
-  );
-};
-
-export const OutlineButton: React.FC<ButtonProps> = ({
-  type,
-  label,
-  onClick,
-  variant = 'default',
-}) => {
-  const btnVariants: StatusStyleProps = {
-    primary: styles.btn__primary,
-    secondary: styles.btn__secondary,
-    danger: styles.btn__danger,
-    default: styles.btn__default,
-  };
-
-  return (
-    <button
-      type={type || 'button'}
-      onClick={onClick}
-      className={`${styles.variable__btn} ${btnVariants[variant]}`}
-    >
-      {label}
     </button>
   );
 };
