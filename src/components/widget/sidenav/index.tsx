@@ -1,5 +1,6 @@
 import {
   audit,
+  dashboard,
   decisionModels,
   feesCharges,
   feesPricing,
@@ -25,6 +26,14 @@ const SideNav = () => {
   return (
     <div className={styles.sidenav}>
       <aside className="mt-24">
+        <div className={styles.dash__container}>
+          <SidebarMenuItem
+            title="Dashboard"
+            url="/"
+            activeIcon={dashboard}
+            baseIcon={dashboard}
+          />
+        </div>
         <h3 className={styles.link__heading}>Customers</h3>
         <div className="">
           <SidebarMenuItem

@@ -48,6 +48,9 @@ html {
       gap: 24px;
       margin-bottom: 30px;
       @include device($tablet) {
+        grid-template-columns: 1fr 1fr;
+      }
+      @include device($mobile) {
         grid-template-columns: 1fr;
       }
     }

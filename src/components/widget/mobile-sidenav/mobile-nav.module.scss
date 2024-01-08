@@ -14,11 +14,13 @@
   z-index: 400;
   display: none;
   height: 100%;
-  
+
   @include device($mini) {
     display: block;
   }
-
+  .dash__container {
+    margin-bottom: 30px;
+  }
   .mobile__nav__logo {
     margin-bottom: 20px;
     margin-left: 20px;
@@ -45,7 +47,6 @@
 }
 
 .over__lay {
-  // className="h-full w-full z-20 bg-dark/50 fixed top-0 left-0 bottom-0"
   height: 100%;
   width: 100%;
   z-index: 301;

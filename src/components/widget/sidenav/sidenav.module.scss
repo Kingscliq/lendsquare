@@ -15,12 +15,15 @@
   background-color: $light;
   position: fixed;
   left: 0;
-  top: 110px;
+  top: 90px;
   display: block;
   @include device($mini) {
     display: none;
   }
 
+  .dash__container {
+    margin-bottom: 30px;
+  }
   .link__heading {
     font-weight: fontWeight('normal');
     text-transform: uppercase;

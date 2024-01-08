@@ -1,5 +1,6 @@
 import {
   audit,
+  dashboard,
   decisionModels,
   feesCharges,
   feesPricing,
@@ -43,13 +44,12 @@ const MobileSideNav: React.FC<MobileSideNavProps> = ({
         <div className={styles.mobile__nav__logo}>
           <img src={logo} alt="light logo" />
         </div>
-        <div className="">
+        <div className={styles.dash__container}>
           <SidebarMenuItem
             title="Dashboard"
-            active={['/'].includes(location?.pathname)}
             url="/"
-            activeIcon={}
-            baseIcon={users}
+            activeIcon={dashboard}
+            baseIcon={dashboard}
           />
         </div>
         <aside className="mt-24">
