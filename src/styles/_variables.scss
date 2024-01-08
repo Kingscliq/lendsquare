@@ -32,12 +32,11 @@ $font-sizes: (
 );
 
 // Break Points
-$breakpoints: (
-  'mobile': 320px,
-  'tablet': 768px,
-  'mini': 1200,
-  'desktop': 1440,
-);
+
+$mobile: 320px;
+$tablet: 768px;
+$mini: 1024px;
+$desktop: 1440px;
 
 // Shadows
 $shadow-primary: 3px 0px 20px 0px rgba(0, 0, 0, 0.04);
@@ -48,8 +47,4 @@ $shadow-primary: 3px 0px 20px 0px rgba(0, 0, 0, 0.04);
 
 @function fontSize($size) {
   @return map-get($font-sizes, $size);
-}
-
-@function device($size) {
-  @return map-get($breakpoints, $size);
 }

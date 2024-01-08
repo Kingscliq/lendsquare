@@ -16,7 +16,8 @@
   position: fixed;
   left: 0;
   top: 110px;
-  @include device('mobile') {
+
+  @include device($mini) {
     display: none;
   }
 

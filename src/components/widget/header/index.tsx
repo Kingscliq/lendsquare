@@ -25,7 +25,7 @@ const Header = ({ openNav }: any) => {
         <div className={styles.search__container}>
           <Search />
         </div>
-        <div></div>
+        <div className={styles.empty__layer}></div>
         <div className={styles.notification__container}>
           <div>
             <img src={notification} alt="" />

@@ -1,5 +1,5 @@
 @import '../../../styles/mixins';
-@import '../../../styles/variables.scss';
+@import '../../../styles/variables';
 
 .header {
   @include grid(4, 1fr);
@@ -9,18 +9,16 @@
   position: fixed;
   width: 100%;
   z-index: 300;
-
-  @include device('tablet') {
-    display: none;
-    padding: 32px;
+  @include device($mini) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
-
   .menu {
     @include flexItem;
     grid-column: span 1;
     .menu__btn {
       display: none;
-      @include device('mobile') {
+      @include device($mini) {
         display: block;
       }
     }
@@ -28,9 +26,16 @@
       margin-left: 20px;
       display: block;
 
-      @include device('mobile') {
+      @include device($mini) {
         display: none;
       }
+    }
+  }
+
+  .empty__layer {
+    display: block;
+    @include device($mini) {
+      display: none;
     }
   }
 
@@ -53,5 +58,9 @@
 
   .search_container {
     grid-column: span 2;
+
+    @include device($mini) {
+      grid-column: span 1;
+    }
   }
 }

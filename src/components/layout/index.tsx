@@ -25,7 +25,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         />
         {/* main content */}
         <main className={styles.layout__main__content}>
-          <section></section>
+          <section className={styles.empty__layer}></section>
           <section className={styles.layout__main}>{children}</section>
         </main>
       </section>

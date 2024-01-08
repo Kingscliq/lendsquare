@@ -3,6 +3,9 @@
 
 .search__container {
   font-family: $secondary-font;
+  @include device($tablet) {
+    display: none;
+  }
   @include flexItem;
   .search__icon__container {
     background-color: $primary-color;

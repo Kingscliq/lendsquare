@@ -47,6 +47,9 @@ html {
       grid-template-columns: repeat(4, 1fr);
       gap: 24px;
       margin-bottom: 30px;
+      @include device($tablet) {
+        grid-template-columns: 1fr;
+      }
     }
 
     .error-text {
