@@ -16,7 +16,7 @@ interface ButtonProps extends Partial<HTMLButtonElement> {
   type?: 'button' | 'submit' | 'reset' | undefined;
 }
 
-const Button: React.FC<ButtonProps> = ({
+export const Button: React.FC<ButtonProps> = ({
   type,
   label,
   onClick,
@@ -51,8 +51,6 @@ const Button: React.FC<ButtonProps> = ({
     </button>
   );
 };
-
-export default Button;
 
 export const OutlineButton: React.FC<ButtonProps> = ({
   type,

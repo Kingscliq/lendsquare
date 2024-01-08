@@ -88,8 +88,6 @@ const UserProfile = () => {
                   success({ message: 'User has been activated successfully' }),
                 2000
               );
-              // console.log(changeUserStatus(userInfo?.id!, 'active'));
-              // console.log('Clicked');
             }}
           />
         </div>

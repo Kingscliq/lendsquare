@@ -1,4 +1,4 @@
-import Button, { OutlineButton } from '@components/elements/button';
+import { OutlineButton, Button } from '@components/elements/button';
 import Card from '@components/elements/card';
 import TextField from '@components/elements/textfield';
 import styles from './filter.module.scss';
