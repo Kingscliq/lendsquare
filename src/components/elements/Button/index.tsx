@@ -40,12 +40,10 @@ export const Button: React.FC<ButtonProps> = ({
       }}
     >
       {loading ? (
-        <div className="btn-loader">Loading...</div>
+        <p className="btn-loader">Loading...</p>
       ) : (
-        <div className="btn-body">
-          <p className="text-center text-sm md:text-base whitespace-nowrap">
-            {label || 'Button Text'}
-          </p>
+        <div>
+          <p>{label || 'Button Text'}</p>
         </div>
       )}
     </button>

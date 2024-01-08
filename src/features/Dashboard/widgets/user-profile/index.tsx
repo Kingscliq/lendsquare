@@ -1,5 +1,4 @@
 import styles from './user-profile.module.scss';
-import { OutlineButton } from '@components/elements/button';
 import ReactStars from 'react-rating-star-with-type';
 import { Avatar, Tabs } from '@radix-ui/themes';
 import Info from './info';
@@ -8,6 +7,7 @@ import { useFilters } from '@hooks/useFilters';
 import { useNavigate, useParams } from 'react-router-dom';
 import Dialog from '@components/elements/dialog';
 import { success } from '@components/elements/alert/notify';
+import { OutlineButton } from '@components/elements/button';
 
 const UserProfile = () => {
   const { id } = useParams();
