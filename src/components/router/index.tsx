@@ -9,7 +9,9 @@ import LoginPage from '@pages/login';
 import UserProfile from '@features/Dashboard/widgets/user-profile';
 
 const AppRoutes: React.FC<{}> = () => {
-  const user = useAuth();
+  const { user } = useAuth();
+
+  console.log(user);
   return (
     <Routes>
       <Route

@@ -2,6 +2,8 @@ import Layout from '@components/layout';
 import { ReactNode } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 
+import React from 'react';
+
 interface ProtectedRouteProps {
   isAllowed: boolean;
   redirectPath: string;
