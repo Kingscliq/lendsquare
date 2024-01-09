@@ -1,10 +1,9 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import React from 'react';
 import '@testing-library/jest-dom';
-import { Button, ButtonProps } from '../../components/elements/button-c';
+import { Button } from '../../components/elements/button-c';
 
 describe('Button Component', () => {
-  const defaultProps: ButtonProps = {
+  const defaultProps = {
     label: 'Click me',
     onClick: jest.fn(),
   };

@@ -1,3 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "ES6",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@assets/*": ["assets/*"],
+      "@widget/*": ["components/widget/*"],
+      "@constants/*": ["constants/*"],
+      "@config/*": ["config/*"],
+      "@pages/*": ["pages/*"],
+      "@store/*": ["store/*"],
+      "@hooks/*": ["hooks/*"],
+      "@utils/*": ["utils/*"],
+      "@features/*": ["features/*"],
+      "@providers/*": ["providers/*"],
+      "@/types/*": ["types/*"]
+    }
+  },
+  "include": ["src"]
+  // "typeRoots": ["../node_modules/@types", "../@types"]
+}
+
 // {
 //   "compilerOptions": {
 //     "target": "es5",
@@ -14,7 +51,7 @@
 //     "resolveJsonModule": true,
 //     "isolatedModules": true,
 //     "noEmit": true,
-//     "jsx": "react-jsx",
+//     "jsx": "react",
 //     "baseUrl": "./src",
 //     "paths": {
 //       "@components/*": ["components/*"],
@@ -29,45 +66,8 @@
 //       "@features/*": ["features/*"],
 //       "@providers/*": ["providers/*"],
 //       "@/types/*": ["types/*"]
-//     }
+//     },
+//     "typeRoots": ["node_modules/@types", "src/@types"]
 //   },
-//   "include": ["src"]
-//   // "typeRoots": ["../node_modules/@types", "../@types"]
+//   "include": ["src/**/*"]
 // }
-
-{
-  "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react",
-    "baseUrl": "./src",
-    "paths": {
-      "@components/*": ["components/*"],
-      "@assets/*": ["assets/*"],
-      "@widget/*": ["components/widget/*"],
-      "@constants/*": ["constants/*"],
-      "@config/*": ["config/*"],
-      "@pages/*": ["pages/*"],
-      "@store/*": ["store/*"],
-      "@hooks/*": ["hooks/*"],
-      "@utils/*": ["utils/*"],
-      "@features/*": ["features/*"],
-      "@providers/*": ["providers/*"],
-      "@/types/*": ["types/*"]
-    },
-    "typeRoots": ["node_modules/@types", "src/@types"]
-  },
-  "include": ["src/**/*"]
-}
