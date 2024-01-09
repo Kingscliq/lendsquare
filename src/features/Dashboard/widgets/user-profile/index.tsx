@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './user-profile.module.scss';
 import ReactStars from 'react-rating-star-with-type';
 import { Avatar, Tabs } from '@radix-ui/themes';

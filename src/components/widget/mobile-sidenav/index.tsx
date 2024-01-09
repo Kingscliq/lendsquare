@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {
   audit,
   dashboard,
@@ -17,10 +19,9 @@ import {
   whiteList,
 } from '@assets/icons';
 
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import styles from './mobile-nav.module.scss';
 import SidebarMenuItem from '@components/elements/sidebar-menu-item';
-import SideNav from '../sidenav';
 
 interface MobileSideNavProps {
   openMobileNav: boolean;
@@ -32,7 +33,6 @@ const MobileSideNav: React.FC<MobileSideNavProps> = ({
   setOpenMobileNav,
 }) => {
   const location = useLocation();
-  const navigate = useNavigate();
 
   return (
     <>

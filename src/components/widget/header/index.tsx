@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { logo, notification } from '@assets/icons';
 import { useAuth } from '@hooks/useAuth';
 import { Avatar } from '@radix-ui/themes';

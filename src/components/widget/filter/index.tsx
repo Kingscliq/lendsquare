@@ -1,3 +1,4 @@
+import React from 'react';
 import Card from '@components/elements/card';
 import TextField from '@components/elements/textfield';
 import styles from './filter.module.scss';

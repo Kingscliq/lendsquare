@@ -1,3 +1,5 @@
+import React from 'react';
+
 import styles from './badge.module.scss';
 
 export interface StatusStyleProps {

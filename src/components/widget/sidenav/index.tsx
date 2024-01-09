@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {
   audit,
   dashboard,
@@ -16,12 +18,11 @@ import {
   whiteList,
 } from '@assets/icons';
 import SidebarMenuItem from '@components/elements/sidebar-menu-item';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import styles from './sidenav.module.scss';
 
 const SideNav = () => {
   const location = useLocation();
-  const navigate = useNavigate();
 
   return (
     <div className={styles.sidenav}>
