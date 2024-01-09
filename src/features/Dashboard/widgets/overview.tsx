@@ -12,7 +12,6 @@ import DashCard from '@components/elements/dash-card';
 import Ellipsis from '@components/elements/popover';
 import PopoverItem from '@components/elements/popover/item';
 import TableComponent from '@components/elements/table';
-import { useUsersData } from '@hooks/useData';
 import { useFilters } from '@hooks/useFilters';
 import { ColumnDef } from '@tanstack/react-table';
 import { IUserData } from '@/types/dataTable';
