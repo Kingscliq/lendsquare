@@ -1,7 +1,7 @@
 import { AlertDialog } from '@radix-ui/themes';
 import React, { ReactNode } from 'react';
 import styles from './dialogue.module.scss';
-import { Button } from '../button';
+import { Button } from '../button-c';
 import OutlineButton from '../outline-button';
 
 interface DialogProps {

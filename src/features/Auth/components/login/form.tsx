@@ -5,8 +5,9 @@ import { useFormik } from 'formik';
 import styles from './login.module.scss';
 import TextField from '@components/elements/textfield';
 import { Link, useNavigate } from 'react-router-dom';
-import { Button } from '@components/elements/button';
+import { Button } from '@components/elements/button-c';
 import { useState } from 'react';
+import { useAuthActions } from '@hooks/useAuth';
 
 const Form = () => {
   const navigate = useNavigate();
@@ -28,6 +29,7 @@ const Form = () => {
     password: yup.string().required('password is required'),
   });
 
+  const { login } = useAuthActions();
   const { handleSubmit, handleChange, values, errors, touched } =
     useFormik<FormValues>({
       initialValues: intitalValues,
@@ -36,7 +38,7 @@ const Form = () => {
         if (errors.password || errors.username) {
           return;
         }
-
+        login(values);
         setTimeout(() => setLoading(false), 3000);
         navigate('/');
       },

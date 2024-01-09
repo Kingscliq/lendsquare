@@ -6,7 +6,7 @@ import SelectDropdown from '@components/elements/select';
 import { FilterQuery, FilterTypes } from '@/types/dataTable';
 import { useUsersData } from '@hooks/useData';
 import { useMemo } from 'react';
-import { Button } from '@components/elements/button';
+import { Button } from '@components/elements/button-c';
 import OutlineButton from '@components/elements/outline-button';
 
 interface FilterProps {

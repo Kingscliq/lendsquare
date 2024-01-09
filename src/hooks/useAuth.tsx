@@ -11,7 +11,7 @@ export const auth = (state: RootState) => state.auth;
  * @description Hook providing actions related to authentication for use in components.
  * @returns {Object} An object containing login and logout actions.
  */
-export const useAlertActions = () => {
+export const useAuthActions = () => {
   const dispatch = useAppDispatch();
 
   return {
