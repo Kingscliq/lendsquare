@@ -1,4 +1,4 @@
-import { useDataActions, useUsersData } from '@hooks/useData';
+import { useDataActions } from '@hooks/useData';
 import { useEffect } from 'react';
 import styles from './login.module.scss';
 import { logo } from '@assets/icons';

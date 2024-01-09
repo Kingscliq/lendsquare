@@ -68,3 +68,8 @@ export type FilterTypes = {
     newStatus: 'active' | 'inactive' | 'blacklisted' | 'pending'
   ) => IUserData[];
 };
+
+export interface IUser {
+  username: string;
+  password: string;
+}

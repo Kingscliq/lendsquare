@@ -1,9 +1,9 @@
-import { IUserData } from '@/types/dataTable';
-import { createSlice } from '@reduxjs/toolkit';
+import { IUser, IUserData } from '@/types/dataTable';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 interface AuthState {
   isLoggedIn: boolean;
-  user: IUserData | null;
+  user: IUser | null;
 }
 
 const initialState: AuthState = {
@@ -15,10 +15,12 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    login: state => {
+    login: (state, action: PayloadAction<IUser>) => {
+      state.user = action.payload;
       state.isLoggedIn = true;
     },
     logout: state => {
+      state.user = null;
       state.isLoggedIn = false;
     },
   },
