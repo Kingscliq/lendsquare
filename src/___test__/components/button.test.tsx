@@ -1,8 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import React from 'react';
 import '@testing-library/jest-dom';
-import { Button, ButtonProps } from '@components/elements/button-c';
-// import { Button, ButtonProps } from './Button';
+import { Button, ButtonProps } from '../../components/elements/button-c';
 
 describe('Button Component', () => {
   const defaultProps: ButtonProps = {
@@ -24,14 +23,14 @@ describe('Button Component', () => {
   });
 
   it('disables button when loading prop is true', () => {
-    render(<Button {...defaultProps} loading />);
-    const buttonElement = screen.getByText('Click me');
+    render(<Button {...defaultProps} loading role="button" />);
+    const buttonElement = screen.getByRole('button');
     expect(buttonElement).toBeDisabled();
   });
 
   it('applies custom className', () => {
-    render(<Button {...defaultProps} className="custom-class" />);
-    const buttonElement = screen.getByText('Click me');
+    render(<Button {...defaultProps} className="custom-class" role="button" />);
+    const buttonElement = screen.getByRole('button');
     expect(buttonElement).toHaveClass('custom-class');
   });
 });

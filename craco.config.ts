@@ -1,4 +1,6 @@
 import path from 'path';
+import { pathsToModuleNameMapper } from 'ts-jest';
+import options from './tsconfig.json';
 
 module.exports = {
   webpack: {
@@ -16,4 +18,13 @@ module.exports = {
       '@types': path.resolve(__dirname, 'src/types'),
     },
   },
+  jest: {
+    configure: {
+      preset: 'ts-jest',
+      moduleNameMapper: pathsToModuleNameMapper(options.compilerOptions.paths, {
+        prefix: '<rootDir>/src/',
+      }),
+    },
+  },
 };
+
