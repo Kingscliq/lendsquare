@@ -22,13 +22,22 @@ describe('Button Component', () => {
   });
 
   it('disables button when loading prop is true', () => {
-    render(<Button {...defaultProps} loading role="button" />);
-    const buttonElement = screen.getByRole('button');
+    render(
+      <Button
+        {...defaultProps}
+        ariaLabel="button"
+        data-testid="button"
+        loading
+      />
+    );
+    const buttonElement = screen.getByTestId('btn');
     expect(buttonElement).toBeDisabled();
   });
 
   it('applies custom className', () => {
-    render(<Button {...defaultProps} className="custom-class" role="button" />);
+    render(
+      <Button {...defaultProps} className="custom-class" ariaLabel="button" />
+    );
     const buttonElement = screen.getByRole('button');
     expect(buttonElement).toHaveClass('custom-class');
   });

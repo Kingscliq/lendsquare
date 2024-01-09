@@ -46,6 +46,7 @@ const TextField: React.FC<TextFieldProps> = ({
             inputClass,
             styles.text__field,
             error ? styles.error__border : styles.border,
+            error ? 'error__border' : '0',
           ].join(' ')}
           placeholder={placeholder || 'Enter a value'}
           value={value}
