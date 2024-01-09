@@ -1,7 +1,7 @@
 import React, { ComponentProps, JSXElementConstructor } from 'react';
 import styles from './text-field.module.scss';
 
-interface TextFieldProps extends Partial<HTMLInputElement> {
+export interface TextFieldProps extends Partial<HTMLInputElement> {
   onClick?: () => void;
   error?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -50,7 +50,6 @@ const TextField: React.FC<TextFieldProps> = ({
           placeholder={placeholder || 'Enter a value'}
           value={value}
           onClick={onClick}
-          error={error}
           onChange={onChange}
           name={name}
           disabled={disabled}
