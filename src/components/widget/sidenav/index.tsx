@@ -9,6 +9,7 @@ import {
   gurarantor,
   karma,
   loanRequest,
+  logout,
   organisation,
   preferences,
   reports,
@@ -20,6 +21,7 @@ import {
 import SidebarMenuItem from '@components/elements/sidebar-menu-item';
 import { useLocation } from 'react-router-dom';
 import styles from './sidenav.module.scss';
+import Divider from '@components/elements/divider';
 
 const SideNav = () => {
   const location = useLocation();
@@ -193,6 +195,10 @@ const SideNav = () => {
           />
         </div>
       </aside>
+      <Divider />
+      <div className={styles.logout}>
+        <img src={logout} alt="Logout" />
+      </div>
     </div>
   );
 };

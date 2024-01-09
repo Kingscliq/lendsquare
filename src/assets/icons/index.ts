@@ -28,6 +28,7 @@ import filter from './filter.svg';
 import successIcon from './tick-circle.svg';
 import errorIcon from './close-circle.svg';
 import dashboard from './dashboard.svg';
+import logout from './logout.svg';
 
 export {
   logo,
@@ -60,4 +61,5 @@ export {
   errorIcon,
   successIcon,
   dashboard,
+  logout,
 };
