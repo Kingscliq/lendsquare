@@ -39,9 +39,12 @@ const Form = () => {
         if (errors.password || errors.username) {
           return;
         }
+        setLoading(true);
         login(values);
-        setTimeout(() => setLoading(false), 3000);
-        navigate('/');
+        setTimeout(() => {
+          setLoading(false);
+          navigate('/');
+        }, 5000);
       },
     });
 
