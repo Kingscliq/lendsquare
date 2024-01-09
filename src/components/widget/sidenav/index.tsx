@@ -197,7 +197,10 @@ const SideNav = () => {
       </aside>
       <Divider />
       <div className={styles.logout}>
-        <img src={logout} alt="Logout" />
+        <div>
+          <img src={logout} alt="Logout" />
+        </div>
+        <div>Logout</div>
       </div>
     </div>
   );

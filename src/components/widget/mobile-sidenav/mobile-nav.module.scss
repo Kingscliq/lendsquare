@@ -45,7 +45,19 @@
 .isClosed {
   left: -32rem;
 }
-
+.logout {
+  display: flex;
+  align-items: center;
+  font-family: $secondary-font;
+  font-weight: fontWeight('light');
+  cursor: pointer;
+  color: $secondary-color;
+  transition: all 0.3s ease-out;
+  padding: 14px 30px;
+  & > div:nth-child(2) {
+    margin-left: 10px;
+  }
+}
 .over__lay {
   height: 100%;
   width: 100%;

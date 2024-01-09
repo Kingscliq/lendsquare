@@ -10,6 +10,7 @@ import {
   karma,
   loanRequest,
   logo,
+  logout as logoutIcon,
   organisation,
   preferences,
   reports,
@@ -22,6 +23,8 @@ import {
 import { useLocation } from 'react-router-dom';
 import styles from './mobile-nav.module.scss';
 import SidebarMenuItem from '@components/elements/sidebar-menu-item';
+import Divider from '@components/elements/divider';
+import { useAuthActions } from '@hooks/useAuth';
 
 interface MobileSideNavProps {
   openMobileNav: boolean;
@@ -33,7 +36,7 @@ const MobileSideNav: React.FC<MobileSideNavProps> = ({
   setOpenMobileNav,
 }) => {
   const location = useLocation();
-
+  const { logout } = useAuthActions();
   return (
     <>
       <div
@@ -215,6 +218,13 @@ const MobileSideNav: React.FC<MobileSideNavProps> = ({
             />
           </div>
         </aside>
+        <Divider />
+        <div className={styles.logout} onClick={() => logout()}>
+          <div>
+            <img src={logoutIcon} alt="Logout" />
+          </div>
+          <div>Logout</div>
+        </div>
       </div>
 
       {/* overlay */}
