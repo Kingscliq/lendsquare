@@ -3,7 +3,7 @@ import { setData, clearData, updateData } from 'slices/dataSlice';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { RootState } from '../store/types';
 import { generateData } from '@utils/helpers';
-import { IUserData } from '@/types/dataTable';
+import { IUserData } from '@/types/data-table';
 
 export const users = (state: RootState) => state.data;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IUserData } from '@/types/dataTable';
+import { IUserData } from '@/types/data-table';
 import styles from './user-profile.module.scss';
 import Card from '@components/elements/card';
 import { useMemo } from 'react';

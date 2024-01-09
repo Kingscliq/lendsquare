@@ -14,7 +14,7 @@ import PopoverItem from '@components/elements/popover/item';
 import TableComponent from '@components/elements/table';
 import { useFilters } from '@hooks/useFilters';
 import { ColumnDef } from '@tanstack/react-table';
-import { IUserData } from '@/types/dataTable';
+import { IUserData } from '@/types/data-table';
 import { useNavigate } from 'react-router-dom';
 import THead from '@components/elements/table/thead';
 import { getDayMonth } from '@utils/formatters';

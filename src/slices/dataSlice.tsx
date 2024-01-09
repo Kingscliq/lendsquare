@@ -1,4 +1,4 @@
-import { IUserData } from '@/types/dataTable';
+import { IUserData } from '@/types/data-table';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface DataState {

@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { login, logout } from 'slices/authSlice';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { RootState } from '../store/types';
-import { IUser } from '@/types/dataTable';
+import { IUser } from '@/types/data-table';
 
 // Selects the auth slice from the global state
 export const auth = (state: RootState) => state.auth;

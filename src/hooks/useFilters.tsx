@@ -1,5 +1,5 @@
 // Import necessary types and React hooks
-import { FilterQuery, UserFilterType } from '@/types/dataTable';
+import { FilterQuery, UserFilterType } from '@/types/data-table';
 import React, { useCallback, useState } from 'react';
 import { useDataActions, useUsersData } from './useData';
 

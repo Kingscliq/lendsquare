@@ -1,4 +1,4 @@
-import { IUser, IUserData } from '@/types/dataTable';
+import { IUser, IUserData } from '@/types/data-table';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 interface AuthState {

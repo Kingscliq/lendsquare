@@ -3,7 +3,7 @@ import Card from '@components/elements/card';
 import TextField from '@components/elements/input-field';
 import styles from './filter.module.scss';
 import SelectDropdown from '@components/elements/select';
-import { FilterQuery, FilterTypes } from '@/types/dataTable';
+import { FilterQuery, FilterTypes } from '@/types/data-table';
 import { useUsersData } from '@hooks/useData';
 import { useMemo } from 'react';
 import { Button } from '@components/elements/button-c';

@@ -7,11 +7,12 @@
   flex-direction: column;
   box-shadow: $shadow-primary;
   font-family: $secondary-font;
-
+  overflow-x: scroll;
   .table__main {
-    overflow-x: auto;
+    overflow-x: scroll;
     .table__cover {
       display: inline-block;
+      overflow-x: scroll;
       width: 100%;
       .table {
         width: 100%;

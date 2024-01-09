@@ -8,7 +8,7 @@ import {
   ColumnDef,
   flexRender,
 } from '@tanstack/react-table';
-import { FilterTypes, IUserData } from '@/types/dataTable';
+import { FilterTypes, IUserData } from '@/types/data-table';
 import Filter from '@components/widget/filter';
 
 interface TableProps {
