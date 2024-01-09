@@ -8,6 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@components/elements/button-c';
 import { useState } from 'react';
 import { useAuthActions } from '@hooks/useAuth';
+import { logo } from '@assets/icons';
 
 const Form = () => {
   const navigate = useNavigate();
@@ -47,6 +48,9 @@ const Form = () => {
   return (
     <form className={styles.form__container} onSubmit={handleSubmit}>
       <div className={styles.content}>
+        <div className={styles.logo}>
+          <img src={logo} alt="Lendsqr logo" />
+        </div>
         <div className={styles.headings}>
           <h2>Welcome!</h2>
           <p>Enter details to login.</p>
