@@ -1,0 +1,60 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.button {
+  width: 100%;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: all 0.5s ease-in-out;
+  background-color: $primary-color;
+  border: none;
+  cursor: pointer;
+  color: $light;
+  font-family: $secondary-font;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  .btn-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $grey-100;
+  }
+
+  .btn-body {
+    @include flexCenter('row');
+    p {
+      text-align: center;
+      font-size: 098;
+    }
+  }
+}
+
+.variable__btn {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  background-color: transparent;
+
+  &.btn__primary {
+    border: 1px solid $primary-color;
+    color: $primary-color;
+  }
+
+  &.btn__secondary {
+    border: 1px solid $secondary-color;
+    color: $secondary-color;
+  }
+
+  &.btn__danger {
+    border: 1px solid $error;
+    color: $error;
+  }
+
+  &.btn__default {
+    border: 1px solid $accent;
+    color: $accent;
+  }
+}

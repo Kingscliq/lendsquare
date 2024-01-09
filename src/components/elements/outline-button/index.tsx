@@ -1,7 +1,7 @@
 import React from 'react';
-import { ButtonProps } from '.';
 import { StatusStyleProps } from '../badge';
-import styles from './button.module.scss';
+import styles from './outline-button.module.scss';
+import { ButtonProps } from '../button';
 
 const OutlineButton: React.FC<ButtonProps> = ({
   type,
