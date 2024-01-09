@@ -7,7 +7,7 @@ import { useFilters } from '@hooks/useFilters';
 import { useNavigate, useParams } from 'react-router-dom';
 import Dialog from '@components/elements/dialog';
 import { success } from '@components/elements/alert/notify';
-import OutlineButton from '@components/elements/button/outline-button';
+import OutlineButton from '../../../../components/elements/button/outline-button';
 
 const UserProfile = () => {
   const { id } = useParams();
