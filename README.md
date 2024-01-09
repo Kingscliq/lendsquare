@@ -139,7 +139,7 @@ This will generate a build folder with optimized and minified files ready for de
 ## Folder Structure
 
 
-build/                       (Generated build files)
+-build/                       (Generated build files)
 public/                      (Public assets like images, favicons, index.html)
 src/                         (Source code)
   assets/                    (Static assets like images, fonts, icons)
@@ -160,3 +160,17 @@ index.tsx                    (Entry point of the app)
 react-app-env.d.ts           (TypeScript environment definitions)
 reportWebVitals.ts           (Web Vitals reporting)
 setupTests.ts                (Test environment setup)
+
+# Project Dependencies
+
+The project utilizes several key dependencies to enhance functionality. Below are some of the main dependencies:
+
+- **React:** ^18.2.0
+- **React Router Dom:** ^6.21.1
+- **Redux Toolkit:** ^1.8.3
+- **React Query:** ^4.12.0
+- **React Table:** ^8.5.15
+- **Formik:** ^2.4.5
+- **... (other main dependencies)**
+
+For the full list of dependencies and their versions, please refer to the [package.json](./package.json) file.
