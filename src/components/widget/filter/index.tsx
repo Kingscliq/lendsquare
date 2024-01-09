@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '@components/elements/card';
-import TextField from '@components/elements/textfield';
+import TextField from '@components/elements/input-field';
 import styles from './filter.module.scss';
 import SelectDropdown from '@components/elements/select';
 import { FilterQuery, FilterTypes } from '@/types/dataTable';

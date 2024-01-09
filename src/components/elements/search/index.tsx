@@ -1,5 +1,5 @@
 import React from 'react';
-import TextField from '../textfield';
+import TextField from '../input-field';
 import { searchIcon } from '@assets/icons';
 import styles from './search.module.scss';
 

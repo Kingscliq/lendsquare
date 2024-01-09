@@ -49,11 +49,9 @@ html {
       margin-bottom: 30px;
       @include device($tablet) {
         grid-template-columns: 1fr 1fr;
-        background-color: red;
       }
       @include device(600px) {
         grid-template-columns: 1fr;
-        background-color: green;
       }
     }
 

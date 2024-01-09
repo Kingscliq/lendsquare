@@ -3,7 +3,7 @@ import React from 'react';
 import * as yup from 'yup';
 import { useFormik } from 'formik';
 import styles from './login.module.scss';
-import TextField from '@components/elements/textfield';
+import TextField from '@components/elements/input-field';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@components/elements/button-c';
 import { useState } from 'react';
