@@ -34,13 +34,15 @@ export const Button: React.FC<ButtonProps> = ({
       style={{
         cursor: loading || disabled ? 'not-allowed' : '',
         opacity: loading || disabled ? '.68' : '1',
-        backgroundColor: loading || disabled ? 'rgba(57, 205, 204, 0.06)' : '',
+        backgroundColor: loading || disabled ? 'rgba(57, 205, 204, 0.5)' : '',
         color: loading || disabled ? 'rgba(12, 33, 28, 0.791)' : 'white',
       }}
       data-testid="btn"
     >
       {loading ? (
-        <p className="btn-loader">Loading...</p>
+        <p className="btn-loader" style={{ color: 'white' }}>
+          LOADING...
+        </p>
       ) : (
         <div>
           <p>{label || 'Button Text'}</p>

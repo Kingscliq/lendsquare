@@ -77,7 +77,6 @@ html {
     .filter {
       @include flexBetween('row');
       margin-bottom: 30px;
-
       .filter__btn {
         display: flex;
         align-items: center;
@@ -87,7 +86,6 @@ html {
         }
       }
     }
-
     .mobile__hidden {
       display: block;
       @include device($mobile) {

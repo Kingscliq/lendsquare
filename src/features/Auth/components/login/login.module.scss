@@ -57,11 +57,13 @@
         font-size: fontSize('xl');
         margin-bottom: 10px;
         font-weight: fontWeight('bold');
+        font-family: $primary-font;
       }
 
       p {
         font-size: fontSize('md');
         font-weight: fontWeight('regular');
+        font-family: $primary-font;
       }
     }
 

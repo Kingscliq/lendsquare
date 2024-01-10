@@ -1,5 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+@font-face {
+  font-family: 'Avenir Next';
+  src: local('☺'),
+    url('/src/assets/fonts/AvenirNextLTPro-It.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: local('☺'),
+    url('/src/assets/fonts/AvenirNextLTPro-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: local('☺'),
+    url('/src/assets/fonts/AvenirNextLTPro-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 // Colors
 $primary-color: #39cdcc;
 $secondary-color: #213f7d;
@@ -11,6 +38,7 @@ $grey-200: rgba(0, 0, 0, 0.04);
 $error: #e11900;
 
 // Fonts
+$primary-font: 'Avenir Next', sans-serif;
 $secondary-font: 'Work Sans', sans-serif;
 
 $font-weights: (
