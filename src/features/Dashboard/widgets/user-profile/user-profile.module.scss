@@ -26,20 +26,21 @@
     // max-width: 1000px;
     .profile__menu {
       @include flexItem;
+      @include device($mobile) {
+        // @include flexBetween('column');
+        flex-direction: column;
+        align-items: start;
+      }
       margin-bottom: 50px;
       .profile__name {
         @include flexItem;
         padding-right: 30px;
+        @include device($mobile) {
+          justify-self: flex-start;
+        }
         .name {
           padding-left: 30px;
         }
-        // .avatar {
-        //   height: 100px;
-        //   width: 100px;
-        //   border-radius: 100%;
-        //   background-color: rgba(33, 63, 125, 0.16);
-        //   @include flexCenter('row');
-        // }
         h3 {
           font-size: 22px;
           font-weight: fontWeight('normal');
@@ -55,9 +56,18 @@
         padding-left: 30px;
         border-right: 1px solid $grey-200;
         border-left: 1px solid $grey-200;
+        @include device($mobile) {
+          justify-self: flex-start;
+          padding-left: 0;
+          margin-top: 30px;
+        }
       }
       .balance__bank {
         padding-left: 30px;
+        @include device($mobile) {
+          justify-self: flex-start;
+          padding-left: 0;
+        }
         h2 {
           font-size: 22px;
           font-weight: fontWeight('normal');
@@ -87,7 +97,6 @@
 
 .info__container {
   margin-top: 30px;
-  // max-width: 1000px;
   h2 {
     font-size: fontSize('base');
     font-weight: fontWeight('normal');
@@ -100,6 +109,12 @@
     padding-bottom: 30px;
     .info__data {
       @include grid(4, 1fr);
+      @include device($tablet) {
+        @include grid(2, 1fr);
+      }
+      @include device($mobile) {
+        @include grid(1, 1fr);
+      }
       gap: 30px;
       .info__data__item {
         h3 {
