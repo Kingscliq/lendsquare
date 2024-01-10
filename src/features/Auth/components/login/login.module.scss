@@ -38,6 +38,9 @@
   .content {
     width: 60%;
     margin: auto;
+    @include device($mobile) {
+      width: 90%;
+    }
     .logo {
       display: none;
     }
