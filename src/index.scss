@@ -75,5 +75,18 @@ html {
       border: none;
       font-family: 'Work Sans', sans-serif !important;
     }
+    .filter {
+      @include flexBetween('row');
+      margin-bottom: 30px;
+
+      .filter__btn {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        & > :nth-child(2) {
+          margin-left: 10px;
+        }
+      }
+    }
   }
 }

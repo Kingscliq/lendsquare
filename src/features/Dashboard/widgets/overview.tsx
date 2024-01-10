@@ -4,6 +4,7 @@ import {
   blackListUser,
   dashUsers,
   eye,
+  filter,
   userWithLoans,
   userWithSavings,
 } from '@assets/icons';
@@ -18,6 +19,7 @@ import { IUserData } from '@/types/data-table';
 import { useNavigate } from 'react-router-dom';
 import THead from '@components/elements/table/thead';
 import { getDayMonth } from '@utils/formatters';
+import OutlineButton from '@components/elements/outline-button';
 
 const Overview = () => {
   const navigate = useNavigate();
@@ -29,6 +31,7 @@ const Overview = () => {
     usersWithLoan,
     usersWithSavings,
     setFilterModal,
+    resetFilter,
   } = filters;
 
   const menuItems = [
@@ -142,6 +145,20 @@ const Overview = () => {
           title={'Users with Savings'}
           value={usersWithSavings as unknown as string}
         />
+      </div>
+
+      <div className="filter">
+        <div onClick={() => setFilterModal(true)} className="filter__btn">
+          <div>
+            <img src={filter} alt="" />
+          </div>
+          <div>
+            <p>Filter</p>
+          </div>
+        </div>
+        <div onClick={() => resetFilter()} className="clear__filter">
+          <OutlineButton label="Clear Filters" />
+        </div>
       </div>
       <TableComponent
         data={filteredData}

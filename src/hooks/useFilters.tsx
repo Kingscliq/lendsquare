@@ -79,6 +79,7 @@ export const useFilters = () => {
 
   const resetFilter = React.useCallback(() => {
     dispatch({ type: 'RESET_STATE' });
+    setQuery(q => ({ ...q, ...initialState }));
   }, [dispatch]);
 
   /**
