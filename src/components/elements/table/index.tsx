@@ -101,6 +101,9 @@ function Table({
       </button>
     );
   };
+
+  const responsive_items = ['organisation', 'email', 'phone', 'start_date']
+
   return (
     <section>
       <div className="grid grid-cols-2 justify-between mt-4 mx-4"></div>
@@ -114,7 +117,15 @@ function Table({
                   <tr key={headerGroup.id}>
                     {headerGroup.headers.map(header => {
                       return (
-                        <th key={header.id} colSpan={header.colSpan}>
+                        <th
+                          key={header.id}
+                          colSpan={header.colSpan}
+                          className={
+                            responsive_items.includes(header?.id)
+                              ? 'mobile__hidden'
+                              : ''
+                          }
+                        >
                           {header.isPlaceholder ? null : (
                             <div>
                               {flexRender(
@@ -135,8 +146,16 @@ function Table({
                     return (
                       <tr key={row.id}>
                         {row?.getVisibleCells().map(cell => {
+                          console.log(cell.column);
                           return (
-                            <td key={cell.id}>
+                            <td
+                              key={cell.id}
+                              className={
+                                responsive_items.includes(cell?.column?.id)
+                                  ? 'mobile__hidden'
+                                  : ''
+                              }
+                            >
                               {flexRender(
                                 cell?.column.columnDef.cell,
                                 cell?.getContext()

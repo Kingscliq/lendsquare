@@ -87,5 +87,12 @@ html {
         }
       }
     }
+
+    .mobile__hidden {
+      display: block;
+      @include device($mobile) {
+        display: none;
+      }
+    }
   }
 }
