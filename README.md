@@ -23,6 +23,10 @@ Lendsqr's web app, serving over half a million users, employs React with TypeScr
 
 The project is a dynamic web application developed with React, TypeScript, and SCSS, catering to a substantial user base. Noteworthy features encompass a robust authentication system, an organized users table for efficient data management, detailed user profiles, and versatile user management capabilities, including activation and blacklisting.
 
+## Video Demo
+
+- https://drive.google.com/drive/folders/1BWBnTusSya0CCY4IdtWBeD75P0ThhLZt?usp=drive_link
+
 ## Features
 
 **Authentication:**
@@ -135,31 +139,29 @@ yarn build
 
 This will generate a build folder with optimized and minified files ready for deployment.
 
-
 ## Folder Structure
 
-|-- build/                     (Generated build files)
-|-- public/                    (Public assets like images, favicons, index.html)
-|-- src/                       (Source code)
-|   |-- assets/                (Static assets like images, fonts, icons)
-|   |-- components/            (Reusable UI components)
-|   |-- features/              (Subdirectories for feature-specific code)
-|   |-- hooks/                 (Custom React hooks)
-|   |-- pages/                 (Top-level views and routes)
-|   |-- providers/             (Context providers for global state)
-|   |-- slices/                (Redux slices for state management)
-|   |-- store/                 (Redux store configuration)
-|   |-- styles/                (Global and component-specific styles)
-|   |-- types/                 (TypeScript type definitions)
-|   |-- utils/                 (Utility functions and helpers)
-|-- App.test.tsx               (App component test file)
-|-- App.tsx                    (Root app component)
-|-- index.scss                 (Global stylesheet)
-|-- index.tsx                  (Entry point of the app)
-|-- react-app-env.d.ts         (TypeScript environment definitions)
-|-- reportWebVitals.ts         (Web Vitals reporting)
-|-- setupTests.ts              (Test environment setup)
-
+|-- build/ (Generated build files)
+|-- public/ (Public assets like images, favicons, index.html)
+|-- src/ (Source code)
+| |-- assets/ (Static assets like images, fonts, icons)
+| |-- components/ (Reusable UI components)
+| |-- features/ (Subdirectories for feature-specific code)
+| |-- hooks/ (Custom React hooks)
+| |-- pages/ (Top-level views and routes)
+| |-- providers/ (Context providers for global state)
+| |-- slices/ (Redux slices for state management)
+| |-- store/ (Redux store configuration)
+| |-- styles/ (Global and component-specific styles)
+| |-- types/ (TypeScript type definitions)
+| |-- utils/ (Utility functions and helpers)
+|-- App.test.tsx (App component test file)
+|-- App.tsx (Root app component)
+|-- index.scss (Global stylesheet)
+|-- index.tsx (Entry point of the app)
+|-- react-app-env.d.ts (TypeScript environment definitions)
+|-- reportWebVitals.ts (Web Vitals reporting)
+|-- setupTests.ts (Test environment setup)
 
 # Project Dependencies
 

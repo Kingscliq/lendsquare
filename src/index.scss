@@ -87,7 +87,7 @@ html {
       }
     }
     .mobile__hidden {
-      display: block;
+      display: inline-block;
       @include device($mobile) {
         display: none;
       }
