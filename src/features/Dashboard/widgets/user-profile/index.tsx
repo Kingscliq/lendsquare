@@ -1,20 +1,20 @@
-import React from 'react';
-import styles from './user-profile.module.scss';
-import ReactStars from 'react-rating-star-with-type';
-import { Avatar, Tabs } from '@radix-ui/themes';
-import Info from './info';
-import ComingSoon from './coming-soon';
-import { useFilters } from '@hooks/useFilters';
-import { useNavigate, useParams } from 'react-router-dom';
-import Dialog from '@components/elements/dialog';
-import { success } from '@components/elements/alert/notify';
-import OutlineButton from '@components/elements/outline-button';
+import React from 'react'
+import styles from './user-profile.module.scss'
+import ReactStars from 'react-rating-star-with-type'
+import { Avatar, Tabs } from '@radix-ui/themes'
+import Info from './info'
+import ComingSoon from './coming-soon'
+import { useFilters } from '@hooks/useFilters'
+import { useNavigate, useParams } from 'react-router-dom'
+import Dialog from '@components/elements/dialog'
+import { success } from '@components/elements/alert/notify'
+import OutlineButton from '@components/elements/outline-button'
 
 const UserProfile = () => {
-  const { id } = useParams();
-  const { getSingleUsers } = useFilters();
+  const { id } = useParams()
+  const { getSingleUsers } = useFilters()
 
-  const userInfo = getSingleUsers!(Number(id));
+  const userInfo = getSingleUsers!(Number(id))
 
   const tabsData = [
     {
@@ -43,11 +43,11 @@ const UserProfile = () => {
       value: 'apps-systems',
       component: <ComingSoon />,
     },
-  ];
+  ]
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const { changeUserStatus } = useFilters();
+  const { changeUserStatus } = useFilters()
 
   return (
     <section className={styles.user__profile}>
@@ -67,11 +67,11 @@ const UserProfile = () => {
             }
             actionText={'Continue'}
             submitFn={() => {
-              changeUserStatus(userInfo?.id!, 'blacklisted');
+              changeUserStatus(userInfo?.id!, 'blacklisted')
               setTimeout(
                 () => success({ message: 'User has been blacklisted' }),
                 2000
-              );
+              )
             }}
           />
           <Dialog
@@ -82,13 +82,13 @@ const UserProfile = () => {
             }
             actionText={'Continue'}
             submitFn={() => {
-              changeUserStatus(userInfo?.id!, 'active');
+              changeUserStatus(userInfo?.id!, 'active')
 
               setTimeout(
                 () =>
                   success({ message: 'User has been activated successfully' }),
                 2000
-              );
+              )
             }}
           />
         </div>
@@ -116,7 +116,7 @@ const UserProfile = () => {
             </div>
           </div>
           <div className={styles.balance__bank}>
-            <h2>₦{userInfo?.monthly_income}</h2>
+            <h2>${userInfo?.monthly_income}</h2>
             <p>
               {userInfo?.account_number}/{userInfo?.bank_name}
             </p>
@@ -126,7 +126,7 @@ const UserProfile = () => {
       <Tabs.Root defaultValue="account">
         <section className={styles.tabs__list}>
           <Tabs.List>
-            {tabsData.map(item => {
+            {tabsData.map((item) => {
               return (
                 <Tabs.Trigger
                   value={item.value}
@@ -135,20 +135,20 @@ const UserProfile = () => {
                 >
                   {item.label}
                 </Tabs.Trigger>
-              );
+              )
             })}
           </Tabs.List>
         </section>
         <section>
-          {tabsData.map(item => {
+          {tabsData.map((item) => {
             return (
               <Tabs.Content value={item.value}>{item.component}</Tabs.Content>
-            );
+            )
           })}
         </section>
       </Tabs.Root>
     </section>
-  );
-};
+  )
+}
 
-export default UserProfile;
+export default UserProfile

@@ -43,10 +43,7 @@ const Header = ({ openNav }: any) => {
               radius="full"
             />
             <div className={styles.dropdown}>
-              <Dropdown
-                placeholder={'Adedeji'}
-                items={['Profile', 'Settings']}
-              />
+              <Dropdown placeholder={'Dunn'} items={['Profile', 'Settings']} />
             </div>
           </div>
         </div>
