@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 import {
   audit,
@@ -18,25 +18,25 @@ import {
   transactions,
   users,
   whiteList,
-} from '@assets/icons';
+} from '@assets/icons'
 
-import { useLocation } from 'react-router-dom';
-import styles from './mobile-nav.module.scss';
-import SidebarMenuItem from '@components/elements/sidebar-menu-item';
-import Divider from '@components/elements/divider';
-import { useAuthActions } from '@hooks/useAuth';
+import { useLocation } from 'react-router-dom'
+import styles from './mobile-nav.module.scss'
+import SidebarMenuItem from '@components/elements/sidebar-menu-item'
+import Divider from '@components/elements/divider'
+import { useAuthActions } from '@hooks/useAuth'
 
 interface MobileSideNavProps {
-  openMobileNav: boolean;
-  setOpenMobileNav: () => void;
+  openMobileNav: boolean
+  setOpenMobileNav: () => void
 }
 
 const MobileSideNav: React.FC<MobileSideNavProps> = ({
   openMobileNav,
   setOpenMobileNav,
 }) => {
-  const location = useLocation();
-  const { logout } = useAuthActions();
+  const location = useLocation()
+  const { logout } = useAuthActions()
   return (
     <>
       <div
@@ -44,9 +44,7 @@ const MobileSideNav: React.FC<MobileSideNavProps> = ({
           openMobileNav ? styles.isOpen : styles.isClosed
         }`}
       >
-        <div className={styles.mobile__nav__logo}>
-          <img src={logo} alt="light logo" />
-        </div>
+        <div className={styles.mobile__nav__logo}>Laurence</div>
         <div className={styles.dash__container}>
           <SidebarMenuItem
             title="Dashboard"
@@ -246,7 +244,7 @@ const MobileSideNav: React.FC<MobileSideNavProps> = ({
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
-export default MobileSideNav;
+export default MobileSideNav

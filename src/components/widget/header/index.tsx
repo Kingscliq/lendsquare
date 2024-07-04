@@ -1,17 +1,17 @@
-import React from 'react';
+import React from 'react'
 
-import { logo, notification } from '@assets/icons';
-import { useAuth } from '@hooks/useAuth';
-import { Avatar } from '@radix-ui/themes';
+import { logo, notification } from '@assets/icons'
+import { useAuth } from '@hooks/useAuth'
+import { Avatar } from '@radix-ui/themes'
 
-import styles from './header.module.scss';
-import Dropdown from '@components/elements/dropdown-menu';
-import Search from '@components/elements/search';
+import styles from './header.module.scss'
+import Dropdown from '@components/elements/dropdown-menu'
+import Search from '@components/elements/search'
 
 const Header = ({ openNav }: any) => {
-  const user = useAuth();
+  const user = useAuth()
 
-  const { user: person } = user;
+  const { user: person } = user
 
   return (
     <nav>
@@ -23,7 +23,8 @@ const Header = ({ openNav }: any) => {
             <div></div>
           </button>
           <div className={styles.menu__logo}>
-            <img src={logo} alt="Logo" />
+            {/* <img src={logo} alt="Logo" /> */}
+            Dashboard
           </div>
         </div>
         <div className={styles.search__container}>
@@ -51,7 +52,7 @@ const Header = ({ openNav }: any) => {
         </div>
       </section>
     </nav>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
