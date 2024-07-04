@@ -1,26 +1,24 @@
-import React from 'react';
+import React from 'react'
 
-import { useDataActions } from '@hooks/useData';
-import { useEffect } from 'react';
-import styles from './login.module.scss';
-import { logo } from '@assets/icons';
-import { hero } from '@assets/images';
-import Form from './form';
+import { useDataActions } from '@hooks/useData'
+import { useEffect } from 'react'
+import styles from './login.module.scss'
+import { logo } from '@assets/icons'
+import { hero } from '@assets/images'
+import Form from './form'
 
 const Login = () => {
-  const { setData } = useDataActions();
+  const { setData } = useDataActions()
 
   useEffect(() => {
-    setData();
-  }, []);
+    setData()
+  }, [])
 
   return (
     <div className={styles.login}>
       <div className={styles.hero}>
         <div>
-          <div className={styles.logo}>
-            <img src={logo} alt="Lendsqr logo" />
-          </div>
+          <div className={styles.logo}>Laurence Tapia</div>
           <div>
             <img src={hero} alt="Lendsqr hero" />
           </div>
@@ -30,7 +28,7 @@ const Login = () => {
         <Form />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

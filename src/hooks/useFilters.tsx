@@ -56,6 +56,7 @@ function UserReducer(state: FilterQuery, action: Action): FilterQuery {
  * @description Custom hook for managing filters and interacting with user data.
  * @returns {Object} An object containing relevant data and functions.
  */
+
 export const useFilters = () => {
   // Use reducer to manage state changes for filters
   const [filters, dispatch] = React.useReducer(UserReducer, initialState);
@@ -70,6 +71,7 @@ export const useFilters = () => {
    * @description Function to set individual filters.
    * @param {UserFilterType} payload - The payload containing filter information.
    */
+  
   const setFilter = React.useCallback(
     (payload: UserFilterType) => {
       dispatch({ type: 'SET_FILTER', payload });
