@@ -41,6 +41,11 @@ const Form = () => {
         }
         setLoading(true)
         login(values)
+
+        //  successfull
+
+        // Store the user token on the cookie
+        
         setTimeout(() => {
           setLoading(false)
           navigate('/')
