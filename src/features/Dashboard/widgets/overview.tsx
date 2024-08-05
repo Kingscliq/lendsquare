@@ -54,43 +54,31 @@ const Overview = () => {
   const tableColumns = React.useMemo<ColumnDef<IUserData>[]>(
     () => [
       {
-        header: () => (
-          <THead text="Organisation" onClick={() => setFilterModal(true)} />
-        ),
+        header: () => <THead text="Organisation" />,
         accessorKey: 'organisation',
       },
       {
-        header: () => (
-          <THead text="Username" onClick={() => setFilterModal(true)} />
-        ),
+        header: () => <THead text="Username" />,
         accessorKey: 'username',
         cell: (info) => info.getValue(),
       },
       {
-        header: () => (
-          <THead text="Email" onClick={() => setFilterModal(true)} />
-        ),
+        header: () => <THead text="Email" />,
         accessorKey: 'email',
         cell: (info) => info?.getValue(),
       },
       {
-        header: () => (
-          <THead text="Phone" onClick={() => setFilterModal(true)} />
-        ),
+        header: () => <THead text="Phone" />,
         accessorKey: 'phone',
         cell: (info) => info?.getValue(),
       },
       {
-        header: () => (
-          <THead text="Date Joined" onClick={() => setFilterModal(true)} />
-        ),
+        header: () => <THead text="Date Joined" />,
         accessorKey: 'start_date',
         cell: (info) => getDayMonth(info?.getValue() as string),
       },
       {
-        header: () => (
-          <THead text="Status" onClick={() => setFilterModal(true)} />
-        ),
+        header: () => <THead text="Status" />,
         accessorKey: 'status',
         cell: (info) => (
           <Badge
@@ -120,7 +108,7 @@ const Overview = () => {
         },
       },
     ],
-    [menuItems, navigate, setFilterModal]
+    [menuItems, navigate]
   )
 
   return (
