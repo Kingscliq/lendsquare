@@ -14,6 +14,7 @@
   .text__field__container {
     @include flexItem;
     width: 100%;
+    position: relative;
     .text__field {
       background-color: transparent;
       outline: none;
@@ -31,6 +32,13 @@
       &:focus {
         border: 1px solid $primary-color;
       }
+    }
+    .icon {
+      cursor: pointer;
+      top: 0;
+      right: 16px;
+      transform: translateY(15px);
+      position: absolute;
     }
   }
 }

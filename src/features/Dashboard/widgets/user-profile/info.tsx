@@ -1,15 +1,15 @@
-import React from 'react';
+import React from 'react'
 
-import { IUserData } from '@/types/data-table';
-import styles from './user-profile.module.scss';
-import Card from '@components/elements/card';
-import { useMemo } from 'react';
+import { IUserData } from '@/types/data-table'
+import styles from './user-profile.module.scss'
+import Card from '@components/elements/card'
+import { useMemo } from 'react'
 
 interface InfoProps {
-  item: IUserData;
+  item: IUserData
 }
 const Info: React.FC<InfoProps> = ({ item }) => {
-  console.log({ item });
+  console.log({ item })
 
   const {
     fullname,
@@ -32,7 +32,7 @@ const Info: React.FC<InfoProps> = ({ item }) => {
     twitter,
     instagram,
     loan_repayment,
-  } = item;
+  } = item
 
   const infoDetails = useMemo(
     () => [
@@ -84,18 +84,39 @@ const Info: React.FC<InfoProps> = ({ item }) => {
         ],
       },
     ],
-    []
-  );
+    [
+      bvn,
+      children,
+      duration_of_employment,
+      email,
+      employment_status,
+      facebook,
+      fullname,
+      gender,
+      gurarantors_email_address,
+      gurarantors_fullname,
+      gurarantors_phone_number,
+      gurarantors_relationship,
+      instagram,
+      level_of_education,
+      loan_repayment,
+      marital_status,
+      monthly_income,
+      phone,
+      twitter,
+      type_of_residence,
+    ]
+  )
 
   return (
     <Card className={styles.info__container}>
       <section>
-        {infoDetails.map(item => {
+        {infoDetails.map((item) => {
           return (
             <section key={item.id} className={styles.info__main}>
               <h2>{item.heading}</h2>
               <section className={styles.info__data}>
-                {item.data.map(info => (
+                {item.data.map((info) => (
                   <section className={styles.info__data__item}>
                     <h3>{info.label}</h3>
                     <p>{info.value || '-'}</p>
@@ -103,11 +124,11 @@ const Info: React.FC<InfoProps> = ({ item }) => {
                 ))}
               </section>
             </section>
-          );
+          )
         })}
       </section>
     </Card>
-  );
-};
+  )
+}
 
-export default Info;
+export default Info

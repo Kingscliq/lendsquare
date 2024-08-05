@@ -9,7 +9,6 @@ import {
   gurarantor,
   karma,
   loanRequest,
-  logo,
   logout as logoutIcon,
   organisation,
   preferences,

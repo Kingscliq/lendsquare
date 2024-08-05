@@ -1,7 +1,6 @@
 import React from 'react'
 
-import { logo, notification } from '@assets/icons'
-import { useAuth } from '@hooks/useAuth'
+import { notification } from '@assets/icons'
 import { Avatar } from '@radix-ui/themes'
 
 import styles from './header.module.scss'
@@ -9,10 +8,6 @@ import Dropdown from '@components/elements/dropdown-menu'
 import Search from '@components/elements/search'
 
 const Header = ({ openNav }: any) => {
-  const user = useAuth()
-
-  const { user: person } = user
-
   return (
     <nav>
       <section className={styles.header}>

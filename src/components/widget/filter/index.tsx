@@ -1,29 +1,29 @@
-import React from 'react';
-import Card from '@components/elements/card';
-import TextField from '@components/elements/input-field';
-import styles from './filter.module.scss';
-import SelectDropdown from '@components/elements/select';
-import { FilterQuery, FilterTypes } from '@/types/data-table';
-import { useUsersData } from '@hooks/useData';
-import { useMemo } from 'react';
-import { Button } from '@components/elements/button-c';
-import OutlineButton from '@components/elements/outline-button';
+import React from 'react'
+import Card from '@components/elements/card'
+import TextField from '@components/elements/input-field'
+import styles from './filter.module.scss'
+import SelectDropdown from '@components/elements/select'
+import { FilterQuery, FilterTypes } from '@/types/data-table'
+import { useUsersData } from '@hooks/useData'
+import { useMemo } from 'react'
+import { Button } from '@components/elements/button-c'
+import OutlineButton from '@components/elements/outline-button'
 
 interface FilterProps {
-  filters: FilterTypes;
-  query: FilterQuery;
+  filters: FilterTypes
+  query: FilterQuery
 }
 
 const Filter: React.FC<FilterProps> = ({ filters, query }) => {
-  const users = useUsersData();
+  const users = useUsersData()
   const organisations = useMemo(
     () =>
-      users.generatedData.map(item => ({
+      users.generatedData.map((item: { organisation: any }) => ({
         label: item.organisation,
         value: item.organisation,
       })),
-    []
-  );
+    [users.generatedData]
+  )
 
   const status = [
     {
@@ -42,7 +42,7 @@ const Filter: React.FC<FilterProps> = ({ filters, query }) => {
       label: 'Pending',
       value: 'pending',
     },
-  ];
+  ]
   return (
     <Card
       className={`${styles.filter__container} ${
@@ -57,7 +57,7 @@ const Filter: React.FC<FilterProps> = ({ filters, query }) => {
                 label={'Organisation'}
                 options={organisations}
                 onChange={({ value }: { value: string }) => {
-                  filters.setFilter({ field: 'organisation', value });
+                  filters.setFilter({ field: 'organisation', value })
                 }}
               />
             </div>
@@ -66,7 +66,7 @@ const Filter: React.FC<FilterProps> = ({ filters, query }) => {
             <TextField
               label="Username"
               value={filters.filters.username}
-              onChange={e =>
+              onChange={(e) =>
                 filters.setFilter({ field: 'username', value: e.target.value })
               }
             />
@@ -75,7 +75,7 @@ const Filter: React.FC<FilterProps> = ({ filters, query }) => {
             <TextField
               label="Email"
               value={filters.filters?.email}
-              onChange={e =>
+              onChange={(e) =>
                 filters.setFilter({ field: 'email', value: e.target.value })
               }
             />
@@ -85,7 +85,7 @@ const Filter: React.FC<FilterProps> = ({ filters, query }) => {
               label="Date"
               type="date"
               value={filters.filters.date}
-              onChange={e =>
+              onChange={(e) =>
                 filters.setFilter({ field: 'date', value: e.target.value })
               }
             />
@@ -94,7 +94,7 @@ const Filter: React.FC<FilterProps> = ({ filters, query }) => {
             <TextField
               label="Phone Number"
               value={filters.filters.phone_number}
-              onChange={e =>
+              onChange={(e) =>
                 filters.setFilter({
                   field: 'phone_number',
                   value: e.target.value,
@@ -107,7 +107,7 @@ const Filter: React.FC<FilterProps> = ({ filters, query }) => {
               options={status}
               label={'Status'}
               onChange={({ value }: { value: string }) => {
-                filters.setFilter({ field: 'status', value });
+                filters.setFilter({ field: 'status', value })
               }}
             />
           </div>
@@ -122,8 +122,8 @@ const Filter: React.FC<FilterProps> = ({ filters, query }) => {
               <Button
                 label="Filter"
                 onClick={() => {
-                  filters.setQuery(q => ({ ...q, ...query }));
-                  filters.setFilterModal(false);
+                  filters.setQuery((q) => ({ ...q, ...query }))
+                  filters.setFilterModal(false)
                 }}
               />
             </div>
@@ -131,7 +131,7 @@ const Filter: React.FC<FilterProps> = ({ filters, query }) => {
         </form>
       </section>
     </Card>
-  );
-};
+  )
+}
 
-export default Filter;
+export default Filter
