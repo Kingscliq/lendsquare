@@ -3,7 +3,6 @@ import React from 'react'
 import { useDataActions } from '@hooks/useData'
 import { useEffect } from 'react'
 import styles from './login.module.scss'
-import { logo } from '@assets/icons'
 import { hero } from '@assets/images'
 import Form from './form'
 
@@ -12,6 +11,7 @@ const Login = () => {
 
   useEffect(() => {
     setData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

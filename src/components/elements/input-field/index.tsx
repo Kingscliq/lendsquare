@@ -1,16 +1,17 @@
-import React, { ComponentProps, JSXElementConstructor } from 'react';
-import styles from './text-field.module.scss';
+import React, { ComponentProps, JSXElementConstructor, ReactNode } from 'react'
+import styles from './text-field.module.scss'
 
 export interface TextFieldProps extends Partial<HTMLInputElement> {
-  onClick?: () => void;
-  error?: boolean;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  success?: boolean;
-  label?: string;
-  inputRef?: string;
-  message?: string;
-  props?: ComponentProps<JSXElementConstructor<any>>;
-  inputClass?: string;
+  onClick?: () => void
+  error?: boolean
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+  success?: boolean
+  label?: string
+  inputRef?: string
+  message?: string
+  props?: ComponentProps<JSXElementConstructor<any>>
+  inputClass?: string
+  icon?: ReactNode
 }
 const TextField: React.FC<TextFieldProps> = ({
   type,
@@ -27,6 +28,7 @@ const TextField: React.FC<TextFieldProps> = ({
   inputClass,
   props,
   disabled,
+  icon,
 }) => {
   return (
     <div className={`${styles.field__container}`}>
@@ -57,10 +59,12 @@ const TextField: React.FC<TextFieldProps> = ({
           ref={inputRef}
           {...props}
         />
+
+        {icon && <div className={styles.icon}>{icon}</div>}
       </div>
       {error && <small style={{ color: '#e11900' }}>{message}</small>}
     </div>
-  );
-};
+  )
+}
 
-export default TextField;
+export default TextField

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react'
 import {
   activateUsers,
   blackListUser,
@@ -7,23 +7,23 @@ import {
   filter,
   userWithLoans,
   userWithSavings,
-} from '@assets/icons';
-import Badge from '@components/elements/badge';
-import DashCard from '@components/elements/dash-card';
-import Ellipsis from '@components/elements/popover';
-import PopoverItem from '@components/elements/popover/item';
-import TableComponent from '@components/elements/table';
-import { useFilters } from '@hooks/useFilters';
-import { ColumnDef } from '@tanstack/react-table';
-import { IUserData } from '@/types/data-table';
-import { useNavigate } from 'react-router-dom';
-import THead from '@components/elements/table/thead';
-import { getDayMonth } from '@utils/formatters';
-import OutlineButton from '@components/elements/outline-button';
+} from '@assets/icons'
+import Badge from '@components/elements/badge'
+import DashCard from '@components/elements/dash-card'
+import Ellipsis from '@components/elements/popover'
+import PopoverItem from '@components/elements/popover/item'
+import TableComponent from '@components/elements/table'
+import { useFilters } from '@hooks/useFilters'
+import { ColumnDef } from '@tanstack/react-table'
+import { IUserData } from '@/types/data-table'
+import { useNavigate } from 'react-router-dom'
+import THead from '@components/elements/table/thead'
+import { getDayMonth } from '@utils/formatters'
+import OutlineButton from '@components/elements/outline-button'
 
 const Overview = () => {
-  const navigate = useNavigate();
-  const filters = useFilters();
+  const navigate = useNavigate()
+  const filters = useFilters()
 
   const {
     filteredData,
@@ -32,22 +32,24 @@ const Overview = () => {
     usersWithSavings,
     setFilterModal,
     resetFilter,
-  } = filters;
+  } = filters
 
-  const menuItems = [
-    {
-      label: 'View Details',
-      icon: eye,
-    },
-    {
-      label: 'Blacklist Users',
-      icon: blackListUser,
-    },
-    {
-      label: 'Activate Users',
-      icon: activateUsers,
-    },
-  ];
+  const menuItems = useMemo(() => {
+    return [
+      {
+        label: 'View Details',
+        icon: eye,
+      },
+      {
+        label: 'Blacklist Users',
+        icon: blackListUser,
+      },
+      {
+        label: 'Activate Users',
+        icon: activateUsers,
+      },
+    ]
+  }, [])
 
   const tableColumns = React.useMemo<ColumnDef<IUserData>[]>(
     () => [
@@ -62,35 +64,35 @@ const Overview = () => {
           <THead text="Username" onClick={() => setFilterModal(true)} />
         ),
         accessorKey: 'username',
-        cell: info => info.getValue(),
+        cell: (info) => info.getValue(),
       },
       {
         header: () => (
           <THead text="Email" onClick={() => setFilterModal(true)} />
         ),
         accessorKey: 'email',
-        cell: info => info?.getValue(),
+        cell: (info) => info?.getValue(),
       },
       {
         header: () => (
           <THead text="Phone" onClick={() => setFilterModal(true)} />
         ),
         accessorKey: 'phone',
-        cell: info => info?.getValue(),
+        cell: (info) => info?.getValue(),
       },
       {
         header: () => (
           <THead text="Date Joined" onClick={() => setFilterModal(true)} />
         ),
         accessorKey: 'start_date',
-        cell: info => getDayMonth(info?.getValue() as string),
+        cell: (info) => getDayMonth(info?.getValue() as string),
       },
       {
         header: () => (
           <THead text="Status" onClick={() => setFilterModal(true)} />
         ),
         accessorKey: 'status',
-        cell: info => (
+        cell: (info) => (
           <Badge
             text={info?.getValue() as string}
             status={info?.getValue() as string}
@@ -100,10 +102,10 @@ const Overview = () => {
       {
         header: '',
         accessorKey: 'ellipsis',
-        cell: info => {
+        cell: (info) => {
           return (
             <Ellipsis>
-              {menuItems.map(item => {
+              {menuItems.map((item) => {
                 return (
                   <PopoverItem
                     label={item.label}
@@ -111,15 +113,15 @@ const Overview = () => {
                     key={item.label}
                     onClick={() => navigate(`/user/${info.row.original.id}`)}
                   />
-                );
+                )
               })}
             </Ellipsis>
-          );
+          )
         },
       },
     ],
-    []
-  );
+    [menuItems, navigate, setFilterModal]
+  )
 
   return (
     <div>
@@ -167,7 +169,7 @@ const Overview = () => {
         filters={filters}
       />
     </div>
-  );
-};
+  )
+}
 
-export default Overview;
+export default Overview

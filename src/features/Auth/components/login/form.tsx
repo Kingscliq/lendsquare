@@ -9,11 +9,13 @@ import { Button } from '@components/elements/button-c'
 import { useState } from 'react'
 import { useAuthActions } from '@hooks/useAuth'
 import { logo } from '@assets/icons'
+import { EyeIcon, EyeOff } from 'lucide-react'
 
 const Form = () => {
   const navigate = useNavigate()
 
   const [loading, setLoading] = useState<boolean>(false)
+  const [passwordShow, setPasswordShow] = useState<boolean>(false)
 
   interface FormValues {
     username: string
@@ -79,6 +81,15 @@ const Form = () => {
               error={!!errors?.password && touched?.password}
               onChange={handleChange}
               message={errors.password}
+              type={passwordShow ? 'text' : 'password'}
+              icon={
+                <section
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => setPasswordShow(!passwordShow)}
+                >
+                  {passwordShow ? <EyeIcon /> : <EyeOff />}
+                </section>
+              }
             />
           </div>
           <div className={styles.link}>
