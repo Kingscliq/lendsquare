@@ -13,6 +13,7 @@ export interface TextFieldProps extends Partial<HTMLInputElement> {
   inputClass?: string
   icon?: ReactNode
 }
+
 const TextField: React.FC<TextFieldProps> = ({
   type,
   placeholder,
@@ -59,7 +60,6 @@ const TextField: React.FC<TextFieldProps> = ({
           ref={inputRef}
           {...props}
         />
-
         {icon && <div className={styles.icon}>{icon}</div>}
       </div>
       {error && <small style={{ color: '#e11900' }}>{message}</small>}

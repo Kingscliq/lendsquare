@@ -2,24 +2,6 @@
   "name": "laurence",
   "version": "0.1.0",
   "private": true,
-  "jest": {
-    "rootDir": "src",
-    "verbose": true,
-    "transform": {
-      "^.+\\.(css|less|scss)$": "jest-transform-stub",
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
-    "preset": "ts-jest",
-    "testEnvironment": "jsdom"
-  },
   "dependencies": {
     "@craco/craco": "^6.4.5",
     "@radix-ui/themes": "^2.0.3",
@@ -94,7 +76,9 @@
     "autoprefixer": "^10.4.12",
     "husky": "^8.0.3",
     "identity-obj-proxy": "^3.0.0",
+    "jest-environment-jsdom": "^29.7.0",
     "jest-transform-stub": "^2.0.0",
+    "jsdom": "^24.1.1",
     "postcss": "^8.4.18",
     "react-rating-star-with-type": "^1.2.2",
     "tailwindcss": "^3.1.8",
