@@ -54,7 +54,8 @@ const Form = () => {
     <form className={styles.form__container} onSubmit={handleSubmit}>
       <div className={styles.content}>
         <div className={styles.logo}>
-          <img src={logo} alt="Lendsqr logo" />
+          {/* <img src={logo} alt="Lendsqr logo" /> */}
+          Laurence Tapia
         </div>
         <div className={styles.headings}>
           <h2>Welcome!</h2>
