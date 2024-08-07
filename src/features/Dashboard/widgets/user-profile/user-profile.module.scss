@@ -78,6 +78,8 @@
       }
       .balance__bank {
         padding-left: 30px;
+        display: flex;
+        align-items: center;
         @include device($mobile) {
           justify-self: flex-start;
           padding-left: 0;

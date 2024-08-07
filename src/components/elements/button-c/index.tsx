@@ -1,18 +1,18 @@
-import React, { ReactNode } from 'react';
-import styles from './button.module.scss';
+import React, { ReactNode } from 'react'
+import styles from './button.module.scss'
 
 export interface ButtonProps extends Partial<HTMLButtonElement> {
-  label?: string | ReactNode;
-  onClick?: () => void;
-  onMouseOver?: () => void;
-  loading?: boolean;
-  loadingText?: string;
-  loadingIcon?: string;
-  btnIcon?: string;
-  variant?: string;
-  btnLeftIcon?: string;
-  btnRightIcon?: string;
-  type?: 'button' | 'submit' | 'reset' | undefined;
+  label?: string | ReactNode
+  onClick?: () => void
+  onMouseOver?: () => void
+  loading?: boolean
+  loadingText?: string
+  loadingIcon?: string
+  btnIcon?: string
+  variant?: string
+  btnLeftIcon?: string
+  btnRightIcon?: string
+  type?: 'button' | 'submit' | 'reset' | undefined
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -49,9 +49,8 @@ export const Button: React.FC<ButtonProps> = ({
         </div>
       )}
     </button>
-  );
-};
-
+  )
+}
 
 // Different between RPC and Rest
 // Axe - test for accessibility / lighthouse

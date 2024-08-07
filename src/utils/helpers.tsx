@@ -1,14 +1,9 @@
-import { IUserData } from '@/types/data-table';
-import { faker } from '@faker-js/faker';
-import {
-  maritalStatus,
-  nigerianBanks,
-  relationships,
-  statuses,
-} from './models';
+import { IUserData } from '@/types/data-table'
+import { faker } from '@faker-js/faker'
+import { maritalStatus, americanBanks, relationships, statuses } from './models'
 
 export const generateData = (): IUserData[] => {
-  const generatedData: IUserData[] = [];
+  const generatedData: IUserData[] = []
 
   for (let i = 1; i <= 500; i++) {
     const record: IUserData = {
@@ -66,10 +61,10 @@ export const generateData = (): IUserData[] => {
         .accountNumber()
         .substring(0, 10)
         .toLowerCase(),
-      bank_name: faker.helpers.arrayElement(nigerianBanks),
-    };
+      bank_name: faker.helpers.arrayElement(americanBanks),
+    }
 
-    generatedData.push(record);
+    generatedData.push(record)
   }
-  return generatedData;
-};
+  return generatedData
+}

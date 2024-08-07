@@ -9,6 +9,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import Dialog from '@components/elements/dialog'
 import { success } from '@components/elements/alert/notify'
 import OutlineButton from '@components/elements/outline-button'
+import Badge from '@components/elements/badge'
 
 const UserProfile = () => {
   const { id } = useParams()
@@ -49,6 +50,57 @@ const UserProfile = () => {
 
   const { changeUserStatus } = useFilters()
 
+  console.log({ userInfo })
+
+  const userStatus = {
+    active: (
+      <Dialog
+        trigger={
+          <OutlineButton
+            label="Blacklist User"
+            variant="danger"
+            disabled={userInfo?.status === 'blacklisted'}
+          />
+        }
+        title={'Blacklist User'}
+        description={
+          'This action automatically blacklists a user and disables the user from carrying out transactions'
+        }
+        actionText={'Continue'}
+        submitFn={() => {
+          changeUserStatus(userInfo?.id!, 'blacklisted')
+          setTimeout(
+            () => success({ message: 'User has been blacklisted' }),
+            2000
+          )
+        }}
+      />
+    ),
+    blacklisted: (
+      <Dialog
+        trigger={
+          <OutlineButton
+            label="Activate User"
+            variant="primary"
+            disabled={userInfo?.status === 'active'}
+          />
+        }
+        title={'Activate User'}
+        description={
+          'This action automatically activates a user and enables him to carry out transactions'
+        }
+        actionText={'Continue'}
+        submitFn={() => {
+          changeUserStatus(userInfo?.id!, 'active')
+
+          setTimeout(
+            () => success({ message: 'User has been activated successfully' }),
+            2000
+          )
+        }}
+      />
+    ),
+  }
   return (
     <section className={styles.user__profile}>
       <button className="btn" onClick={() => navigate(-1)}>
@@ -59,38 +111,7 @@ const UserProfile = () => {
           <h2>User Details</h2>
         </div>
         <div className={styles.profile__cta}>
-          <Dialog
-            trigger={<OutlineButton label="Blacklist User" variant="danger" />}
-            title={'Blacklist User'}
-            description={
-              'This action automatically blacklists a user and disables the user from carrying out transactions'
-            }
-            actionText={'Continue'}
-            submitFn={() => {
-              changeUserStatus(userInfo?.id!, 'blacklisted')
-              setTimeout(
-                () => success({ message: 'User has been blacklisted' }),
-                2000
-              )
-            }}
-          />
-          <Dialog
-            trigger={<OutlineButton label="Activate User" variant="primary" />}
-            title={'Activate User'}
-            description={
-              'This action automatically activates a user and enables him to carry out transactions'
-            }
-            actionText={'Continue'}
-            submitFn={() => {
-              changeUserStatus(userInfo?.id!, 'active')
-
-              setTimeout(
-                () =>
-                  success({ message: 'User has been activated successfully' }),
-                2000
-              )
-            }}
-          />
+          {userStatus[userInfo?.status! as 'active' | 'blacklisted']}
         </div>
       </div>
       <div className={styles.profile__card}>
@@ -106,7 +127,13 @@ const UserProfile = () => {
             </div>
             <div className={styles.name}>
               <h3>{userInfo?.fullname}</h3>
-              <p>{userInfo?.username} </p>
+              <p style={{ marginBottom: '10px' }}>{userInfo?.username} </p>
+              <div>
+                <Badge
+                  text={userInfo?.status as string}
+                  status={userInfo?.status as string}
+                />
+              </div>
             </div>
           </div>
           <div className={styles.tier}>
@@ -116,10 +143,12 @@ const UserProfile = () => {
             </div>
           </div>
           <div className={styles.balance__bank}>
-            <h2>${userInfo?.monthly_income}</h2>
-            <p>
-              {userInfo?.account_number}/{userInfo?.bank_name}
-            </p>
+            <div>
+              <h2>${userInfo?.monthly_income}</h2>
+              <p>
+                {userInfo?.account_number}/{userInfo?.bank_name}
+              </p>
+            </div>
           </div>
         </div>
       </div>

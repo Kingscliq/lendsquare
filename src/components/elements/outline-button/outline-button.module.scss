@@ -15,6 +15,10 @@
   &:hover {
     opacity: 0.9;
   }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
 
   .btn-loader {
     display: flex;
@@ -25,6 +29,7 @@
 
   .btn-body {
     @include flexCenter('row');
+    cursor: pointer;
     p {
       text-align: center;
       font-size: 098;
@@ -37,6 +42,7 @@
   text-transform: uppercase;
   border-radius: 8px;
   background-color: transparent;
+  cursor: pointer;
 
   &.btn__primary {
     border: 1px solid $primary-color;

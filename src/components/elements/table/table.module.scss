@@ -38,14 +38,13 @@
         tbody {
           tr {
             width: 100%;
-            border-bottom: 1px solid black;
+            border-bottom: 1px solid rgba(33, 63, 125, 0.1);
             td {
               text-align: left;
               font-size: fontSize('xs');
               font-weight: fontWeight('regular');
               white-space: nowrap;
               padding: 22px 20px;
-              border-bottom: 1px solid rgba(33, 63, 125, 0.1);
               color: $accent;
             }
           }
