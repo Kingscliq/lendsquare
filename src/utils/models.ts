@@ -9,7 +9,6 @@ export const relationships = [
   'colleague',
 ]
 
-// TODO: Change this
 export const americanBanks = [
   'JPMorgan Chase & Co.',
   'Bank of America',

@@ -100,6 +100,54 @@ const UserProfile = () => {
         }}
       />
     ),
+    inactive: (
+      <Dialog
+        trigger={
+          <OutlineButton
+            label="Activate User"
+            variant="primary"
+            disabled={userInfo?.status === 'active'}
+          />
+        }
+        title={'Activate User'}
+        description={
+          'This action automatically activates a user and enables him to carry out transactions'
+        }
+        actionText={'Continue'}
+        submitFn={() => {
+          changeUserStatus(userInfo?.id!, 'active')
+
+          setTimeout(
+            () => success({ message: 'User has been activated successfully' }),
+            2000
+          )
+        }}
+      />
+    ),
+    pending: (
+      <Dialog
+        trigger={
+          <OutlineButton
+            label="Activate User"
+            variant="primary"
+            disabled={userInfo?.status === 'active'}
+          />
+        }
+        title={'Activate User'}
+        description={
+          'This action automatically activates a user and enables him to carry out transactions'
+        }
+        actionText={'Continue'}
+        submitFn={() => {
+          changeUserStatus(userInfo?.id!, 'active')
+
+          setTimeout(
+            () => success({ message: 'User has been activated successfully' }),
+            2000
+          )
+        }}
+      />
+    ),
   }
   return (
     <section className={styles.user__profile}>
