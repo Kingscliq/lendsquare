@@ -7,8 +7,9 @@ export const relationships = [
   'cousin',
   'friend',
   'colleague',
-];
+]
 
+// TODO: Change this
 export const nigerianBanks = [
   'Access Bank',
   'Zenith Bank',
@@ -27,8 +28,8 @@ export const nigerianBanks = [
   'Heritage Bank',
   'Unity Bank',
   'Stanbic IBTC Bank',
-];
+]
 
-export const statuses = ['active', 'inactive', 'pending', 'blacklisted'];
+export const statuses = ['active', 'inactive', 'pending', 'blacklisted']
 
-export const maritalStatus = ['single', 'married', 'divorced'];
+export const maritalStatus = ['single', 'married', 'divorced']

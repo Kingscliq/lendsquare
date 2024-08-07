@@ -51,3 +51,12 @@ export const Button: React.FC<ButtonProps> = ({
     </button>
   );
 };
+
+
+// Different between RPC and Rest
+// Axe - test for accessibility / lighthouse
+// GraphQL
+// gRPC
+// Add user status to the user details
+// Grade out the button depending on the status of the user
+// Explanation of why the project was not fully completed
